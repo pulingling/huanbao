@@ -1,0 +1,4 @@
+<!--tag组件-->
+<view class="tag {{active?'active':''}}">
+    <slot></slot>
+</view>

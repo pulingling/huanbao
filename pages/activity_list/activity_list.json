@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "activity-item": "/components/activity/activity_item",
+    "facility-item": "/components/facility/facility_item"
+  },
+  "navigationBarTitleText": "活动展示"
+}

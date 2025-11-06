@@ -1,0 +1,53 @@
+<view class="container">
+  <video id="video" src="{{video}}" controls enable-play-gesture class="video" object-fit="cover" bindplay="videoPlay" custom-cache="{{false}}" binderror="videoError" bindtimeupdate="getProgress">
+    <cover-view class="warning" wx:if="{{showWarning}}" bindtap="confirmBits">您正在使用非WIFI网络,播放将产生流量费用</cover-view>
+  </video>
+  <view class="nav">
+    <view class="{{detail?'active':''}}" bindtap="handleTab" data-detail>详情</view>
+    <view class="{{!detail?'active':''}}" bindtap="handleTab" wx:if="{{hasTest}}">测试</view>
+    <view wx:else> </view>
+  </view>
+  <block wx:if="{{introduction}}">
+    <block wx:if="{{detail}}">
+      <view class="detail_item">
+        <view class="title">{{title}}</view>
+        <view class="lead" wx:if="{{introduction}}">课程简介: </view>
+        <view class="content" wx:if="{{introduction}}">{{introduction}}</view>
+      </view>
+      <view class="detail_item">
+        <view class="lead" wx:if="{{outline && outline !== ' '}}">课程纲要: </view>
+        <view class="content" wx:if="{{outline && outline !== ' '}}">{{outline}}</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="detail_item">
+        <view class="title">
+          <view class="point"></view>
+          评测说明
+        </view>
+        <view class="content">
+          1. 根据每个课程的教学内容特设计此套题库，本课程共包含6道题，完成后可查看测评结果；
+
+          2. 完成答题后可查看正确答案与解析。
+        </view>
+      </view>
+      <button class="examBtn" bindtap="toExam">开始测试</button>
+    </block>
+  </block>
+</view>
+<block wx:if="{{showBind}}">
+  <view class="mask" catchtap="doNothing">
+    <form class="form" bindsubmit="formSubmit">
+      <view>请绑定您在pc端的账号</view>
+      <text>(绑定后不可变更)</text>
+      <input name="user" type="text" placeholder="账号" />
+      <input name="password" type="text" placeholder="密码" password />
+      <text class="waring_text" wx:if="{{isWrong}}">账号或密码不正确，请重新输入！</text>
+      <button class="subBtn" form-type="submit">确认绑定</button>
+      <text bindtap="jumpBind">没有账号? <text class="green">跳过此步</text></text>
+    </form>
+  </view>
+</block>
+<view class="cover1" wx:if="{{coverVisible}}" catchtouchmove="doNothing">
+  <cover bind:close="close" title="完成在线学习" score="10"></cover>
+</view>

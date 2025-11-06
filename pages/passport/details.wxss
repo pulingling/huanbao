@@ -1,0 +1,4 @@
+/* pages/passport/details.wxss */
+.detail {
+  width: 750rpx;
+}

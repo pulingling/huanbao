@@ -1,0 +1,80 @@
+.orderCard{
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid rgba(214, 210, 210, 0.836);
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.title{
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.active{
+  color: #78C98B;
+}
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btnBox{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 26rpx;
+  right: 16rpx;
+  font-weight:400;
+}
+.btnBox .img{
+  width: 16rpx;
+  height: 28rpx;
+  margin-left: 14rpx;
+}
+.detail{
+  width: 120rpx;
+  height: 50rpx;
+  border-radius: 15rpx;
+  background: rgba(76, 126, 247, 0.64);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.detailupdate{
+  width: 200rpx;
+  height: 50rpx;
+  border-radius: 15rpx;
+  background: rgba(76, 126, 247, 0.64);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 30rpx;
+}
+.disabled{
+  background: rgba(164, 156, 153, 0.49);
+}
+.leftInfo{
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  color:rgba(136,136,136,1);
+}
+.orderType{
+  width:92rpx;
+  height:28rpx;
+  border-radius:4rpx;
+  border:1px solid rgba(16,174,255,1);
+  font-size:20rpx;
+  font-weight:400;
+  color:rgba(16,174,255,1);
+  margin-left: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.person{
+  color:rgba(234,138,10,1);
+  border:1px solid rgba(255,195,0,1);
+}

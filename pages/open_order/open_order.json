@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "环保设施公众开放",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "tag": "/components/orderTag/orderTag",
+    "orderItem": "/components/order_item/order_item"
+  }
+}

@@ -1,0 +1,5 @@
+<!--pages/activity_detail.wxml-->
+<view>
+   <view class="name">{{title}}</view>	
+   <parser html="{{detail}}" />   
+</view>

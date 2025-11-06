@@ -1,0 +1,10 @@
+<!--pages/onlineBooks/onlineBooks.wxml-->
+<view class="onlineBooks-container">
+  <view class="book-list">
+    <view class="book" wx:for="{{books}}" wx:key="index" data-id="{{item.id}}" bindtap="jump">
+      <image src="{{item.cover_url}}"></image>
+      <view class="title">{{item.name}}</view>
+    </view>
+    <view class="book-pos" wx:if="{{books.length%2 === 1}}"></view>
+  </view>
+</view>

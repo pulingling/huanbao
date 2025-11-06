@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 足迹轮廓 -->
+  <path d="M 12 8 C 12 6 14 4 16 4 C 18 4 20 6 20 8 C 20 10 18 12 16 12 C 14 12 12 10 12 8 Z" fill="#4CAF50"/>
+  
+  <!-- 脚趾 -->
+  <circle cx="14" cy="6" r="1.5" fill="#66BB6A"/>
+  <circle cx="16" cy="5" r="1.5" fill="#66BB6A"/>
+  <circle cx="18" cy="6" r="1.5" fill="#66BB6A"/>
+  
+  <!-- 足底 -->
+  <ellipse cx="16" cy="16" rx="6" ry="10" fill="#4CAF50"/>
+  
+  <!-- 装饰线条 -->
+  <path d="M 12 14 Q 16 12 20 14" stroke="#66BB6A" stroke-width="1" fill="none"/>
+  <path d="M 12 18 Q 16 16 20 18" stroke="#66BB6A" stroke-width="1" fill="none"/>
+  <path d="M 12 22 Q 16 20 20 22" stroke="#66BB6A" stroke-width="1" fill="none"/>
+</svg>

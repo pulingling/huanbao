@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>积分中心图标预览</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        
+        .preview-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #A8D8A8;
+        }
+        
+        .icon-comparison {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: 16px;
+            background: #f9f9f9;
+            min-width: 200px;
+        }
+        
+        .icon-item h3 {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .icon-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .icon-item p {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .entrance-demo {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+        
+        .entrance-area {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .entrance-card {
+            flex: 1;
+            max-width: 200px;
+            background: white;
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(168, 216, 168, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .entrance-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(168, 216, 168, 0.2);
+        }
+        
+        .entrance-card:active {
+            transform: translateY(2px);
+            box-shadow: 0 4px 15px rgba(168, 216, 168, 0.2);
+        }
+        
+        .entrance-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .entrance-card:active img {
+            transform: scale(0.95);
+        }
+        
+        .entrance-card span {
+            display: block;
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .features {
+            background: #A8D8A8;
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-top: 30px;
+        }
+        
+        .features h3 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .features ul {
+            list-style: none;
+        }
+        
+        .features li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>积分中心图标优化预览</h1>
+        
+        <div class="preview-section">
+            <h2 class="section-title">图标对比</h2>
+            
+            <div class="icon-comparison">
+                <div class="icon-item">
+                    <h3>优化后 - 积分抽奖</h3>
+                    <img src="assets/icons/lottery.svg" alt="积分抽奖">
+                    <p>使用绿色主题，圆形转盘设计</p>
+                </div>
+                
+                <div class="icon-item">
+                    <h3>优化后 - 积分规则</h3>
+                    <img src="assets/icons/rules.svg" alt="积分规则">
+                    <p>使用绿色主题，文档列表设计</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="preview-section">
+            <h2 class="section-title">实际效果演示</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                以下是图标在积分中心页面中的实际显示效果
+            </p>
+            
+            <div class="entrance-demo">
+                <div class="entrance-area">
+                    <div class="entrance-card">
+                        <img src="assets/icons/lottery.svg" alt="积分抽奖">
+                        <span>积分抽奖</span>
+                    </div>
+                    
+                    <div class="entrance-card">
+                        <img src="assets/icons/rules.svg" alt="积分规则">
+                        <span>积分规则</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h3>优化特点</h3>
+            <ul>
+                <li>统一使用 #A8D8A8 绿色主题，与页面整体风格协调</li>
+                <li>增大圆角半径至 16px，更加现代化</li>
+                <li>优化阴影效果，使用绿色透明度阴影</li>
+                <li>增加交互动画效果，提升用户体验</li>
+                <li>图标设计更加简洁明了，符合小程序设计规范</li>
+                <li>保持60x60尺寸，确保在不同设备上的清晰显示</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

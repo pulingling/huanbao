@@ -1,0 +1,2 @@
+<!--pages/passport/details.wxml-->
+<image class="detail" src="{{detail}}" mode="widthFix"></image>

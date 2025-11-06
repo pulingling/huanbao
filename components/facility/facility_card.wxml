@@ -1,0 +1,15 @@
+<view class="orderCard" bindtap="toDetail" data-id="{{item.id}}" data-title="{{title}}">
+    <view class="Card">
+        <view class='imgStyle'>
+           <image class="img" src="{{item.pic}}" mode="widthFix"></image>
+        </view>
+        <view class="cardInfo">
+            <view class="cardName">
+                <view class="nameBox">
+                    <text class="name">{{item.title}}</text>
+                </view>
+                <text class="synopsis" wx:if="{{item.desc}}">{{item.desc}}</text>
+            </view>
+        </view>
+    </view>
+</view>

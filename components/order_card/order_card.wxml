@@ -1,0 +1,22 @@
+<view bindtap="toDetail" class="orderCard">
+  <view class="title">
+      <text>{{item.title}}</text>
+      <text class="{{item.type === 1? 'orderType person' : 'orderType'}}">{{item.type === 1 ? '个人预约' : '团体预约'}}</text>
+    <view class="btnBox">
+      <text class="{{item.status === 1?'active':''}}">{{item.status === 1 ? '待参观' : (item.status === 2?'已取消':'已完成')}}</text>
+      <image class="img" src="/images/arrowRight.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="main">
+    <view class="leftInfo">
+      <view>
+        <text>预约人数：</text>
+        <text>{{item.count}}人</text>
+      </view>
+      <view>
+        <text>参观时间：</text>
+        <text>{{visitTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>

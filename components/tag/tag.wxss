@@ -1,0 +1,33 @@
+.tag {
+    color: #969696;
+    display: inline;
+    box-sizing: border-box;
+    border: 1rpx solid rgba(255,255,255,0);
+}
+.active {
+    color: #68B853;
+    background-color:#DDFFF2;
+}
+.huge{
+    box-sizing: border-box;
+    height: 56rpx;
+    border-radius: 56rpx;
+    line-height: 56rpx;
+    font-size: 28rpx;
+    padding: 8rpx 10rpx;
+}
+.normal{
+    box-sizing: border-box;
+    height: 46rpx;
+    line-height: 46rpx;
+    padding: 5rpx 15rpx;
+    border-radius: 43rpx;
+    font-size: 26rpx;
+}
+.normal.active {
+    border: 1rpx solid #6ECE83;
+}
+.huge.active {
+    color: #474646;
+    background: linear-gradient(to right,rgba(127, 218, 147, 0.5),rgba(127, 218, 147, 0.1));
+}

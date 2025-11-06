@@ -1,0 +1,56 @@
+<!--pages/footmark/rank.wxml-->
+<view class="container">
+	<view class="rank-bg">
+		<view class="rank1">
+			<image src="{{rankList[1].avatarUrl}}" class="rank1-user-icon"></image>
+			<view class="rank1-user-icon-tag">
+				<text class="user-icon-rank">2</text>
+			</view>
+			<text class="nickname">{{rankList[1].nickName}}</text>
+			<text  wx:if="{{rankList[1]}}" class="userPoint">{{rankList[0].score}}</text>
+			<view class="honor-tag">
+				<text class="honor-text">{{rankList[1].comment}}</text>
+			</view>
+		</view>
+		<view class="rank2">
+			<image class="rank2-user-icon" src="{{rankList[0].avatarUrl}}"></image>
+			<view class="rank2-user-icon-tag">
+				<text class="user-icon-rank">1</text>
+			</view>
+			<text class="nickname">{{rankList[0].nickName}}</text>
+			<text class="userPoint">{{rankList[0].score}}</text>
+			<view class="honor-tag">
+				<text class="honor-text">{{rankList[0].comment}}</text>
+			</view>
+		</view>
+		<view class="rank3">
+			<image class="rank3-user-icon" src="{{rankList[2].avatarUrl}}"></image>
+			<view class="rank3-user-icon-tag">
+				<text class="user-icon-rank">3</text>
+			</view>
+			<text class="nickname">{{rankList[2].nickName}}</text>
+			<text  wx:if="{{rankList[2]}}" class="userPoint">{{rankList[0].score}}</text>
+			<view class="honor-tag">
+				<text class="honor-text">{{rankList[2].comment}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="ranklist">
+		<view class="ranklist-item" wx:for="{{rankList}}" wx:key="unique" wx:if="{{index >= 3}}">
+			<text class="rank-num">{{index+1}}</text>
+			<image class="rank-logo" src="{{item.avatarUrl}}"></image>
+			<view class="rank-nickname">
+				<text>{{item.nickName}}</text>
+				<text class="rank-userComment">{{item.comment}}</text>
+			</view>
+			<text class="rank-score">{{item.score}}</text>
+		</view>
+	</view>
+	<button class="group-btn" open-type="share">
+		<view class="grouprank" >
+			<text class="grouprank-text" >查看群排名</text>
+		</view>
+	</button>
+
+</view>

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "美境行动",
+  "navigationBarBackgroundColor": "#E3FFCC",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#F7F7F7",
+  "usingComponents": {
+    "mp-tabs": "../../components/tabs",
+    "Loading":"/components/loading/loading"
+  }
+}

@@ -1,0 +1,13 @@
+<!--components/loading/loading.wxml-->
+<view class="loading-container">
+  <view class="loading-symbol">
+    <view class="circle">
+      <view class="content">
+        loading {{process}}
+      </view>
+      <view class="wave">
+        
+      </view>
+    </view>
+  </view>
+</view>

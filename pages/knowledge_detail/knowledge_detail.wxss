@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    font-size: 34rpx;
+    box-sizing: border-box;
+    z-index: -1;
+}
+.container image {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: -1;
+}
+.container .desc image {
+    width: 100% !important;
+    position: relative !important;
+}
+.desc {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+}
+.confirm {
+    position: relative;
+    width: 100%;
+    text-align: end;
+    z-index: 1;
+    color: #353535;
+    font-size: 24rpx;
+}

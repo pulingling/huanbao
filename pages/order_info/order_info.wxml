@@ -1,0 +1,185 @@
+<view class="line"></view>
+<view class="orderInfo">
+  <view class="orderNum">
+    <view class="orderNumMain">
+      <text>订单号: </text>
+      <text>{{orderId}}</text>
+    </view>
+    <view class="orderNumType">
+      <text class="{{info.status === 1?'active':''}}">{{info.status === 1 ? '已预约' : (info.status === 2?'已取消':'已完成')}}</text>
+    </view>
+  </view>
+  <view wx:if="{{info.type === 2}}">
+    <view class="lineOrder"></view>
+    <view class="orderName">
+      <text>{{info.title}}</text>
+    </view>
+    <view class="orderMain">
+      <view class="orderitem">
+        <text>预约类型: </text>
+        <text>{{info.type === 1 ? '个人预约' : '团体预约'}}</text>
+      </view>
+      <view wx:if="{{info.type === 2}}" class="orderitem">
+        <text>预约团体: </text>
+        <text>{{info.group_name}}</text>
+      </view>
+      <!-- <view wx:if="{{info.type === 2}}" class="orderitem">
+        <text>预约人职位: </text>
+        <text>{{info.office}}</text>
+      </view> -->
+      <view wx:if="{{info.type === 2}}" class="orderitem">
+        <text>预约手机号: </text>
+        <text>{{info.mobile}}</text>
+      </view>
+      <view class="orderitem">
+        <text>身份证号</text>
+        <text>{{info.id_card}}</text>
+      </view>
+      <view class="orderitem">
+        <text>预约人数</text>
+        <text>{{info.count}}</text>
+      </view>
+      <view wx:if="{{info.type === 1}}">
+        <view wx:for="{{joinner}}" wx:for-index="index" wx:for-item="item">
+          <view class="joinNum">{{index+1}}</view>
+          <view class="orderitem">
+            <text>预约姓名: </text>
+            <text>{{item.name}}</text>
+          </view>
+          <view class="orderitem">
+            <text>预约人年龄: </text>
+            <text>{{item.age}}</text>
+          </view>
+          <view class="orderitem">
+            <text>预约手机号: </text>
+            <text>{{item.mobile}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="orderitem">
+        <text>预约时间: </text>
+        <text>{{visitTime}}</text>
+      </view>
+      <view class="lineOrder"></view>
+      <view>
+        <text class="orderName">设施信息: </text>
+        <view>
+          <view>
+            <text>地址: </text>
+            <text>{{info.location_desc}}</text>
+          </view>
+          <view>
+            <text>联系电话: </text>
+            <text>{{info.admin_mobile}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{info.type === 1}}">
+    <view class="lineOrder"></view>
+    <view class="orderName">
+      <text>{{info.title}}</text>
+    </view>
+    <view class="orderitem">
+      <text>设施地址: </text>
+      <text>{{info.location_desc}}</text>
+    </view>
+    <view class="orderitem">
+      <text>联系电话: </text>
+      <text>{{info.kfd_mobile}}</text>
+    </view>
+    <view class="lineOrder"></view>
+    <view class="orderName">
+      <text>预约信息</text>
+    </view>
+    <view wx:if="{{!showall}}" class="person">
+      <view class="personItem">
+        <view class="personName">
+          <text>预约姓名</text>
+          <!-- <text class="num">1</text> -->
+        </view>
+        <text>{{joinner[0].name}}</text>
+      </view>
+      <view class="personItem">
+        <view class="personName">
+          <text>手机号</text>
+        </view>
+        <text>{{joinner[0].mobile}}</text>
+      </view>
+      <view class="personItem">
+        <view class="personName">
+          <text>预约人数</text>
+        </view>
+        <text>{{joinner[0].count}}</text>
+      </view>
+      <view class="personItem">
+        <view class="personName">
+          <text>身份证号</text>
+        </view>
+        <text>{{joinner[0].id_card}}</text>
+      </view>
+      <view class="personItem">
+        <view class="personName">
+          <text>预约时间</text>
+        </view>
+        <text>{{visitTime}}</text>
+      </view>
+    </view>
+    <view wx:if="{{showall}}" wx:for="{{joinner}}" wx:for-item="item" wx:for-index="index" class="person">
+      <view class="personItem">
+        <view class="personName">
+          <text>预约姓名</text>
+          <!-- <text class="num">{{index + 1}}</text> -->
+        </view>
+        <text>{{item.name}}</text>
+      </view>
+      <view class="personItem">
+        <view class="personName">
+          <text>手机号</text>
+        </view>
+        <text>{{item.mobile}}</text>
+      </view>
+      <view class="personItem">
+        <view class="personName">
+          <text>预约人数</text>
+        </view>
+        <text>{{item.count}}</text>
+      </view>
+      <view class="personItem">
+        <view class="personName">
+          <text>身份证号</text>
+        </view>
+        <text>{{item.id_card}}</text>
+      </view>
+      <view wx:if="{{index === 0}}" class="personItem">
+        <view class="personName">
+          <text>预约时间</text>
+        </view>
+        <text>{{visitTime}}</text>
+      </view>
+    </view>
+    <view bindtap="toshowall" wx:if="{{joinner.length>1}}" class="showmore">
+      <text>{{!showall?"展开":"收起"}}</text>
+      <image class="{{!showall?'img':'img shou'}}" src="/images/s-arrow-bottom.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="btns">
+    <!-- <view wx:if="{{info.status === 1}}" bindtap="openedit" class="closeOrder">
+      修改订单
+    </view> -->
+    <view wx:if="{{info.status === 1}}" bindtap="openCancel" class="closeOrder">
+      取消订单
+    </view>
+  </view>
+</view>
+<mp-dialog show="{{showCancle}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '确认'}, {text: '取消'}]}}">
+    <view class="cancleOrder">
+      <view>
+        确认取消订单？
+      </view>
+      <view>
+        如需再次预约请重新下单
+      </view>
+    </view>
+</mp-dialog>

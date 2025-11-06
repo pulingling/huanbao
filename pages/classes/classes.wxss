@@ -1,0 +1,49 @@
+Page{
+    background: #F6F6F6;
+}
+.container {
+    width: 750rpx;
+    height: 100%;
+    padding-top: 20rpx;
+}
+.bg {
+    width: 750rpx;
+    position: absolute;
+    top: -120rpx;
+    left: 0;
+    z-index: -1;
+}
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 34rpx;
+    margin-top: 15rpx;
+}
+.header tag {
+    margin-right: 30rpx;
+}
+.list {
+    padding-top: 15rpx;
+}
+.tags {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 112rpx 30rpx 15rpx 30rpx;
+    border-radius: 20rpx;
+    background: #FFF;
+}
+.tag_item {
+    margin: 15rpx 10rpx;
+}
+.list_items {
+    margin-top: 54rpx;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: wrap;
+    padding-bottom: 40rpx;
+}

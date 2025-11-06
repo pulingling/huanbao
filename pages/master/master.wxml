@@ -1,0 +1,11 @@
+<view class="container">
+    <!--<image></image>-->
+    <view class="box" wx:for="{{list}}" wx:key="id" bindtap="handleTap" data-id="{{item.id}}">
+        <view>{{item.title}}</view>
+        <view>专家单位：{{item.zhiwei}}</view>
+        <view>专家职位：{{item.danwei}}</view>
+        <view class="button">
+            查看简介
+        </view>
+    </view>
+</view>

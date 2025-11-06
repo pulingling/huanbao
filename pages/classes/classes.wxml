@@ -1,0 +1,15 @@
+<image src="/images/bg.png" mode="withFill" class="bg"></image>
+<view class="container">
+    <view class="tags">
+        <block wx:for="{{tags}}" wx:key="category">
+            <tag class="tag_item" active="{{actCate === item.category}}" data-category="{{item.category}}" bindtap="handleCate">{{item.name}}</tag>
+        </block>
+    </view>
+    <view class="list">
+        <view class="header" wx:if="{{actCate != 18}}">
+            <tag huge data-level="1" active="{{actLevel === 1}}" bindtap="handleLevel">初级课程</tag>
+            <tag huge data-level="2" active="{{actLevel === 2}}" bindtap="handleLevel">中级课程</tag>
+        </view>
+        <list_item class="list_items" option="{{list}}" showTime></list_item>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+.tag {
+  padding: 18rpx 50rpx;
+  font-weight:400;
+  font-size: 28rpx;
+  color:rgba(53,53,53,1);
+  background:rgba(245,245,245,1);
+  border-radius:4px;
+}
+.active {
+  color: #48C4A6;
+  background:rgba(230,250,246,1);
+}

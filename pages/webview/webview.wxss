@@ -1,0 +1,87 @@
+.order{
+  background: #F6F6F6;
+  padding-bottom: 60rpx;
+}
+Page{
+  background: #F6F6F6;
+}
+.orderItem{
+  margin-top: 30rpx;
+}
+.tabMain{
+  width: 100%;
+  display: flex;
+}
+.tab_container {
+  color: #969696;
+  background: #FFF;
+  font-size: 28rpx;
+  line-height: 107rpx;
+  height: 112rpx;
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.tabBtn{
+  margin-left: 115rpx;
+}
+.tab_container text {
+  vertical-align: bottom;
+  transition: all .2s ease-out;
+}
+.tab_container .active {
+  color: #78C98B;
+  font-size: 36rpx;
+  line-height: 50rpx;
+  position: relative;
+}
+.tab_container .active::after {
+  content: " ";
+  display: block;
+  background:rgba(171,221,183,1);
+  border-radius:4rpx;
+  height: 6rpx;
+  width: 80rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.position{
+  width:144rpx;
+  height:112rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:-2px 0px 2px 0px rgba(235,235,235,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:32rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.arrowBottom{
+  width: 18rpx;
+  height: 10rpx;
+  margin-left: 12rpx;
+}
+.positionChoose{
+  position: fixed;
+  top: 112rpx;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,0.5);
+}
+.tag_box {
+  display: flex;
+  flex-flow: wrap;
+  background: #FFF;
+  box-sizing: border-box;
+  justify-content: space-around;
+  padding-bottom: 45rpx;
+}
+.tag_item {
+  margin: 28rpx 10rpx 0;
+}

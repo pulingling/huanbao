@@ -1,0 +1,27 @@
+<!--pages/onlineBooks/book.wxml-->
+
+<view class="book-container" style="{{bookContainerSize}}">
+
+  <view class="back" bindtap="back">
+    <image src="/assets/icons/3d-back.png"></image>
+  </view>
+  <view class="swiper-container">
+    <view class="swiper-item {{current===index?'active '+anchorDirection:' '}} {{next===index?'next':''}}" wx:for="{{book}}" wx:key="index" bindtouchstart="changeStart" data-page="{{index}}" style="{{current===index?'clip-path:'+clipPath+';':''}}" bindtouchmove="{{stopChange?'stopChange':'changeMove'}}" bindtouchend="{{stopChange?'':'changeEnd'}}">
+      <view class="movable-container">
+        <movable-area scale-area style="{{bookContainerSize}}">
+          <movable-view x="{{x}}" y="{{y}}" direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="1" scale-max="4" scale-value="{{scale}}">
+            <image src="{{item}}" resizable="{{true}}" mode="widthFix"></image>
+          </movable-view>
+        </movable-area>
+      </view>
+
+    </view>
+  </view>
+  <view wx:if="{{anchorDirection === 'left' && !stopChange}}"class="corner-up" style="{{'transform-origin: bottom right;right:'+cornerInfo.hp+'%;width:'+cornerInfo.width+'rpx;height:'+cornerInfo.height+'rpx;bottom:0;transform:scale('+cornerInfo.scale+','+cornerInfo.scale+')'}}">
+    <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/turn_page.png"></image>
+  </view>
+  <view wx:elif="{{anchorDirection === 'right' && !stopChange}}" class="corner-up" style="{{'transform-origin: bottom left;left:'+cornerInfo.hp+'%;width:'+cornerInfo.width+'rpx;height:'+cornerInfo.height+'rpx;bottom:0;transform:scale('+cornerInfo.scale+','+cornerInfo.scale+')'}}">
+    <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/turn_page2.png"></image>
+  </view>
+</view>
+<audio src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/turnPage.mp3" wx:show="{{false}}"></audio>

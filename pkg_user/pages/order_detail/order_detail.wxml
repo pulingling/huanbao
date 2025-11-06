@@ -1,0 +1,198 @@
+<view class="orderDetail">
+  <view>
+    <view class="tab_container" bindtap="handleTab">
+      <text data-id="1" class="{{tabShow === 1?'active':''}}">个人预约</text>
+      <text data-id="2" class="{{tabShow === 2?'active':''}}">团体预约</text>
+    </view>
+    <view wx:if="{{tabShow === 1}}">
+      <view bindtap="addjoiner" class="addjoiner">
+        <view class="addLeft">
+          <view class="imgBox">
+            <image class="img" src="/images/people.png" mode="aspectFit"></image>
+          </view>
+          <view>
+            <text class="addText">点击添加预约者</text>
+          </view>
+        </view>
+      </view>
+      <view class="orderInfo">
+        <view wx:for="{{joinner}}" wx:for-index="idx" wx:for-item="item" wx:key="idx" class="joinner">
+          <text>{{item.name}}</text>
+          <image data-index="{{idx}}" bindtap="toEdit" class="img" src="/images/edit.png" mode="aspectFit"></image>
+        </view>
+        <view class="infoItem">
+          <text class="itemName">姓名</text>
+          <input class="weui-input" value="{{person.name}}" data-key="name" bindinput="bindUserInput" placeholder="请填写姓名" />
+        </view>
+        <view class="infoItem">
+          <text class="itemName">手机号</text>
+          <input class="weui-input" value="{{person.mobile}}" type="number" data-key="mobile" bindinput="bindUserInput" placeholder="请填写手机号" />
+        </view>
+        <view class="infoItem">
+          <text class="itemName">身份证号</text>
+          <input class="weui-input" value="{{person.id_card}}" data-key="id_card" bindinput="bindUserInput" placeholder="请填写身份证号" />
+        </view>
+        <!-- <view  class="infoItem">
+          <text class="itemName">预约人数</text>
+          <slider class="slider" bindchange="countChange" min="1" max="5" show-value/>
+        </view> -->
+        <view class="infoItem visitTime">
+          <text>预约时间</text>
+          <text class="chooseDate" bindtap="openCalender" wx:if="{{!chooseDate}}">请选择预约时间 <text
+              class="arrowRight"></text></text>
+          <text class="chooseDate" bindtap="openCalender" wx:else>{{chooseDate}} {{visitRnage}}</text>
+        </view>
+      </view>
+      <view class="noticeinfo">
+        <view class="noticeTitle">个人预约须知：</view>
+        <view>1.个人预约人数不超过10人，超出请选择团体预约。</view>
+        <view>2.预约成功后将收到短信通知。</view>
+        <view>3.如用户存在2次预约后未参观且未提前取消订单行为，则限制该账号1年内不能再线上预约任何活动。</view>
+      </view>
+      <view class="submit">
+        <view bindtap="toPersonOrder" class="submitBtn">
+          提交
+        </view>
+      </view>
+    </view>
+    <view class="group" wx:if="{{tabShow === 2}}">
+      <view class="orderInfo">
+        <view class="infoItem">
+          <text class="itemName">单位名称</text>
+          <input class="weui-input" value="{{group.group_name}}" bindinput="groupOfName" placeholder="请填写单位名称" />
+        </view>
+        <view class="infoItem">
+          <text class="itemName">参观人数</text>
+          <input class="weui-input" value="{{group.count}}" type="number" bindinput="groupNum" placeholder="请填写参观人数" />
+        </view>
+        <view class="infoItem">
+          <text class="itemName">联络人姓名</text>
+          <input class="weui-input" value="{{group.name}}" bindinput="groupName" placeholder="请填写联络人姓名" />
+        </view>
+        <!-- <view class="infoItem">
+          <text class="itemName">联络人职位</text>
+          <input class="weui-input" value="{{group.office}}" bindinput="groupOffice" placeholder="请填写联络人职位" />
+        </view> -->
+        <view class="infoItem">
+          <text class="itemName">手机号</text>
+          <input class="weui-input" value="{{group.mobile}}" type="number" bindinput="groupPhone"
+            placeholder="请填写联络人手机号" />
+        </view>
+        <view class="infoItem">
+          <text class="itemName">身份证号</text>
+          <input class="weui-input" value="{{group.id_card}}" bindinput="groupidCard" placeholder="请填写联络人身份证号" />
+        </view>
+        <view class="infoItem visitTime">
+          <text>预约时间</text>
+          <text class="chooseDate" bindtap="openCalender" wx:if="{{!chooseDate}}">请选择预约时间 <text
+              class="arrowRight"></text></text>
+          <text class="chooseDate" bindtap="openCalender" wx:else>{{chooseDate}} {{groupStartTime}}~{{groupEndTime}}</text>
+        </view>
+      </view>
+      <view class="noticeinfo">
+        <view class="noticeTitle">团体预约须知：</view>
+        <view>1. 团体预约针对独立成团的10人以上的对公接待用户。</view>
+        <view>2. 预约订单提交后，将由公众设施开放单位电话联系确认。</view>
+        <view>3.如用户存在2次预约后未参观且未提前取消订单行为，则限制该账号1年内不能再线上预约任何活动。</view>
+      </view>
+      <view class="submit">
+        <view bindtap="groupOrder" class="submitBtn">
+          提交
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<mp-dialog show="{{ordersuccess===true}}" bindbuttontap="ordertapDialogButton" buttons="{{[{text:'查看订单'},{text:'返回'}]}}">
+  <text>预约申请提交成功</text>
+</mp-dialog>
+<mp-dialog show="{{ordersuccess==='black'}}" bindbuttontap="ordertapDialogButton" buttons="{{[{text:'查看订单'},{text:'返回'}]}}">
+  <text>抱歉您已被拉黑,提交失败</text>
+</mp-dialog>
+<view wx:if="{{isAdd}}" class="cover">
+  <view class="add">
+    <view class="closeBox">
+      <view bindtap="close" class="close">X</view>
+    </view>
+    <view class="addinfoItem">
+      <view class="infoName">
+        姓名
+      </view>
+      <view class="infoValue">
+        <input class="weui-input" bindinput="inputName" value="{{joinPerson.name}}" placeholder="请填预约人姓名" />
+      </view>
+    </view>
+    <!-- <view class="addinfoItem">
+      <view class="infoName">
+        年龄
+      </view>
+      <view class="infoValue">
+        <input class="weui-input" type="number" bindinput="inputAge" value="{{joinPerson.age}}"
+          placeholder="请填写预约人年龄" />
+      </view>
+    </view> -->
+    <view class="addinfoItem">
+      <view class="infoName">
+        身份证号
+      </view>
+      <view class="infoValue">
+        <input class="weui-input" type="number" bindinput="inputPhone" value="{{joinPerson.id_card}}"
+          placeholder="请填写预约人身份证号" />
+      </view>
+    </view>
+    <view wx:if="{{isEdit}}" bindtap="delItem" class="delItem">
+      删除预约人
+    </view>
+    <view class="addItem">
+      <view bindtap="saveItem" class="addBtn">
+        保存
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showCalendar}}" class="coverCalendar">
+  <view class="coverMask" bindtap="closeCalendar"></view>
+  <view class="addCalendar">
+    <calendar calendarConfig="{{calendarConfig}}" bind:afterCalendarRender="afterCalendarRender">
+    </calendar>
+    <view wx:if="{{tabShow===1}}">
+      <text class="timeRange">点击选择参观时间段</text>
+      <view bindtap="chooseTime" class="timeChoose">
+        <view data-time="{{item}}" class="{{ visitRnage === item? 'timeChooseItem timeActive' : 'timeChooseItem'}}"
+          wx:for="{{detail.visit_zone}}" wx:for-item="item">
+          {{item}}
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{tabShow===2}}">
+      <text class="timeRange">请选择参观时间段</text>
+      <view class="chooseTimeRange">
+        <picker mode="time" value="{{groupStartTime}}" start="00:00" end="24:00" bindchange="startTimeChange">
+          <view wx:if="{{groupStartTime}}" class="picker timeChoose choosed">
+            开始时间: {{groupStartTime}}
+          </view>
+          <view wx:else class="picker timeChoose">
+            点击选择开始时间
+          </view>
+        </picker>
+        <picker mode="time" value="{{groupEndTime}}" start="00:00" end="24:00" bindchange="endTimeChange">
+          <view wx:if="{{groupEndTime}}" class="picker timeChoose choosed">
+            结束时间: {{groupEndTime}}
+          </view>
+          <view wx:else class="picker timeChoose">
+            点击选择结束时间
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="calendarBtnBox">
+      <view class="calendarBtn" bindtap="closeCalendar">
+        取消
+      </view>
+      <view class="calendarBtn confirm" bindtap="confirmCalendar">
+        确认
+      </view>
+    </view>
+  </view>
+</view>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>

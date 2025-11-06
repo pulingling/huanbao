@@ -1,0 +1,51 @@
+/* pages/onlineBooks/onlineBooks.wxss */
+page{
+  width:100%;
+  height:100%;
+}
+
+.onlineBooks-container{
+  width:100%;
+  height:auto;
+  
+}
+
+.onlineBooks-container .book-list{
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.book-list .book{
+  width:330rpx;
+  height:510rpx;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-between;
+  margin:40rpx 0;
+  box-sizing: border-box;
+  box-shadow:10rpx 10rpx 20rpx 0 rgba(100,100,100,0.45);
+}
+
+.book-pos{
+  width:280rpx;
+  height:433rpx;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: space-between;
+  margin:40rpx 0;
+  box-sizing: border-box;
+}
+
+.book-list .book>image{
+  width:100%;
+  height:100%;
+}
+
+.book-list .book>.title{
+  color:#6AA814;
+}

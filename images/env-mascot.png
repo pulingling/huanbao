@@ -1,0 +1,32 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 环保小精灵身体 -->
+  <circle cx="40" cy="45" r="25" fill="#4CAF50"/>
+  
+  <!-- 头部 -->
+  <circle cx="40" cy="25" r="18" fill="#66BB6A"/>
+  
+  <!-- 眼睛 -->
+  <circle cx="35" cy="22" r="3" fill="#2E7D32"/>
+  <circle cx="45" cy="22" r="3" fill="#2E7D32"/>
+  <circle cx="35" cy="21" r="1" fill="#FFFFFF"/>
+  <circle cx="45" cy="21" r="1" fill="#FFFFFF"/>
+  
+  <!-- 嘴巴 -->
+  <path d="M 35 28 Q 40 32 45 28" stroke="#2E7D32" stroke-width="2" fill="none"/>
+  
+  <!-- 叶子装饰 -->
+  <path d="M 30 15 Q 25 10 20 15 Q 25 20 30 15" fill="#388E3C"/>
+  <path d="M 50 15 Q 55 10 60 15 Q 55 20 50 15" fill="#388E3C"/>
+  
+  <!-- 手臂 -->
+  <circle cx="20" cy="40" r="6" fill="#66BB6A"/>
+  <circle cx="60" cy="40" r="6" fill="#66BB6A"/>
+  
+  <!-- 脚 -->
+  <ellipse cx="32" cy="65" rx="6" ry="4" fill="#4CAF50"/>
+  <ellipse cx="48" cy="65" rx="6" ry="4" fill="#4CAF50"/>
+  
+  <!-- 环保标志 -->
+  <circle cx="40" cy="45" r="8" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M 35 45 L 40 40 L 45 45 L 40 50 Z" fill="#FFFFFF"/>
+</svg>

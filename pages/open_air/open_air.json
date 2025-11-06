@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "公众开放",
+  "usingComponents": {
+    "tag": "/components/tag/tag",
+    "cover":"/components/cover/cover"
+  }
+}

@@ -1,0 +1,72 @@
+.page{
+  background: #f7f7f7;
+}
+.page.bo-bg{
+  background: #FAFFF5;
+}
+.container {
+  background-image:linear-gradient(#E3FFCC,#BEFFD6);
+  background-size:100% 222rpx;
+  background-repeat: no-repeat;
+}
+.bg {
+  width: 750rpx;
+  height: 224rpx;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+}
+.swiper {
+  width: 690rpx;
+  height: 284rpx;
+  border-radius: 30rpx;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  color: #333;
+  font-size: 28rpx;
+  height: 68rpx;
+  width: 100%;
+  padding: 34rpx 30rpx 0rpx 30rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.head_arrow {
+  width:22rpx;
+  height:15rpx;
+  position: absolute;
+  top:30rpx;
+  right:-15rpx;
+  bottom: 20rpx;
+}
+.head view {
+  position: relative;
+  font-size: 28rpx;
+  height: 100%;
+  line-height: 68rpx;
+  font-weight: 400;
+  width: 160rpx;
+  text-align: center;
+}
+.head .under-decorate{
+  width:40rpx;
+  position:absolute;
+  bottom:-30rpx;
+  left:50%;
+  transform:translateX(-50%);
+  height:4rpx;
+  flex:0 0 auto;
+  background-color:#6BA917;
+}
+.head .active{
+  font-size: 34rpx;
+  font-weight: 500;
+  color:#6AA814;
+}
+.bar_item {
+  transition: all .2s ease-out;
+}

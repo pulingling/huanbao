@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "orderCard": "/components/order_card/order_card"
+  }
+}

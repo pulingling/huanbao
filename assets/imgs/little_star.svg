@@ -1,0 +1,63 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 主星星形状 -->
+  <path d="M50 10 L58 35 L85 35 L64 52 L72 77 L50 60 L28 77 L36 52 L15 35 L42 35 Z" 
+        fill="#FFD700" 
+        stroke="#FFA500" 
+        stroke-width="2"/>
+  
+  <!-- 星星内部高光 -->
+  <path d="M50 15 L55 32 L72 32 L59 44 L64 61 L50 50 L36 61 L41 44 L28 32 L45 32 Z" 
+        fill="#FFFF99" 
+        opacity="0.7"/>
+  
+  <!-- 星星眼睛 -->
+  <circle cx="42" cy="38" r="3" fill="#333333"/>
+  <circle cx="58" cy="38" r="3" fill="#333333"/>
+  
+  <!-- 星星眼睛高光 -->
+  <circle cx="43" cy="37" r="1" fill="#FFFFFF"/>
+  <circle cx="59" cy="37" r="1" fill="#FFFFFF"/>
+  
+  <!-- 星星嘴巴 -->
+  <path d="M45 48 Q50 53 55 48" 
+        stroke="#333333" 
+        stroke-width="2" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- 星星脸颊红晕 -->
+  <circle cx="35" cy="45" r="4" fill="#FFB6C1" opacity="0.6"/>
+  <circle cx="65" cy="45" r="4" fill="#FFB6C1" opacity="0.6"/>
+  
+  <!-- 装饰性小星星 -->
+  <g opacity="0.8">
+    <!-- 左上小星星 -->
+    <path d="M20 20 L22 25 L27 25 L23 28 L25 33 L20 30 L15 33 L17 28 L13 25 L18 25 Z" 
+          fill="#FFFF99"/>
+    
+    <!-- 右上小星星 -->
+    <path d="M80 25 L82 30 L87 30 L83 33 L85 38 L80 35 L75 38 L77 33 L73 30 L78 30 Z" 
+          fill="#FFFF99"/>
+    
+    <!-- 右下小星星 -->
+    <path d="M85 75 L87 80 L92 80 L88 83 L90 88 L85 85 L80 88 L82 83 L78 80 L83 80 Z" 
+          fill="#FFFF99"/>
+    
+    <!-- 左下小星星 -->
+    <path d="M15 80 L17 85 L22 85 L18 88 L20 93 L15 90 L10 93 L12 88 L8 85 L13 85 Z" 
+          fill="#FFFF99"/>
+  </g>
+  
+  <!-- 闪烁效果线条 -->
+  <g opacity="0.6">
+    <line x1="50" y1="5" x2="50" y2="15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="50" y1="85" x2="50" y2="95" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="5" y1="50" x2="15" y2="50" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <line x1="85" y1="50" x2="95" y2="50" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    
+    <line x1="21" y1="21" x2="28" y2="28" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="79" y1="21" x2="72" y2="28" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="21" y1="79" x2="28" y2="72" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="79" y1="79" x2="72" y2="72" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>

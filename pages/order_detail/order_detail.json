@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "在线预约",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "calendar": "/components/calendar/index"
+  }
+}

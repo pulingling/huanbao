@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "环境教育",
+  "navigationBarBackgroundColor": "#E3FFCC",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#3AC191",
+  "usingComponents": {
+    "list_item": "/components/list_item/list_item",
+    "main": "/components/main/main",
+    "ppts": "/components/ppts/ppts",
+    "knowledge": "/components/knowledge/knowledge",
+    "bases": "/components/base/base",
+    "schools": "/components/schools/schools",
+    "books":"/components/books/books"
+  }
+}

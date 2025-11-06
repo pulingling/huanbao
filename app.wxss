@@ -1,0 +1,41 @@
+@import "assets/iconfont.wxss";
+@import "wxParse/wxParse.wxss";
+
+Page {
+    min-height: 100%;
+}
+
+image {
+    display: block;
+}
+
+.container {
+    display: block;
+    min-height: 100%;
+    font-size: 24rpx;
+}
+.tip {
+    font-size: 28rpx;
+    color: #858585;
+}
+button.button-hover {
+    opacity: .7;
+}
+button::after {
+    content: '';
+    display: none;
+}
+button:active, .btn:active {
+    /* background: #eee;
+    color: #0542AB; */
+    opacity: .8;
+}
+.mask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}

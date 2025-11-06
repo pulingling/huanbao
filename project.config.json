@@ -1,0 +1,201 @@
+{
+  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": true,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "lazyloadPlaceholderEnable": false,
+    "useMultiFrameRuntime": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "disableUseStrict": false,
+    "minifyWXML": true,
+    "showES6CompileOption": false,
+    "useCompilerPlugins": false,
+    "ignoreUploadUnusedFiles": true,
+    "useStaticServer": true,
+    "condition": false,
+    "compileWorklet": false,
+    "localPlugins": false,
+    "swc": false,
+    "disableSWC": true
+  },
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/learn/learn",
+          "pathName": "pages/learn/learn",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classes/classes",
+          "pathName": "pages/classes/classes",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/video_page/video_page",
+          "pathName": "pages/video_page/video_page",
+          "query": "id=69",
+          "scene": null
+        },
+        {
+          "name": "pages/exam/exam",
+          "pathName": "pages/exam/exam",
+          "query": "id=61",
+          "scene": null
+        },
+        {
+          "name": "pages/base/base",
+          "pathName": "pages/base/base",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail_long/detail_long",
+          "pathName": "pages/detail_long/detail_long",
+          "query": "id=362&type=1",
+          "scene": null
+        },
+        {
+          "name": "pages/schools/schools",
+          "pathName": "pages/schools/schools",
+          "query": "id=61",
+          "scene": null
+        },
+        {
+          "name": "pages/open_air/open_air",
+          "pathName": "pages/open_air/open_air",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail_short/detail_short",
+          "pathName": "pages/detail_short/detail_short",
+          "query": "id=1&type=2",
+          "scene": null
+        },
+        {
+          "name": "pages/knowledge/knowledge",
+          "pathName": "pages/knowledge/knowledge",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/knowledge_detail/knowledge_detail",
+          "pathName": "pages/knowledge_detail/knowledge_detail",
+          "query": "id=5",
+          "scene": null
+        },
+        {
+          "name": "pages/footmark/rank",
+          "pathName": "pages/footmark/rank",
+          "query": "",
+          "scene": 1000
+        },
+        {
+          "name": "pages/footmark/footmark",
+          "pathName": "pages/footmark/footmark",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/order_detail/order_detail",
+          "pathName": "pages/order_detail/order_detail",
+          "query": "id=4",
+          "scene": null
+        },
+        {
+          "name": "pages/order_detail/order_detail",
+          "pathName": "pages/order_detail/order_detail",
+          "query": "id=4",
+          "scene": null
+        },
+        {
+          "name": "群聊分享",
+          "pathName": "pages/footmark/rank",
+          "query": "",
+          "scene": 1044,
+          "shareInfo": {
+            "groupName": "测试模拟群0",
+            "shareName": "DgxucliJqoZky98Pqg5MKF7DJCgdArGbSry3G3i9EQM@cr4dev",
+            "shareKey": "TU1s0aqQ0PP24BliqGdPdw9KBn-fK-Ys1sp7dF3gxzyKYjZReemoWCIL3r0m5BSjMB9eFHpPA3iRFjBvlHuCyg~~"
+          }
+        },
+        {
+          "name": "群聊",
+          "pathName": "pages/footmark/rank",
+          "query": "",
+          "scene": 1044,
+          "shareInfo": {
+            "groupName": "测试模拟群5",
+            "shareName": "lPfHRnusdc6h6-OCsvMeFRbTbwZMZ9TiIbirbK837Qs@cr4dev",
+            "shareKey": "HNnzBxkQJdnc8l4C6y_5M8zWVPljO0yByGLay4ZE63EACXiD63U9twRtVOKsCZvMHagX5KjjXKhQzmmrl2vi2w~~"
+          }
+        },
+        {
+          "name": "pages/auth/auth",
+          "pathName": "pages/auth/auth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/activity_list/activity_list",
+          "pathName": "pages/activity_list/activity_list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/auth/auth",
+          "pathName": "pages/auth/auth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/auth/auth_index",
+          "pathName": "pages/auth/auth_index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "libVersion": "3.10.2",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "appid": "wx30f3d2a79cabc4de",
+  "projectname": "xjmp%E8%BF%9E%E6%9D%A1%E4%B8%AD"
+}

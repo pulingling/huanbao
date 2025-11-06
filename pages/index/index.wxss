@@ -1,0 +1,220 @@
+Page{
+    background: #F7F7F7;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: wrap;
+    text-align: center;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-size: 34rpx;
+    box-sizing: border-box;
+    padding: 112rpx 30rpx 60rpx 30rpx;
+}
+.index-container>.float-btn{
+  position:fixed;
+  right:0;
+  top:1050rpx;
+  width:132rpx;
+  height:132rpx;
+}
+.bg {
+    width: 750rpx;
+    height: 224rpx;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: -1;
+}
+.swiper {
+    width: 690rpx;
+    height: 284rpx;
+    border-radius: 30rpx;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+    font-size: 28rpx;
+    height: 68rpx;
+    width: 100%;
+    position: absolute;
+    padding: 0 30rpx;
+    top: 30rpx;
+    left: 0;
+    box-sizing: border-box;
+}
+.head_arrow {
+    width:22rpx;
+    height:15rpx;
+    position: absolute;
+    right:-15rpx;
+    bottom: 20rpx;
+}
+.head view {
+    position: relative;
+    font-size: 28rpx;
+    height: 100%;
+    line-height: 68rpx;
+    font-weight: 400;
+    width: 100rpx;
+    text-align: center;
+}
+.head .active{
+    font-size: 34rpx;
+    font-weight: 500;
+    color:#6AA814;
+}
+.bar_item {
+    transition: all .2s ease-out;
+}
+
+.popup-knowledge {
+  width: 610rpx;
+  height: 1046rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(https://cdn.envedu.com.cn/images/xzs/bg_1.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 99;
+}
+
+.popup-knowledge.bg1 {
+  height: 908rpx;
+  background-image: url(https://cdn.envedu.com.cn/images/xzs/bg_2.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.popup-knowledge.bg2 {
+  height: 896rpx;
+  background-image: url(https://cdn.envedu.com.cn/images/xzs/bg_3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.popup-knowledge .date {
+  height: 72rpx;
+  font-size: 60rpx;
+  font-family: AlimamaShuHeiTi, AlimamaShuHeiTi;
+  font-weight: bold;
+  color: #0B6845;
+  line-height: 72rpx;
+  margin-top: 220rpx;
+  margin-left: 44rpx;
+}
+
+.popup-knowledge.bg1 .date {
+  margin-top: 180rpx;
+}
+
+.popup-knowledge.bg2 .date {
+  margin-top: 170rpx;
+}
+
+.popup-knowledge .title {
+  height: 56rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 600;
+  color: #2E3748;
+  line-height: 56rpx;
+  margin-top: 52rpx;
+  margin-left: 36rpx;
+  margin-right: 36rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.popup-knowledge .content {
+  margin: 36rpx 36rpx 78rpx 36rpx;
+  height: 318rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 400;
+  color: #515A68;
+  line-height: 44rpx;
+  text-align: justify;
+  background: linear-gradient(180deg, #C8FFC6 0%, #F9FFFD 100%);
+  border-radius: 16rpx;
+  border: 2rpx solid #515A68;
+  padding: 26rpx;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+.popup-knowledge.bg1 .content {
+  background: linear-gradient(180deg, #FFE2C1 0%, #FFFEE4 100%);
+  border-radius: 16rpx;
+  border: 2rpx solid #515A68;
+}
+
+.popup-knowledge.bg2 .content {
+  background: linear-gradient(180deg, #D1F2FF 0%, #ECFFF1 100%);
+  border-radius: 16rpx;
+  border: 2rpx solid #515A68;
+}
+
+.popup-knowledge .more {
+  width: 400rpx;
+  height: 88rpx;
+  background: linear-gradient(148deg, #F8FFFE 0%, #ECFFFA 100%);
+  box-shadow: inset 0rpx 0rpx 20rpx 0rpx rgba(3,255,112,0.5);
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFang SC;
+  font-weight: 600;
+  color: #0B6845;
+  line-height: 88rpx;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.popup-knowledge.bg1 .more {
+  background: linear-gradient(148deg, #F8FFFE 0%, #ECFFFA 100%);
+  box-shadow: inset 0rpx 0rpx 20rpx 0rpx #FFDC71;
+  border-radius: 44rpx;
+  color: #D0731D;
+}
+
+.popup-knowledge.bg2 .more {
+  background: linear-gradient(148deg, #F8FFFE 0%, #ECFFFA 100%);
+  box-shadow: inset 0rpx 0rpx 20rpx 0rpx rgba(58,176,255,0.5);
+  border-radius: 44rpx;
+  color: #0D6682;
+}
+
+.popup-knowledge .bottom {
+  margin-top: 50rpx;
+}
+
+.popup-knowledge .close {
+  width: 68rpx;
+  height: 68rpx;
+  color: #FFFFFF;
+  border: 6rpx white solid;
+  border-radius: 50% 50%;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  line-height: 68rpx;
+  margin: 0 auto;
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "预约修改",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "calendar": "/components/calendar/index"
+  }
+}

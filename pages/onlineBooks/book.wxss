@@ -1,0 +1,137 @@
+/* pages/onlineBooks/book.wxss */
+page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(255, 247, 223)
+}
+
+.book-container {
+  width:100%;
+  height:100%;
+  position: relative;
+}
+
+.back {
+  height: 60rpx;
+  width: 40rpx;
+  position: fixed;
+  top: 0;
+  left: 20rpx;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back>image {
+  width: 50%;
+  height: 50%;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
+  resize: both;
+  position: fixed;
+}
+
+swiper-item {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-item>movable-area {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-item>movable-area>movable-view {
+  width: 100%;
+  height: 100%;
+}
+
+movable-view>image {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-container>.swiper-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.swiper-item.active {
+  display: flex;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.swiper-item.left {
+  justify-content: flex-start;
+  left: 0;
+}
+
+.swiper-item.right {
+  justify-content: flex-end;
+  right: 0; 
+}
+
+.swiper-item.next {
+  display: flex;
+  z-index: 9;
+}
+
+.swiper-item>.movable-container>movable-area {
+  width: 690rpx;
+  min-height: 100%;
+  height: 100%;
+}
+
+
+
+.swiper-item>.movable-container>movable-area>movable-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+movable-view>image {
+  width: 100%;
+  height: 100%;
+  max-height:100%;
+  margin:auto 0;
+}
+
+.book-container .corner-up {
+  width: auto;
+  height: 92%;
+  position: absolute;
+  top:0;
+  z-index: 15;
+  overflow: hidden;
+}
+
+.book-container .corner-up>image {
+  width: 100%;
+  height: 100%;
+}
+
+.audio{
+  width:0;
+  height:0;
+  position:absolute;
+}

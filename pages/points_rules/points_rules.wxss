@@ -1,0 +1,147 @@
+/* pages/points_rules/points_rules.wxss */
+.rules-container {
+  padding: 30rpx;
+  background-color: #f7f8fa;
+  min-height: 100vh;
+}
+
+.rules-header {
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.rules-title {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #26A69A;
+  margin-bottom: 10rpx;
+}
+
+.rules-subtitle {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.rules-content {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 表格样式 */
+.rules-table {
+  border: 1rpx solid #e9e9e9;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.table-header-row, .table-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.table-header-row {
+  background-color: #e3ffcc;
+  color: #333;
+  font-weight: bold;
+}
+
+.th, .td {
+  flex: 1;
+  padding: 20rpx 15rpx;
+  font-size: 26rpx;
+  text-align: center;
+  border-left: 1rpx solid #e9e9e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.th:first-child, .td:first-child {
+  border-left: none;
+  flex: 1.5; /* 积分行为列更宽一些 */
+}
+
+.table-row {
+  border-top: 1rpx solid #e9e9e9;
+}
+
+.table-row:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.table-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 15rpx;
+  background-color: #e3ffcc;
+  border-top: 1rpx solid #e9e9e9;
+  font-weight: bold;
+}
+
+.tf-label {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.tf-value {
+  font-size: 28rpx;
+  color: #ff5722;
+}
+
+/* 备注部分 */
+.notes-section {
+  margin-top: 40rpx;
+  padding: 30rpx;
+  background-color: #f7f8fa;
+  border-radius: 12rpx;
+}
+
+.notes-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #26A69A;
+  margin-bottom: 20rpx;
+}
+
+.note-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15rpx;
+  padding-left: 30rpx;
+  position: relative;
+}
+
+.note-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #26A69A;
+  font-weight: bold;
+}
+
+.rules-footer {
+  margin-top: 60rpx;
+  text-align: center;
+}
+
+.back-button {
+  background: linear-gradient(135deg, #26A69A 0%, #00BCD4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 24rpx 80rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 24rpx rgba(38, 166, 154, 0.25);
+  transition: all 0.3s ease;
+}
+
+.back-button:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(38, 166, 154, 0.3);
+}

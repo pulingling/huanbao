@@ -1,0 +1,553 @@
+page {
+    background: #F7F7F7;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 34rpx;
+    background: #F7F7F7;
+}
+
+.top {
+    width: 750rpx;
+    height: 154rpx;
+    background-image:linear-gradient(#E3FFCC,#BEFFD6);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main {
+    width: 696rpx;
+    position: relative;
+    top: -130rpx;
+    left: 26rpx;
+}
+
+
+/* 轮播图 */
+
+.detail-banner {
+    width: 100%;
+    height: 320rpx;
+    border-radius: 20rpx;
+    padding: 0 0 40rpx 0;
+}
+
+.detail-banner-img {
+    width: 100%;
+    height: 311rpx;
+}
+
+/* video */
+
+.box-w {
+    width: 100%;
+    height: 311rpx;
+    border-radius: 20rpx;
+}
+
+.videocover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20rpx;
+    z-index: 3;
+}
+
+.videocoverbg {
+    width: 100%;
+    height: 73rpx;
+    font-size: 30rpx;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20rpx 20rpx 0rpx 0rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    line-height: 73rpx;
+    color: #FFFFFF;
+}
+
+.playbtn {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    left: 50%;
+    width: 64rpx;
+    height: 84rpx;
+    transform: translate(-50%, -50%);
+}
+
+.videocover .cover {
+    width: 100%;
+}
+
+.ico-share {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.nav_tab {
+    position: relative;
+    top: -200rpx;
+    width: 702rpx;
+    margin: 20rpx auto;
+    height: 100rpx;
+    display: flex;
+    background: #F7F7F7;
+    border-radius: 10rpx;
+    flex-direction: row;
+}
+
+/* 未选中的样式 */
+.common0, .common1, .common2, .common3 {
+    line-height: 100rpx;
+    text-align: center;
+    flex: 1;
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    width:max-content
+}
+
+.common0 {
+    text-align: center;
+}
+
+.common1 {
+}
+
+.common2 {
+    text-align: center;
+}
+
+.common3 {
+  text-align: center;
+}
+
+/* 选中时的样式 */
+.active0, .active1, .active2, .active3 {
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #73DC4E;
+    flex: 1;
+    text-align: center;
+    width:max-content
+}
+
+
+/* 下划线的样式 */
+.nav_underline0, .nav_underline1, .nav_underline2, .nav_underline3 {
+    background: #73DC4E;
+    width: 120rpx;
+    height: 6rpx;
+    margin-top: -10rpx;
+    border-radius: 8rpx;
+    margin-left: calc(50% - 60rpx);
+}
+
+.nav_underline1 {
+    margin-left: calc(50% - 60rpx);
+}
+
+.nav_underline2 {
+    margin-left: calc(50% - 60rpx);
+}
+
+/* 方案 */
+.planes {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -220rpx;
+    z-index: 10;
+    background: #F7F7F7;
+}
+
+.planes .pageItem {
+    width: 696rpx;
+    height: 368rpx;
+    background: #FFFFFF;
+    box-shadow: 0rpx 8rpx 28rpx 0rpx rgba(241, 241, 241, 0.35);
+    border-radius: 20rpx;
+    position: relative;
+    left: 25rpx;
+    margin-bottom: 24rpx;
+}
+
+.pic1 {
+    height: 240rpx;
+    overflow: hidden;
+    border-radius: 20rpx;
+}
+
+.image1 {
+    width: 100%;
+}
+
+.planes .pageItem .name {
+    width: 370rpx;
+    height: 42rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #333333;
+    line-height: 42rpx;
+    position: absolute;
+    top: 252rpx;
+    left: 6rpx;
+    text-align: left;
+}
+
+.planes .pageItem .title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    width: 580rpx;
+    height: 42rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #333333;
+    line-height: 42rpx;
+    position: absolute;
+    top: 252rpx;
+    left: 6rpx;
+    text-align: left;
+}
+
+.planes .pageItem .reward {
+    height: 30rpx;
+    font-size: 22rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #EFAC00;
+    line-height: 30rpx;
+    position: absolute;
+    top: 252rpx;
+    right: 46rpx;
+}
+
+.planes .pageItem .tip {
+    width: 24rpx;
+    height: 23rpx;
+    position: absolute;
+    top: 256rpx;
+    right: 12rpx;
+}
+
+.planes .pageItem .year {
+    height: 25rpx;
+    font-size: 18rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #999999;
+    line-height: 25rpx;
+    position: absolute;
+    top: 294rpx;
+    left: 24rpx;
+}
+
+.planes .pageItem .desc {
+    width: 659rpx;
+    height: 33rpx;
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #666666;
+    line-height: 33rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 325rpx;
+    left: 24rpx;
+    text-align: left;
+}
+
+/* 活动 */
+.activities {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -220rpx;
+    z-index: 10;
+    background: #F7F7F7;
+}
+
+.activities .pageItem {
+    width: 696rpx;
+    height: 368rpx;
+    background: #FFFFFF;
+    box-shadow: 0rpx 8rpx 28rpx 0rpx rgba(241, 241, 241, 0.35);
+    border-radius: 20rpx;
+    position: relative;
+    left: 25rpx;
+    margin-bottom: 24rpx;
+}
+
+.activities .pageItem .pic {
+    width: 696rpx;
+    height: 264rpx;
+    border-radius: 20rpx;
+}
+
+.activities .pageItem .name {
+    height: 42rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #417B17;
+    line-height: 42rpx;
+    position: absolute;
+    top: 295rpx;
+    left: 6rpx;
+}
+
+/* 文件 */
+.files {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -220rpx;
+    z-index: 10;
+    background: #F7F7F7;
+    padding-top: 25rpx;
+}
+
+.files .pageItem {
+    width: 696rpx;
+    height: 94rpx;
+    box-shadow: 0rpx 8rpx 28rpx 0rpx rgba(241, 241, 241, 0.35);
+    border-radius: 20rpx;
+    position: relative;
+    left: 25rpx;
+    margin-bottom: 24rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2rpx solid #ECECECFF;
+}
+
+.files .pageItem .name {
+    width: 521rpx;
+    height: 45rpx;
+    font-size: 32rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #313131;
+    line-height: 45rpx;
+    text-align: left;
+    position: relative;
+    left: 30rpx;
+}
+
+.files .pageItem .more {
+    width: 18rpx;
+    height: 30rpx;
+    position: relative;
+    top: 22rpx;
+    right: 30rpx;
+}
+
+.certificates{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  width: 100%;
+  height: 100%;
+  margin-top:-200rpx;
+}
+
+.certificates>.selectors-set,.certificates>.selectors-set>view{
+  display: flex;
+  align-items: center;
+  font-size:24rpx;
+}
+.certificates>.selectors-set{
+  width:100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left:20rpx;
+  box-sizing: border-box;
+}
+.certificates>.selectors-set>view{
+  margin:12rpx 0 12rpx 18rpx;
+}
+.certificates>.selectors-set>view>.label{
+  color:#333;
+  font-weight:600;
+  font-size:32rpx;
+}
+.certificates>.selectors-set>view>picker{
+  background-color:#fff;
+  border:1rpx solid #409852;
+  padding:3rpx 12rpx;
+  margin-left:12rpx;
+  width:max-content;
+  border-radius: 8rpx;
+  box-shadow: inset 0 0 10rpx #eee8;
+  color:#333;
+  font-size:28rpx;
+
+}
+.certificates>.selectors-set>view>picker .picker{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.certificates>.selectors-set>view>picker .down-arrow{
+  width:12rpx;
+  height:12rpx;
+  transform-origin: 50% 50%;
+  transform:rotateZ(45deg);
+  border-right:4rpx solid #333;
+  border-bottom: 4rpx solid #333;
+  margin-right:10rpx;
+  margin-left:18rpx;
+  margin-top:12rpx;
+}
+.certList{
+  width:100%;
+  min-height:1200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.certList>.cert-item{
+  width:702rpx;
+  height:130rpx;
+  background-color:#fff;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  margin-top:24rpx;
+}
+.cert-item>.pdf-logo{
+  width:130rpx;
+  height:152rpx;
+  flex:0 0 auto;
+  margin-left:28rpx;
+}
+.cert-item>.mid{
+  display: flex;
+  flex-direction: column;
+  flex:0 0 auto;
+  align-items:flex-start;
+  margin-left:34rpx;
+}
+.cert-item>.mid>.individual-name{
+  font-size:28rpx;
+  color:#333;
+  font-weight:600;
+  max-width:400rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cert-item>.mid>.school-name{
+  padding:6rpx 12rpx;
+  background-color:#F1FAEF;
+  border-radius: 12rpx;
+  color:#515A68;
+  font-size:24rpx;
+  max-width:260rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cert-item>.mid>.year{
+  color:#93A1B6;
+  font-size:24rpx;
+}
+.cert-item>.right{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  color:#6AA814;
+  font-size:24rpx;
+  margin-right:30rpx;
+  margin-left:auto;
+}
+.cert-item>.right>.top{
+  display: flex;
+  align-self: center;
+  width:max-content;
+  height:auto;
+  background-color: transparent;
+  background-image:none;
+}
+.cert-item>.right>.top>.tag{
+  width:36rpx;
+  height:52rpx;
+  margin-left:8rpx;
+  flex:0 0 auto;
+  background-color:#6AA814;
+  clip-path:polygon(0% 0%,100% 0,100% 100%,50% 80%,0% 100%, 0% 0%);
+}
+
+.view-background {
+  width: 100%;
+  height: 178px; /* 根据需要调整高度 */
+  position: relative;
+  margin-bottom: 80rpx;
+  text-align: center;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+}
+
+.button-container {
+  position: absolute;
+  right: 17px; /* 右边距 */
+  bottom: 10px; /* 底部边距 */
+  display: flex;
+  align-items: center; /* 垂直居中对齐按钮 */
+}
+
+.update-button1 {
+  height: 26px; /* 设置按钮高度 */
+  margin-right: 10px; /* 按钮之间的间距 */
+  display: flex;
+  align-items: center; /* 垂直居中对齐文字 */
+  justify-content: center; /* 水平居中对齐文字 */
+  text-align: center; /* 确保文字在按钮中居中 */
+  border-radius: 20px; /* 设置按钮的圆角半径为10px */
+  background-color: #2A9508;
+  color: rgb(250, 250, 250);
+  font-size: 30rpx;
+  font-weight: bold;
+  bottom: 35px; /* 按钮距离底部的距离 */
+  z-index: 1;   /* 确保按钮在图片之上 */
+}
+
+.update-button2 {
+  height: 26px; /* 设置按钮高度 */
+  margin-right: 10px; /* 按钮之间的间距 */
+  display: flex;
+  align-items: center; /* 垂直居中对齐文字 */
+  justify-content: center; /* 水平居中对齐文字 */
+  text-align: center; /* 确保文字在按钮中居中 */
+  border-radius: 20px; /* 设置按钮的圆角半径为10px */
+  background-color: #81C97B;
+  color: rgb(250, 250, 250);
+  font-size: 30rpx;
+  font-weight: bold;
+  bottom: 35px; /* 按钮距离底部的距离 */
+  z-index: 1;   /* 确保按钮在图片之上 */
+}
+
+.icon-image {
+  width: 16px; /* 根据实际图标大小调整 */
+  height: 16px;
+  margin-right: 5px; /* 图标和文字之间的间隔 */
+}

@@ -1,0 +1,45 @@
+const utils = require("../../utils/util");
+Component({
+  properties:{
+    link:{
+      type:String,
+      value:''
+    },
+    title:{
+      type:String,
+      value:''
+    },
+    img:{
+      type:String,
+      value:''
+    },
+    company:{
+      type:String,
+      value:''
+    },
+    time:{
+      type:String,
+      value:''
+    },
+    item_id:{
+      type:Number,
+      value:0
+    }
+  }, 
+  data:{
+    dateTime:''
+  },
+  methods:{
+    navigateTo(){
+      wx.navigateTo({
+        url: `/pages/out/out?link=${this.properties.link}`,
+      })
+    }
+  },
+  attached(){
+    
+    this.setData({
+      dateTime:utils.timeParse2(this.properties.time)
+    })
+  }
+});

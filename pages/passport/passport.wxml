@@ -1,0 +1,149 @@
+<view class="container">
+  <view class="top"></view>
+  <view class="main">
+    <!-- 轮播图 S -->
+    <swiper wx:if="{{sign_on_off === 'off'}}" class="detail-banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-color="{{beforeColor}}" indicator-active-color="{{afterColor}}" style="background: white;">
+      <swiper-item wx:for="{{banner_list}}" wx:key="index">
+        <view class='videocover' data-id="{{index}}" bindtap='playbtn'>
+          <view class='videocoverbg'>{{item.title}}</view>
+        </view>
+        <image src='../../images/0803_04.png' class='playbtn' data-id="{{index}}" bindtap="videoPlay" hidden="{{!item.isShow}}"></image>
+        <!-- <image src='../../images/0803_04.png' class='playbtn'  data-id="{{index}}" bindtap="videoPlay" hidden="{{controls}}"></image> -->
+        <image class="detail-banner-img" src="{{item.pic}}" hidden="{{!item.isShow}}"></image>
+        <view>
+          <video class='box-w block' id="{{'video'+index}}" src="{{item.video}}" data-id="{{index}}" show-center-play-btn="{{false}}" autoplay='{{index === currentId ? true:false}}' objectFit="cover" bindfullscreenchange="fullScreen" bindended="jieshu" controls="{{controls}}"></video>
+        </view>
+      </swiper-item>
+    </swiper>
+    <!-- 轮播图 E -->
+    <view wx:if="{{sign_on_off === 'on'}}" class="view-background">
+      <!-- 视图内容 -->
+      <image src="https://cdn.envedu.com.cn/image/meijing_sign_bk2.png" class="background-image" />
+      <view class="button-container">
+        <button icon="el-icon-search" class="update-button1" bindtap="jumpToSignUp">报名入口</button>
+        <button class="update-button2" bindtap="jumpToSignList">报名列表</button>
+      </view>
+    </view>
+  </view>
+  <!-- tab框 -->
+  <view class="nav_title">
+    <view class="nav_tab">
+      <!-- 如果选中的下表等于当前的索引，就使用active class名，否则class名为common -->
+      <view wx:for="{{list}}" wx:key="list" class="{{selected==index?'active' + index:'common' + index}}" data-index='{{index}}' bindtap="selected">
+        {{item}}
+        <!-- 如果选中的下表等于当前的索引，就添加下划线 -->
+        <view class="{{selected==index?'nav_underline' + index:''}}"></view>
+      </view>
+    </view>
+    <!-- tab1 -->
+    <view wx:if="{{selected == 0}}" class="planes">
+      <view wx:for="{{pageList}}" wx:key="index" class="pageItem" bindtap="details" data-detail="{{item.detail}}">
+        <view class="pic1">
+          <image class="image1" src="{{item.pic}}" mode="widthFix"></image>
+        </view>
+        <text class="title">【{{item.name}}】</text>
+        <view class="reward">{{item.reward}}</view>
+        <image src="https://zd-sites.oss-cn-shenzhen.aliyuncs.com/material/0803_01.png" class="tip"></image>
+        <view class="year">{{item.year}}年</view>
+        <view class="desc">{{item.desc}}</view>
+      </view>
+    </view>
+    <!-- tab2 -->
+    <view wx:if="{{selected == 1}}" class="activities">
+      <view wx:for="{{pageList}}" wx:key="index" class="pageItem" bindtap="toWebview" data-src="{{item.link}}">
+        <image src="{{item.pic}}" class="pic"></image>
+        <view class="name">【{{item.title}}】</view>
+      </view>
+    </view>
+    <!-- tab2 -->
+    <view wx:if="{{selected == 2}}" class="certificates">
+      <view class="selectors-set">
+        <view class="year-set">
+          <view class="label">
+            参赛年份:
+          </view>
+          <picker bindchange="yearChange" value="{{currentYear}}" range="{{yearChoices}}">
+            <view class="picker">
+              {{yearChoices[currentYear]}}
+              <view class="down-arrow">
+                
+              </view>
+            </view>
+          </picker>
+        </view>
+        <view class="type-set">
+          <view class="label">
+            获奖类型:
+          </view>
+          <picker bindchange="typeChange" value="{{currentCertType}}" range="{{certTypes2}}" wx:if="{{currentYear}}"  class="type2">
+            <view class="picker">
+              {{certTypes2[currentCertType]}}
+              <view class="down-arrow">
+                
+              </view>
+            </view>
+          </picker>
+          <picker bindchange="typeChange" value="{{currentCertType}}" range="{{certTypes1}}" wx:else class="type1">
+            <view class="picker">
+              {{certTypes1[currentCertType]}}
+              <view class="down-arrow">
+                
+              </view>
+            </view>
+          </picker>
+        </view>
+        <view class="level-set"  wx:if="{{currentCertType == 1}}">
+          <view class="label">
+            获奖等级:
+          </view>
+          <picker bindchange="levelChange" value="{{currentCertLevel}}" range="{{certLevels}}">
+            <view class="picker">
+              {{certLevels[currentCertLevel]}}
+              <view class="down-arrow">
+                
+              </view>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="certList">
+        <view class="cert-item" wx:for="{{certificateList}}" wx:key="index" data-url="{{item.file_url}}" data-name="{{item.type+' '+item.individual_name}}" bindtap="showPreview">
+          <view class="mid">
+            <view class="individual-name">
+              {{item.school_name}}
+            </view>
+            <view class="school-name">
+              {{item.individual_name}}
+            </view>
+            <view class="year">
+              {{item.season}}
+            </view>
+          </view>
+          <view class="right">
+            <view class="top">
+              <view class="type">
+                {{item.type}}
+              </view>
+              <!-- <image src="https://cdn.zaodoo.com/images/meijing/flag.png" mode="aspectFit" class="tag"/> -->
+              <view class="tag">
+                
+              </view>
+            </view>
+            <view class="level" wx:if="{{item.level}}">
+              {{item.level}}
+            </view>
+          </view>         
+        </view>
+      </view>
+    </view>
+    <!-- tab3 -->
+    <view wx:if="{{selected == 3}}" class="files">
+      <view wx:for="{{pageList}}" wx:key="index" class="pageItem" bindtap="toFilesDetails" data-name="{{item.name}}" data-wordlink="{{item.word_link}}" data-wordName="{{item.word_name}}" data-preview="{{item.preview}}" data-attachmentList="{{item.attachments}}">
+        <view class="name">{{item.name}}</view>
+        <image src="../../images/0807_01.png" class="more"></image>
+      </view>
+    </view>
+  </view>
+<Loading process="{{progress}}" wx:if="{{showLoading}}"></Loading>
+
+</view>

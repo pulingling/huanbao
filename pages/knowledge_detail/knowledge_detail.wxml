@@ -1,0 +1,9 @@
+<view class="container">
+    <block wx:if="{{detail.content && detail.content.length}}">
+        <view class="desc">
+            <import src='../../wxParse/wxParse.wxml' />
+            <template is='wxParse' data="{{wxParseData:content.nodes}}" />
+        </view>
+        <view class="confirm" wx:if="{{detail}}">来源: {{detail.confirm}}</view>
+    </block>
+</view>

@@ -1,0 +1,144 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+.video {
+    width: 750rpx;
+    max-height: 100%;
+}
+.title {
+    font-size: 34rpx;
+    color: #353535;
+    line-height: 48rpx;
+    margin-bottom: 30rpx;
+}
+.lead {
+    color: #393939;
+    font-size: 26rpx;
+    margin-bottom: 14rpx;
+    line-height: 37rpx;
+}
+.content {
+    color: #969696;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    white-space: pre-line;
+}
+.detail_item {
+    width: 100%;
+    border-top: 1rpx #EBEBEB solid;
+    box-sizing: border-box;
+    padding: 30rpx;
+}
+.nav {
+    width: 100%;
+    height: 86rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    transition: all 0.2s ease;
+}
+.nav view {
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 30rpx;
+    color: #212121;
+    line-height: 86rpx;
+}
+.nav .active {
+    color: #6ECE83;
+    border-bottom: #6ECE83 4rpx solid;
+}
+.examBtn {
+    width: 690rpx;
+    height: 75rpx;
+    margin: 0 auto;
+    border-radius: 75rpx;
+    border: none;
+    background: #6ECE83;
+    color: #FFF;
+    line-height: 75rpx;
+    box-shadow: 0 10rpx 45rpx 0 rgba(206,242,224,1);
+    position: absolute;
+    bottom: 167rpx;
+    left: 0;
+    right: 0;
+}
+.point {
+    content: "";
+    box-sizing: border-box;
+    background: #FF9A57;
+    width: 13rpx;
+    height: 13rpx;
+    margin-right: 10rpx;
+    line-height: 40rpx;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 14rpx;
+}
+.warning {
+    position: absolute;
+    text-align: center;
+    font-size: 30rpx;
+    color: #FFF;
+    width: 100%;
+    height: 200rpx;
+    top: 0;
+    left: 0;
+    line-height: 200rpx;
+}
+.mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form {
+    width: 690rpx;
+    height: 834rpx;
+    background:rgba(255,255,255,1);
+    border-radius:20rpx;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 87rpx 78rpx 90rpx 78rpx;
+    position: relative;
+}
+.form text {
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+.form .subBtn {
+    width: 100%;
+    height: 75rpx;
+    margin: 107rpx auto 78rpx auto;
+    border-radius: 75rpx;
+    border: none;
+    background: #6ECE83;
+    color: #FFF;
+    line-height: 75rpx;
+    box-shadow: 0 10rpx 45rpx 0 rgba(206,242,224,1);
+}
+.form input {
+    font-size: 28rpx;
+    text-align: start;
+    margin-top: 60rpx;
+    border-bottom: 1rpx solid #969696;
+}
+.green {
+    color: #6ECE83;
+}
+.waring_text {
+    color:#FF9191;
+    font-size: 24rpx;
+    line-height: 33rpx;
+    position: absolute;
+    top: 450rpx;
+    left: 172rpx;
+}
+.cover1{
+    position: absolute;
+    width: 100%;
+    top:0;
+    z-index: 15;
+  }

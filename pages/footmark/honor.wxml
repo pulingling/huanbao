@@ -1,0 +1,86 @@
+<!--pages/footmark/honor.wxml-->
+<view class="{{shareVisible ? 'container-active' : 'container'}}">
+	<view class="top">
+		<view class="line1">
+			<view class="line1-left">
+				<view class="line1-logo">
+					<open-data type="userAvatarUrl"></open-data>
+				</view>
+
+				<text class="line1-title">我获得了{{userData.comment}}证书</text>
+			</view>
+			<button bindtap="share">
+				<text class="line1-share">分享荣誉</text>
+			</button>
+		</view>
+
+		<view class="cert">
+			<!-- <view class="cert-tag">
+        <text class="cert-tag-text">{{userData.comment}}</text>
+      </view> -->
+			<image class="backImg" src="/assets/imgs/cert2.png"></image>
+			<text  class="cert-name">公众环保足迹证书</text>
+			<open-data type="userNickName" class="cert-text"></open-data>
+
+			<view class="cert-bot">
+				<text class="cert-note">在{{year}}年度积极践行环保行为，获得了「{{userData.comment}}」称号。</text>
+			</view>
+
+		</view>
+		<view class="cert-center">
+			<view class="cert_tri"></view>
+		</view>
+
+		<view class="progress">
+			<view class="comp" style="width:{{progress*0.33+50}}%"></view>
+			<view class="points">
+				<view class="points-item" wx:for="{{honors}}" wx:key="unique">
+					<view class="points-circle"></view>
+					<view class="points-text">{{item}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="rest-center">
+			<text class="rest">{{rest}}</text>
+		</view>
+	</view>
+
+	<view class="bottom">
+		<view class="bottom-title">
+			<view class="bottom-title-icon"></view>
+			<text class="bottom-title-text">段位升级规则</text>
+			<view class="bottom-title-icon"></view>
+		</view>
+	</view>
+	<view class="rules">
+		<view class="rules-item" wx:for="{{levels}}" wx:key="unique">
+			<image class="rule-img" src="/assets/imgs/level{{index+1}}.png"></image>
+			<text class="rule-text">{{item.comment}}</text>
+			<text>{{item.min_score}}里程</text>
+		</view>
+	</view>
+</view>
+
+<view class="share-cover" wx:if="{{shareVisible}}" catchtouchmove="doNothing" bindtap="cancel">
+
+</view>
+
+<view class="shareContainer" wx:if="{{shareVisible}}">
+	<view class="shareImg">
+		<image class="backImg" src="/assets/imgs/cert2.png"></image>
+		<text class="share1">公众环保足迹证书</text>
+		<open-data class="share2" type="userNickName"></open-data>
+		<text class="share3">在{{year}}年度积极践行环保行为，获得了「{{userData.comment}}」称号。</text>
+	</view>
+	<view class="shareB">
+		<button class="shB1" open-type="share">
+			<text class="shT">分享好友</text>
+		</button>
+		<button class="shB2" bindtap="sharepyq">
+			<text class="shT">分享朋友圈</text>
+		</button>
+	</view>
+</view>
+<view class="disableShare">
+	<canvas canvas-id="shareCanvas" style="width:236px;height:360px"></canvas>
+</view>

@@ -1,0 +1,408 @@
+/* pages/lottery/lottery.wxss */
+.lottery-container {
+  min-height: 100vh;
+  background: #E3FFCC;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 加载状态 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+/* 积分信息卡片 */
+.points-card {
+  background: linear-gradient(135deg, #26A69A 0%, #00BCD4 100%);
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 12rpx 40rpx rgba(38, 166, 154, 0.25);
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.points-info, .lottery-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.points-label, .lottery-label {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12rpx;
+  font-weight: 500;
+}
+
+.points-value, .lottery-count {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.points-value {
+  color: #ffffff;
+}
+
+.lottery-count {
+  color: #ffffff;
+}
+
+/* 转盘容器样式 */
+.lottery-wheel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 600rpx;
+  margin: 40rpx 0;
+  position: relative;
+}
+
+.wheel-wrapper {
+  position: relative;
+  width: 600rpx;
+  height: 600rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Canvas转盘容器 */
+.canvas-wheel-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 600rpx;
+  height: 600rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.15);
+}
+.lottery-wheel-img {
+
+}
+/* Canvas转盘样式 */
+.lottery-wheel-canvas {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+    position: absolute;
+  left: -200%;
+
+}
+
+/* 指针样式 */
+.lottery-pointer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 60rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1;
+}
+
+.pointer-triangle {
+  width: 0;
+  height: 0;
+  border-left: 30rpx solid transparent;
+  border-right: 30rpx solid transparent;
+  border-top: 60rpx solid #FFC107;
+  position: relative;
+}
+
+.pointer-triangle::after {
+  content: '';
+  position: absolute;
+  top: -58rpx;
+  left: -28rpx;
+  width: 0;
+  height: 0;
+  border-left: 28rpx solid transparent;
+  border-right: 28rpx solid transparent;
+  border-top: 56rpx solid #FFC107;
+}
+
+/* 中心按钮样式 */
+.lottery-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+  border: 6rpx solid #ffffff;
+  box-shadow: 0 6rpx 20rpx rgba(255, 193, 7, 0.4), 0 0 0 3rpx #FFD54F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.lottery-button:active {
+  transform: translate(-50%, -50%) scale(0.95);
+  box-shadow: 0 4rpx 15rpx rgba(255, 193, 7, 0.6);
+}
+
+.button-text {
+  color: #ffffff;
+  font-size: 84rpx;
+  font-weight: bold;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+  letter-spacing: 2rpx;
+}
+
+/* 开始抽奖按钮 */
+.start-lottery-btn {
+  background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+  color: #fff;
+  padding: 28rpx 60rpx;
+  border-radius: 60rpx;
+  text-align: center;
+  margin: 50rpx auto;
+  width: 320rpx;
+  box-shadow: 0 12rpx 32rpx rgba(255, 193, 7, 0.35);
+  transition: all 0.3s ease;
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.start-lottery-btn:active {
+  transform: translateY(3rpx);
+  box-shadow: 0 6rpx 16rpx rgba(38, 166, 154, 0.35);
+}
+
+.btn-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 抽奖规则 */
+.lottery-rules {
+  background: linear-gradient(135deg, #26A69A 0%, #00BCD4 100%);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-top: 40rpx;
+  box-shadow: 0 12rpx 32rpx rgba(38, 166, 154, 0.35);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.rule-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15rpx;
+  text-align: center;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.rule-subtitle {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+  margin-bottom: 25rpx;
+  text-align: center;
+  font-style: italic;
+}
+
+.rule-section {
+  margin-bottom: 25rpx;
+}
+
+.rule-section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.rule-subsection {
+  margin-bottom: 15rpx;
+  margin-left: 20rpx;
+}
+
+.rule-subsection-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 8rpx;
+}
+
+.rule-item {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 8rpx;
+  margin-left: 10rpx;
+}
+
+/* 底部功能模块 */
+.bottom-modules {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-top: 40rpx;
+}
+
+.module-card {
+  flex: 1;
+  background: linear-gradient(135deg, #26A69A 0%, #00BCD4 100%);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 12rpx 32rpx rgba(38, 166, 154, 0.35);
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.module-card:active {
+  transform: scale(0.98);
+  box-shadow: 0 6rpx 16rpx rgba(38, 166, 154, 0.5);
+}
+
+.module-icon {
+  font-size: 48rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.module-content {
+  flex: 1;
+}
+
+.module-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8rpx;
+  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+}
+
+.module-subtitle {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.module-arrow {
+  font-size: 36rpx;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+
+/* 中奖结果弹窗 */
+.prize-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* width: 100%;
+  height: 100%; */
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20rpx;
+  width: 600rpx;
+  max-width: 90%;
+  overflow: hidden;
+  animation: modalShow 0.3s ease-out;
+}
+
+@keyframes modalShow {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #26A69A 0%, #00BCD4 100%);
+  color: #fff;
+  padding: 30rpx;
+  text-align: center;
+  position: relative;
+}
+
+.modal-title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20rpx;
+  right: 30rpx;
+  font-size: 48rpx;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 60rpx 30rpx;
+  text-align: center;
+}
+
+.prize-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-text {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.result-points {
+  font-size: 36rpx;
+  color: #26A69A;
+  font-weight: bold;
+}
+
+.modal-footer {
+  padding: 0 30rpx 30rpx;
+}
+
+.confirm-btn {
+  background: linear-gradient(135deg, #26A69A 0%, #00BCD4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 24rpx;
+  width: 100%;
+  font-size: 32rpx;
+  font-weight: bold;
+}

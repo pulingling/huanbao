@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "环保课件",
+  "component":true,
+  "usingComponents": {
+    "tag": "/components/tag/tag"
+  }
+}

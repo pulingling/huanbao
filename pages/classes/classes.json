@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "在线学习",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#82DE96",
+  "usingComponents": {
+    "tag": "/components/tag/tag",
+    "list_item": "/components/list_item/list_item"
+  }
+}

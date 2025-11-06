@@ -1,0 +1,46 @@
+<view class="tabMain">
+    <view bindtap="changeshowPosition" class="position">
+      <text class="citynow">{{cityNow}}</text>
+      <image class="arrowBottom" src="/images/arrowBottom.png" mode="aspectFill"></image>
+    </view>
+    <scroll-view scroll-x="true" class="tab_container" bindtap="handleTab">
+      <!-- <text data-id="1" class="{{tabShow === 1?'tabBtn active':'tabBtn'}}">新增设施</text> -->
+      <text data-id="2" class="{{tabShow === 2?'tabBtn active':'tabBtn'}}">近期开放</text>
+      <text data-id="3" class="{{tabShow === 3?'tabBtn active':'tabBtn'}}">关注</text>
+      <!-- <text data-id="1" class="{{tabShow === 1?'tabBtn active':'tabBtn'}}">相关文件</text> -->
+      <text class="tabBtn" bindtap="toOrder">我的预约</text>
+    </scroll-view>
+</view>
+<view wx:if="{{showPosition}}" bindtap="closeshowPosition" class="positionChoose">
+  <view catchtap="tapbox" class="tag_box">
+    <block wx:for="{{cities}}" wx:for-item="value">
+      <tag class="tag_item" active="{{actCity === value.key-0}}" data-city="{{value.key}}" bindtap="handleCity">{{value.value}}</tag>
+    </block>
+  </view>
+</view>
+<view class="{{showPosition ? 'container hidden' : 'container'}}">
+    <view wx:if="{{tabShow === 0}}" class="orderList">
+      <block wx:for="{{list1}}" wx:for-item="item1" wx:key="*this">
+        <orderItem data-id="{{item1.id}}" bindreloadData="reloadData" bindtap="toDetail" item="{{item1}}" ></orderItem>
+      </block>
+    </view>
+     <block wx:if="{{tabShow === 1}}">
+        <view class="tab3">
+            <image src="/images/bg2.png" mode="withFill" class="bg"></image>
+            <view class="docs_box {{index === 0?'top':''}}" wx:for="{{docs}}" wx:key="id" bindtap="handleOpenDetail" data-id="{{item.id}}" data-type="3">
+                <image src="/images/folder.png" mode="aspectFill"></image>
+                <view class="title">{{item.title}}</view>
+            </view>
+        </view>
+    </block>
+    <view wx:if="{{tabShow === 2}}" class="orderList">
+      <block wx:for="{{list2}}" wx:for-item="item2" wx:key="*this">
+        <orderItem data-id="{{item2.id}}" bindreloadData="reloadData" bindtap="toDetail" item="{{item2}}" ></orderItem>
+      </block>
+    </view>
+    <view wx:if="{{tabShow === 3}}" class="orderList">
+      <block wx:for="{{list3}}" wx:for-item="item3" wx:key="*this">
+        <orderItem data-id="{{item3.id}}" bindreloadData="reloadData" bindtap="toDetail" iscollect="{{true}}" item="{{item3}}" ></orderItem>
+      </block>
+    </view>
+</view>

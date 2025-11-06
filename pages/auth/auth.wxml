@@ -1,0 +1,9 @@
+<!--群分享授权页面-->
+<view class="container">
+<image class="logo" src="/assets/imgs/logo.png"></image>
+<text class="title">四川生态环境宣教中心</text>
+  <button open-type="getUserInfo" bindgetuserinfo="getuserInfo">
+    <text class="btntext">授权登录</text>
+  </button>
+</view>
+

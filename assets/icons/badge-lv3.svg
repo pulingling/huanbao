@@ -1,0 +1,17 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="30" cy="30" r="28" fill="url(#gradient1)" stroke="#FFD700" stroke-width="2"/>
+  <circle cx="30" cy="30" r="20" fill="url(#gradient2)"/>
+  <path d="M30 15L33.09 24.27L42 21L36.18 28.73L45 30L36.18 31.27L42 39L33.09 35.73L30 45L26.91 35.73L18 39L23.82 31.27L15 30L23.82 28.73L18 21L26.91 24.27L30 15Z" fill="#FFD700"/>
+  <text x="30" y="35" text-anchor="middle" fill="white" font-size="12" font-weight="bold">3</text>
+  
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "首页",
+  "navigationBarBackgroundColor": "#E3FFCC",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#E3FFCC",
+  "usingComponents": {
+    "list_item": "/components/list_item/list_item",
+    "main": "/components/main/main",
+    "ppts": "/components/ppts/ppts",
+    "knowledge": "/components/knowledge/knowledge",
+    "bases": "/components/base/base",
+    "schools": "/components/schools/schools"
+  }
+}

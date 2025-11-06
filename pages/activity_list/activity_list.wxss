@@ -1,0 +1,36 @@
+.title-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.titleIcon {
+  width: 8rpx;
+  height: 32rpx;
+  margin-left: 24rpx;
+  border-radius: 6rpx;
+  background-image: linear-gradient(#88AFF5, #73A3F0);
+  float: left;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #1B2750;
+  font-weight: 600;
+  margin-left: 18rpx;
+}
+
+.recordsbg{
+  background-color: #EFEFF4;
+}
+.records{
+  background-color: #fff;
+  margin-left: 18rpx;
+  border-radius: 12rpx;
+  margin-top: 16rpx;
+  box-shadow: #EFE8EC 0 0 12rpx 12rpx ;
+  width: 710rpx;
+}
+.container{
+  background-color: #EFEFF4;
+  min-height: 1334rpx;
+}

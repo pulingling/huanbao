@@ -1,0 +1,81 @@
+.card {
+    width: 690rpx;
+    height: 262rpx;
+    margin-top: 24rpx;
+    background: #FFF;
+    border-radius: 20rpx;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 4rpx 30rpx -10rpx rgba(0,0,0,0.1)
+}
+.card_long {
+    height: 276rpx;
+}
+.image{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 5rpx;
+    position: absolute;
+    top: 26rpx;
+    right: 23rpx;
+}
+.title {
+    position: absolute;
+    top: 26rpx;
+    left: 23rpx;
+    font-size: 30rpx;
+    color: #353535;
+    white-space: pre-line;
+    width: 406rpx;
+    height: 82rpx;
+    line-height: 42rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+    text-align:left;
+}
+.content {
+    position: absolute;
+    top: 133rpx;
+    left: 24rpx;
+    width: 406rpx;
+    /*height: 88rpx;*/
+    line-height: 33rpx;
+    color: #969696;
+    white-space: pre-line;
+    font-size: 24rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+}
+.footer {
+    position: absolute;
+    width: 324rpx;
+    left: 20rpx;
+    bottom: 30rpx;
+    height: 30rpx;
+    font-size: 24rpx;
+    line-height: 30rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #969696
+}
+.footer .time {
+    height: 30rpx;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+.footer .image {
+    width:22rpx;
+    height: 22rpx;
+    margin-left: 10rpx;
+}
+.clock{
+    margin-top: -22rpx;
+}

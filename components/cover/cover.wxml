@@ -1,0 +1,18 @@
+<view class="container">
+	<view class="wrap">
+		<view class="dialog">
+			<text class="t1">{{title}}</text>
+			<text  wx:if="{{score>0}}" class="score">{{score}}</text>
+			<text wx:if="{{score>0}}" class="t2">恭喜，您已成功记录公众环保足迹</text>
+			<view class="btns" bindtap="toFootMark">
+				<view class="btn1">
+					<text class="btn-t1">查询足迹</text>
+				</view>
+				<!-- <view class="btn2" bindtap="close">
+					<text class="btn-t2">好的</text>
+				</view> -->
+			</view>
+		</view>
+	</view>
+
+</view>

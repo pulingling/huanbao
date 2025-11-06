@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>积分中心导航栏颜色修改预览</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .preview-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .comparison {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: #000;
+            border-radius: 25px;
+            padding: 10px;
+            position: relative;
+        }
+        
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: #f5f5f5;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .status-bar {
+            height: 44px;
+            background: #A8D8A8;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .status-bar.before {
+            color: white;
+        }
+        
+        .status-bar.after {
+            color: black;
+        }
+        
+        .nav-bar {
+            height: 44px;
+            background: #A8D8A8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .nav-bar.before {
+            color: white;
+        }
+        
+        .nav-bar.after {
+            color: black;
+        }
+        
+        .back-button {
+            position: absolute;
+            left: 15px;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        
+        .back-button.before {
+            color: white;
+        }
+        
+        .back-button.after {
+            color: black;
+        }
+        
+        .content-area {
+            padding: 20px;
+            background: #f5f5f5;
+            height: calc(100% - 88px);
+        }
+        
+        .points-card {
+            background: linear-gradient(135deg, #A8D8A8 0%, #90C695 100%);
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .points-display {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+        .label {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .label.before {
+            color: #666;
+        }
+        
+        .label.after {
+            color: #333;
+        }
+        
+        .change-highlight {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-container">
+        <h1 class="title">积分中心导航栏颜色修改预览</h1>
+        
+        <div class="comparison">
+            <!-- 修改前 -->
+            <div>
+                <div class="label before">修改前 (白色文字)</div>
+                <div class="phone-mockup">
+                    <div class="screen">
+                        <div class="status-bar before">
+                            <span>13:58</span>
+                            <span>96% 🔋</span>
+                        </div>
+                        <div class="nav-bar before">
+                            <div class="back-button before">‹</div>
+                            积分中心
+                        </div>
+                        <div class="content-area">
+                            <div class="points-card">
+                                <div class="user-info">
+                                    <div class="avatar"></div>
+                                    <div>
+                                        <div>微信用户</div>
+                                        <div style="font-size: 12px; opacity: 0.8;">LV3 环保达人</div>
+                                    </div>
+                                </div>
+                                <div class="points-display">2580</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 修改后 -->
+            <div>
+                <div class="label after">修改后 (黑色文字)</div>
+                <div class="phone-mockup">
+                    <div class="screen">
+                        <div class="status-bar after">
+                            <span>13:58</span>
+                            <span>96% 🔋</span>
+                        </div>
+                        <div class="nav-bar after">
+                            <div class="back-button after">‹</div>
+                            积分中心
+                        </div>
+                        <div class="content-area">
+                            <div class="points-card">
+                                <div class="user-info">
+                                    <div class="avatar"></div>
+                                    <div>
+                                        <div>微信用户</div>
+                                        <div style="font-size: 12px; opacity: 0.8;">LV3 环保达人</div>
+                                    </div>
+                                </div>
+                                <div class="points-display">2580</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="change-highlight">
+            ✅ 修改完成：导航栏文字颜色已从白色改为黑色，与首页保持一致
+        </div>
+        
+        <div style="margin-top: 20px; padding: 15px; background: #e8f5e8; border-radius: 8px;">
+            <h3 style="margin-top: 0; color: #2d5a2d;">修改详情：</h3>
+            <ul style="color: #2d5a2d;">
+                <li><strong>文件：</strong>pages/points/points.json</li>
+                <li><strong>修改项：</strong>navigationBarTextStyle</li>
+                <li><strong>修改前：</strong>"white"</li>
+                <li><strong>修改后：</strong>"black"</li>
+                <li><strong>效果：</strong>导航栏标题"积分中心"和返回按钮现在显示为黑色，与首页风格一致</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

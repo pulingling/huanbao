@@ -1,0 +1,93 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/auth/auth",
+    "pages/learn/learn",
+    "pages/passport/passport",
+    "pages/exam/exam",
+    "pages/open_air/open_air",
+    "pages/master/master",
+    "pages/video_page/video_page",
+    "pages/detail_long/detail_long",
+    "pages/detail_short/detail_short",
+    "pages/knowledge_detail/knowledge_detail",
+    "pages/classes/classes",
+    "pages/open_order/open_order",
+    "pages/open_detail/open_detail",
+    "pages/order_detail/order_detail",
+    "pages/order/order",
+    "pages/order_info/order_info",
+    "pages/open_video/open_video",
+    "pages/footmark/footmark",
+    "pages/footmark/honor",
+    "pages/footmark/rank",
+    "pages/footmark/strategy",
+    "pages/activity_list/activity_list",
+    "pages/out/out",
+    "pages/auth/auth_index",
+    "pages/passport/files",
+    "pages/passport/webview",
+    "pages/passport/details",
+    "pages/passport/pdfPreview",
+    "pages/facility/facility_list",
+    "pages/activity_detail/activity_detail",
+    "pages/onlineBooks/onlineBooks",
+    "pages/onlineBooks/book",
+    "pages/return_page/return_page",
+    "pages/enviromentEdu/enviromentEdu",
+    "pages/sign_up/sign_up",
+    "pages/sign_list/sign_list",
+    "pages/sign_file/sign_file",
+    "pages/points/points",
+    "pages/lottery/lottery",
+    "pages/lottery_rules/lottery_rules",
+    "pages/points_rules/points_rules",
+    "pages/prize_delivery/prize_delivery"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": 50
+  },
+  "networkTimeout": {
+    "request": 15000
+  },
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#6ECE83",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index_off.png",
+        "selectedIconPath": "images/index_on.png"
+      },
+      {
+        "pagePath": "pages/enviromentEdu/enviromentEdu",
+        "text": "环保教育",
+        "iconPath": "images/icon_environment.png",
+        "selectedIconPath": "images/icon_environment_active.png"
+      },
+      {
+        "pagePath": "pages/learn/learn",
+        "text": "课程学习",
+        "iconPath": "images/icon_class.png",
+        "selectedIconPath": "images/icon_class_active.png"
+      },
+      {
+        "pagePath": "pages/passport/passport",
+        "text": "环保行动",
+        "iconPath": "images/0803_02.png",
+        "selectedIconPath": "images/0803_03.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "parser": "/components/parser.20200731.min/parser"
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

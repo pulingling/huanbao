@@ -1,0 +1,77 @@
+<!--pages/points_rules/points_rules.wxml-->
+<view class="rules-container">
+  <view class="rules-header">
+    <text class="rules-title">积分获取规则</text>
+    <text class="rules-subtitle">了解如何获取更多积分</text>
+  </view>
+
+  <view class="rules-content">
+    <view class="rules-table">
+      <view class="table-header-row">
+        <view class="th">积分行为</view>
+        <view class="th">单次可获积分</view>
+        <view class="th">每日上限次数</view>
+        <view class="th">每日可获积分上限</view>
+      </view>
+      <view class="table-body">
+        <view class="table-row">
+          <view class="td">每日首次登录</view>
+          <view class="td">+5</view>
+          <view class="td">1次</view>
+          <view class="td">5分</view>
+        </view>
+        <view class="table-row">
+          <view class="td">浏览"环保知识"</view>
+          <view class="td">+2</view>
+          <view class="td">5次</view>
+          <view class="td">10分</view>
+        </view>
+        <view class="table-row">
+          <view class="td">浏览"环保读物"</view>
+          <view class="td">+2</view>
+          <view class="td">5次</view>
+          <view class="td">10分</view>
+        </view>
+        <view class="table-row">
+          <view class="td">浏览"环保课件"</view>
+          <view class="td">+2</view>
+          <view class="td">5次</view>
+          <view class="td">10分</view>
+        </view>
+        <view class="table-row">
+          <view class="td">浏览"美境行动"板块</view>
+          <view class="td">+2</view>
+          <view class="td">5次</view>
+          <view class="td">10分</view>
+        </view>
+        <view class="table-row">
+          <view class="td">在线学习视频课程</view>
+          <view class="td">+5</view>
+          <view class="td">5次</view>
+          <view class="td">25分</view>
+        </view>
+        <view class="table-row">
+          <view class="td">分享小程序任一页面</view>
+          <view class="td">+2</view>
+          <view class="td">5次</view>
+          <view class="td">10分</view>
+        </view>
+      </view>
+      <view class="table-footer-row">
+        <view class="tf-label">日常每日总积分上限</view>
+        <view class="tf-value">50分</view>
+      </view>
+    </view>
+
+    <view class="notes-section">
+      <view class="notes-title">备注</view>
+      <view class="note-item">"环保读物"、"环保课件"板块各浏览时长超过90秒记为有效，"环保知识""美境行动"板块各浏览时长超过1分钟记为有效。</view>
+      <view class="note-item">在线学习视频课程: 1. 每个视频观看超过该视频总时长80%记为有效。 2. 活动期间，该项为双倍积分，单次积分为10分。</view>
+      <view class="note-item">分享小程序任一页面: 分享到微信群或好友。</view>
+    </view>
+  </view>
+
+  <view class="rules-footer">
+    <button class="back-button" bindtap="backToPoints">返回积分页面</button>
+  </view>
+</view>

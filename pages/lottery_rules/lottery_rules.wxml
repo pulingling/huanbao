@@ -1,0 +1,79 @@
+<!--pages/lottery_rules/lottery_rules.wxml-->
+<view class="rules-container">
+  <view class="rules-header">
+    <text class="rules-title">积分抽奖活动规则</text>
+    <view class="subtitle-break"></view>
+    <text class="rules-subtitle">为确保抽奖活动的公平、公正、公开，并为所有参与者提供良好的体验</text>
+  </view>
+
+  <view class="rules-content">
+    <!-- 参与方式 -->
+    <view class="rule-section">
+      <view class="section-title">1. 参与方式</view>
+      <view class="rule-item">
+        <text class="rule-bullet">·</text>
+        <text class="rule-text">每次参与抽奖需消耗500积分</text>
+      </view>
+      <view class="rule-item">
+        <text class="rule-bullet">·</text>
+        <text class="rule-text">为保证更多用户能够公平地参与并有机会获得奖品，系统限制每位用户每日最多可参与抽奖1次</text>
+      </view>
+    </view>
+
+    <!-- 奖品设置 -->
+    <view class="rule-section">
+      <view class="section-title">2. 奖品设置</view>
+      <view class="rule-item">
+        <text class="rule-bullet">·</text>
+        <text class="rule-text">奖品池包含实物奖品与虚拟奖品(含虚拟卡券、积分奖励)两大类别</text>
+      </view>
+      <view class="rule-item">
+        <text class="rule-bullet">·</text>
+        <text class="rule-text">实物奖品数量有限，为保持新鲜感，我们会定期(如每月)进行更新，抽完即止</text>
+      </view>
+      <view class="rule-item">
+        <text class="rule-bullet">·</text>
+        <text class="rule-text">虚拟奖品则不限量供应</text>
+      </view>
+      <view class="rule-item">
+        <text class="rule-bullet">·</text>
+        <text class="rule-text">所有奖品的具体详情，请以抽奖活动页面的转盘/九宫格实时展示为准</text>
+      </view>
+    </view>
+
+    <!-- 中奖与发奖 -->
+    <view class="rule-section">
+      <view class="section-title">3. 中奖与发奖</view>
+      <view class="rule-subsection">
+        <view class="subsection-title">虚拟奖品：</view>
+        <view class="rule-item">
+          <text class="rule-bullet">·</text>
+          <text class="rule-text">中奖后，系统会将相应积分立即自动发放到您的积分账户中</text>
+        </view>
+        <view class="rule-item">
+          <text class="rule-bullet">·</text>
+          <text class="rule-text">您可以在"个人积分中心"的积分明细中查看到账记录</text>
+        </view>
+      </view>
+      <view class="rule-subsection">
+        <view class="subsection-title">实物奖品：</view>
+        <view class="rule-item">
+          <text class="rule-bullet">·</text>
+          <text class="rule-text">中奖后，请您务必在10个工作日内，前往"我的奖品"页面填写并确认您的有效收货地址</text>
+        </view>
+        <view class="rule-item">
+          <text class="rule-bullet">·</text>
+          <text class="rule-text">逾期未填写将被系统视为您自动放弃该奖品，敬请谅解</text>
+        </view>
+        <view class="rule-item">
+          <text class="rule-bullet">·</text>
+          <text class="rule-text">我们将在您成功提交地址后的10个工作日内安排发货</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="rules-footer">
+    <button class="back-button" bindtap="backToLottery">返回抽奖页面</button>
+  </view>
+</view>

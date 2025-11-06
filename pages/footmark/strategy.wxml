@@ -1,0 +1,33 @@
+<!--pages/footmark/strategy.wxml-->
+<view class="container">
+	<view class="item" style="margin-top:22rpx">
+		<image class="icon" src="/assets/imgs/study.png"></image>
+		<view class="text">
+			<text class="t1">环境教育课程</text>
+			<text class="t2">在线学习1课时，可+10里程环保足迹</text>
+		</view>
+		<view class="btn" bindtap="study">
+			<text class="btn-t">去学习</text>
+		</view>
+	</view>
+	<view class="item">
+		<image class="icon" src="/assets/imgs/open.png"></image>
+		<view class="text">
+			<text class="t1">公众环保设施</text>
+			<text class="t2">在线预约1次参观活动，参观结束后可+200里程环保足迹</text>
+		</view>
+		<view class="btn" bindtap="open">
+			<text class="btn-t">去预约</text>
+		</view>
+	</view>
+	<view class="item">
+		<image class="icon" src="/assets/imgs/act.png"></image>
+		<view class="text">
+			<text class="t1">环保公益活动</text>
+			<text class="t2">参与1次环保公益活动，可+200里程环保足迹</text>
+		</view>
+		<view class="btn" bindtap="act">
+			<text class="btn-t">去看看</text>
+		</view>
+	</view>
+</view>

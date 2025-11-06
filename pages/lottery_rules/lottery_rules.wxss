@@ -1,0 +1,103 @@
+/* pages/lottery_rules/lottery_rules.wxss */
+
+.rules-container {
+  padding: 30rpx;
+  background-color: #E3FFCC;
+  min-height: 100vh;
+}
+
+.rules-header {
+  margin-bottom: 40rpx;
+}
+
+.rules-title {
+  display: block;
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #26A69A;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.rules-subtitle {
+  display: block;
+  font-size: 28rpx;
+  color: #666;
+  text-align: left;
+}
+
+.rules-content {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 规则部分样式 */
+.rule-section {
+  margin-bottom: 40rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #26A69A;
+  margin-bottom: 20rpx;
+  padding-left: 20rpx;
+  border-left: 8rpx solid #26A69A;
+}
+
+.rule-subsection {
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.subsection-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #00BCD4;
+  margin-bottom: 15rpx;
+}
+
+.rule-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15rpx;
+}
+
+.rule-bullet {
+  color: #26A69A;
+  font-weight: bold;
+  margin-right: 15rpx;
+  margin-top: 4rpx;
+  flex-shrink: 0;
+}
+
+.rule-text {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.rules-footer {
+  margin-top: 60rpx;
+  text-align: center;
+}
+
+.back-button {
+  background: linear-gradient(135deg, #26A69A 0%, #00BCD4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50rpx;
+  padding: 24rpx 80rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  box-shadow: 0 8rpx 24rpx rgba(38, 166, 154, 0.25);
+  transition: all 0.3s ease;
+}
+
+.back-button:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(38, 166, 154, 0.3);
+}

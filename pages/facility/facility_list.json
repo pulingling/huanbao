@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "设施活动现场",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "facility-card": "/components/facility/facility_card"
+  }
+}

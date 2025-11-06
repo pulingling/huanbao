@@ -1,0 +1,20 @@
+<view class="container">
+	<view class="line1">
+		<view class="left" bindtap="jump">
+			<text class="title">{{title}}</text>
+			<view class="point-box">
+				<text class="point-number">+{{score}}</text>
+			</view>
+		</view>
+		<button bindtap="shareTo">
+			<view class="share">
+
+				<text class="share-text">分享</text>
+				<image class="share-icon" src="/assets/icons/share.png"></image>
+
+			</view>
+		</button>
+	</view>
+
+	<text class="time" bindtap="jump">{{dateTime}}</text>
+</view>

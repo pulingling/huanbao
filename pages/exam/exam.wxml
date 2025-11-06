@@ -1,0 +1,59 @@
+<view class="container">
+    <!--wxs-->
+    <wxs module="judge">
+        var isRight = function(answerKey,correct) {
+            return correct.indexOf(answerKey) !== -1
+        }
+        module.exports.isRight = isRight;
+    </wxs>
+    <!--答题界面-->
+    <block wx:if="{{exam}}">
+        <view class="progress">
+            <view class="bar_bg">
+                <view class="bar" style="width:{{(curId+1)*563/questions.length}}rpx;"></view>
+            </view>
+            {{curId+1 || "-"}}/{{questions.length || "-"}}
+        </view>
+        <view class="main">
+            <view class="title">{{questions[curId].question}}</view>
+            <block wx:for="{{questions[curId].answer_option}}" wx:for-index="key"  wx:for-item="value" wx:key="key">
+                <view class="item {{activeCheck[key]?'active':''}}"data-id="{{key}}" catchtap="handleCheck">
+                    <view class="option">{{value}}</view>
+                    <image class="check_box" src="{{activeCheck[key]?'/images/icon_checkbox_line.png':'/images/icon_checkbox_outline.png'}}" mode="aspectFill"/>
+                </view>
+            </block>
+        </view>
+        <view class="footer">
+            <view bindtap="toggleQuestion" class="{{curId === 0?'no_choose':''}}">上一题</view>
+            <button class="submit {{chose[curId].length?'':'no_choose_submit'}}" bindtap="handleSubmit" data-next wx:if="{{curId && curId > questions.length -2}}">提交</button>
+            <view bindtap="toggleQuestion" class="{{chose[curId].length?'':'no_choose'}}" data-next wx:else>下一题</view>
+        </view>
+    </block>
+    <!--答题结果-->
+    <block wx:else>
+        <view class="result_main">
+            <view class="lead1">你的评测得分为: </view>
+            <view class="point_box">
+                <view class="result_point">{{point}}</view>
+                <image mode="aspecFill" src="/images/notebook.png"></image>
+            </view>
+           <view>
+               <view class="lead2">{{notFullMark?"错题解析":"恭喜! 全部答对"}}</view>
+               <block wx:for="{{questions}}" wx:for-item="question" wx:for-index="index">
+                   <block wx:if="{{textComplete[index]}}">
+                       <view class="right_box">
+                           <view class="title">{{question.question}}</view>
+                           <view class="item {{judge.isRight(key,textComplete[index].correct)?'right_option':''}}" wx:for="{{question.answer_option}}" wx:for-index="key"  wx:for-item="value" wx:key="key">
+                               <view class="option">{{value}}</view>
+                               <view class="right_tip" wx:if="{{judge.isRight(key,textComplete[index].correct)}}">✔ 正确选项</view>
+                               <!--<view class="your_tip" wx:if="{{}}">✘ 你的选项</view>-->
+                           </view>
+                           <view class="explain">{{textComplete[index].detail}}</view>
+                       </view>
+                   </block>
+               </block>
+           </view>
+            <button class="examBtn" bindtap="toClasses">继续学习其他课程</button>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,9 @@
+.name {
+    width: 420rpx;
+    height: 48rpx;
+    font-size: 34rpx;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 700;
+    color: #333333;
+    line-height: 48rpx;
+}

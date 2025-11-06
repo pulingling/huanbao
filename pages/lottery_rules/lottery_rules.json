@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "积分抽奖活动规则",
+  "navigationBarBackgroundColor": "#E3FFCC",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#E3FFCC",
+  "enablePullDownRefresh": false,
+  "usingComponents": {}
+}

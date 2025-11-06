@@ -1,0 +1,54 @@
+<view class="container">
+    <block wx:if="{{type !== '4'}}">
+        <view class="facility_container">
+            <image src="{{detail.s_image || '/images/bg2.png'}}" mode="aspectFill" class="bg"></image>
+            <view class="content">
+                <h1>{{detail.title}}</h1>
+                <block wx:if="{{detail.description && detail.description.length}}">
+                    <view class="desc">
+                        <import src='../../wxParse/wxParse.wxml' />
+                        <template is='wxParse' data="{{wxParseData:description.nodes}}" />
+                    </view>
+                </block>
+                <block wx:if="{{detail.content && detail.content.length}}">
+                    <view class="desc">
+                        <import src='../../wxParse/wxParse.wxml' />
+                        <template is='wxParse' data="{{wxParseData:content.nodes}}" />
+                    </view>
+                </block>
+                <video wx:if="{{detail.s_video}}" id="indexVideo" bindplay="videoPlay" enable-play-gesture object-fit="cover"
+                    custom-cache="{{false}}" controls class="video" src="{{detail.s_video}}">
+                    <cover-view class="warning" wx:if="{{showWarning}}">您正在使用非WIFI网络,播放将产生流量费用</cover-view>
+                    <cover-view class="coverImg" wx:if="{{coverImgShow}}">
+                        <cover-image bindtap="showVideo" class="playimage" src="/images/play.png"></cover-image>
+                        <cover-image bindtap="showVideo" class="image" src="/images/index_swiper.png" mode="aspectFill">
+                        </cover-image>
+                    </cover-view>
+                </video>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{type === '4'}}">
+        <view class="master_container">
+            <image src="/images/bg.png" mode="aspectFill" class="bg"></image>
+            <view class="head">
+                <h1>{{detail.title}}</h1>
+                <view wx:if="{{detail.danwei}}">{{detail.danwei}}</view>
+                <view wx:if="{{detail.zhiwei}}">{{detail.zhiwei}}</view>
+                <view wx:if="{{detail.lingyujieshao}}">{{detail.lingyujieshao}}</view>
+            </view>
+            <block wx:if="{{detail.description && detail.description.length}}">
+                <view class="desc">
+                    <import src='../../wxParse/wxParse.wxml' />
+                    <template is='wxParse' data="{{wxParseData:description.nodes}}" />
+                </view>
+            </block>
+            <block wx:if="{{detail.content && detail.content.length}}">
+                <view class="desc">
+                    <import src='../../wxParse/wxParse.wxml' />
+                    <template is='wxParse' data="{{wxParseData:content.nodes}}" />
+                </view>
+            </block>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,14 @@
+<view class="videoBox">
+  <video id="video"
+    src="{{video}}"
+    controls
+    enable-play-gesture
+    class="video"
+    object-fit="cover"
+    bindplay="videoPlay"
+    custom-cache="{{false}}"
+    binderror="videoError"
+  >
+    <cover-view class="warning" wx:if="{{showWarning}}">您正在使用非WIFI网络,播放将产生流量费用</cover-view>
+  </video>
+</view>

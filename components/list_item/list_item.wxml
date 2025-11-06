@@ -1,0 +1,11 @@
+<block wx:for="{{option}}" wx:key="id">
+    <view class="card {{item.seen?'card_long':''}}" bindtap="toDetail" data-card-id="{{item.id}}">
+        <image class="image" lazy-load src="{{item.s_image || ''}}" mode="aspectFill" data-id="{{item.id}}" binderror="useDefault"></image>
+        <view class="title">{{item.title}}</view>
+        <view class="content">{{item.description == null ? '' : item.description}}</view>
+        <view class="footer" wx:if="{{showTime}}">
+            <image class="image clock" src="/images/icon_clock.png" mode="aspectFit" lazy-load></image>
+            <view class="time">{{item.update_time}}</view>
+        </view>
+    </view>
+</block>

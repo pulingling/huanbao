@@ -1,0 +1,16 @@
+<!-- pages/passport/files.wxml -->
+<text class="name">{{name}}</text>
+<view class='attachList'>
+    <view class="downLoadWord" bindtap="down" data-url="{{word_link}}">
+        <text class='down'>查看原文件</text>
+    </view>
+    <block wx:for="{{attachmentList}}" wx:key="id">
+        <view class='attachDetail'>
+            <view class="geshi">{{item.name}}</view>
+            <view class="loaddown" bindtap="down" data-url="{{item.url}}">查看附件</view>
+        </view>
+    </block>
+    <view class="content">
+        <parser html="{{preview}}" />
+    </view>
+</view>

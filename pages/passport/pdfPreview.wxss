@@ -1,0 +1,4 @@
+/* pages/passport/pdfPreview.wxss */
+.content{
+  margin-top: 15rpx;
+}

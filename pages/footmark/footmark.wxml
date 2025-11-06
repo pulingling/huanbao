@@ -1,0 +1,161 @@
+<!--pages/footmark/footmark.wxml-->
+<scroll-view class="content" scroll-y="{{scroll}}" scroll-top="{{scrollTop}}" >
+	<!-- style="height:{{1100+len*148}}rpx" -->
+	<view class="top">
+		<view class="honor" bindtap="navToHonor">
+		<view class="honor-icon">
+				<open-data type="userAvatarUrl"></open-data>
+		</view>
+			<text class="honor-text">{{userData.comment}}</text>
+		</view>
+		<view class="points">
+			<view class="point" wx:for="{{bubbleList}}" wx:key="unique" style="margin-left:{{index %2!==0 ? 350 : 30}}rpx">
+				<view class="point-bubble" bindtap="addMark" data-idx="{{item.id}}" data-score="{{item.score}}">
+					<text class="point-number">{{item.score}}</text>
+				</view>
+				<text class="point-text">{{item.title}}</text>
+			</view>
+		</view>
+		<image class="back" src="/assets/icons/back.png" bindtap="back"></image>
+	</view>
+
+	<view class="main">
+		<view class="btns">
+			<view class="btn-strategy" bindtap="navToStrategy">
+				<text class="btn-text">足迹攻略</text>
+			</view>
+			<view class="btn-actList" bindtap="navToActList">
+				<text class="btn-text">活动展示</text>
+			</view>
+
+		</view>
+		<view class="record">
+			<view class="record-left">
+				<image class="record-icon" src="/assets/imgs/record.png"></image>
+				<text class="record-text">足迹记录</text>
+				<text class="record-num">{{userData.score}}</text>
+			</view>
+			<view class="btn-rank" bindtap="navToRank">
+				<text class="btn-rank-text">环保里程榜</text>
+			</view>
+		</view>
+		<view wx:if="{{historyList.length}}" class="honor-list">
+			<footmark-record-item wx:for="{{historyList}}" wx:key="unique" title="{{item.comment}}" score="{{item.score}}" time="{{item.createAt}}" item_id="{{item.id}}" type="{{item.type}}" link="{{item.link}}" history_id="{{item.history_id}}" bind:up="up"></footmark-record-item>
+		</view>
+		<view wx:else  class="historyNone">
+			<image class="noneImg" src="/images/raccoon.png"></image>
+			<text class="noneInfo">暂时没有记录</text>
+			<text>从0开始记录你的足迹吧！</text>
+		</view>
+	</view>
+	<view class="tree">
+	<view class="tree-img">
+		<image class="tree_level" mode="widthFix" src="/assets/imgs/tree{{userData.level}}.png"></image>
+	</view>
+	<view class="progress_run">
+		<!-- <view class="animateRunning" ></view> -->
+		<image class="fox" src="/assets/imgs/run.gif"></image>
+		<view class="bar">
+			<view class="cur_bar" style="width:{{percent1*4}}rpx">
+				<text class="percent">{{percent1}}%</text>
+			</view>
+		</view>
+	</view>
+</view>
+</scroll-view>
+
+<view class="cover2" wx:if="{{addMarkDialogVisible}}">
+	<view class="dialog-wrap">
+		<view class="line"></view>
+		<view class="line-circle"></view>
+		<view class="dialog">
+			<text class="dialog-title">环保公益活动</text>
+			<text class="dialog-msg">恭喜您，成功记录公众环保足迹</text>
+			<view class="anime">
+
+				<!-- <view class="shanxing {{((percent < 50 && percent != 0) || percent == 100) ? 'shanxing1' : 'shanxing2'}}">
+					<!-- <view wx:if="{{percent != 0 && percent != 100}}" class="sx1"></view> -->
+					<!-- <view class="sx1"></view> -->
+					<!-- <view wx:if="{{percent != 50 && percent != 0 && percent != 100}}" class="sx2" style="transform: rotate({{percent < 50 ? ((360 * percent / 100) - 180):(360 * (percent - 100) / 100)}}deg);"></view> -->
+					<!-- <view class="sx2"></view>
+					<view class="sx_t">
+					
+					</view>
+				</view> -->
+				<div class="progress-ring">
+					<div class="progress-track"></div>
+					<div class="progress-left"></div>
+					<div class="progress-right"></div>
+					<div class="progress-cover"></div>
+						<view class="inner">
+							<image class="lightning" src="/assets/imgs/lightning.png"></image>
+						</view>
+				</div>
+			</view>
+
+
+			<view class="dialog-points">
+				<text class="dialog-points-num">+{{addScore}}</text>
+				<text class="dialog-points-text">里程</text>
+			</view>
+			<view class="ok" bindtap="hideAddMark">
+				<text class="ok-text">好的</text>
+			</view>
+		</view>
+
+	</view>
+</view>
+
+<view class="cover3" wx:if="{{coverVisible}}"  catchtouchmove="move">
+	<cover bind:close="close3" title="{{coverTitle}}" score="{{coverScore}}"></cover>
+</view>
+
+
+
+
+
+<movable-area  class="suspension">
+<movable-view  class="moveable-view"  direction="all" bindtap="home" x="300" y="600">
+
+	<image class="sus-img" src="/assets/icons/back-to-main.png"></image>
+	<text class="sus-t">首页</text>
+
+</movable-view>
+</movable-area>
+
+<!-- 测试 -->
+<view class="cover2" wx:if="{{honorCoverVisible}}"  catchtouchmove="move">
+	<cover bind:close="close1" title="{{coverTitle}}" score="{{coverScore}}||''"></cover>
+</view>
+<view class="disableShare">
+	<canvas canvas-id="shareCanvas2" style="width:320px;height:417px"></canvas>
+</view>
+<view class="cover-container" wx:if="{{coverVisibleShare}}" catchtouchmove="return">
+	<view class="cover">
+		<image src="/assets/icons/close.png" class="close" bindtap="closeshare"></image>
+		<view class="shareWrap">
+			<image src="{{shareInfo.img}}" class="shareImg"></image>
+			<view class="shareText">
+				<text class="shareT1">{{shareInfo.shareText}}</text>
+				<text class="shareT2">获得了{{shareInfo.score}}环保足迹</text>
+			</view>
+			<view class="aseptImg">
+				<view class="aseptImg-mascot">
+					<image src="/assets/imgs/share.png" class="aseptImg-share"></image>
+					<image src="/assets/imgs/mascot.png" class="mascot"></image>
+				</view>
+				<image wx:if="{{shareInfo.qr}}" src="{{shareInfo.qr}}" class="qr"></image>
+				<image wx:else src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/gh_b93249df3999_258.jpg" class="qr"></image>
+			</view>
+		</view>
+
+		<view class="shareB">
+			<button class="shB1" data-info="{{shareInfo}}" open-type="share">
+				<text class="shT">分享好友</text>
+			</button>
+			<button class="shB2" bindtap="sharepyq">
+				<text class="shT">分享朋友圈</text>
+			</button>
+		</view>
+	</view>
+</view>

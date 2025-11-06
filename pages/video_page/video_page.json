@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "环境教育",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "cover":"/components/cover/cover"
+  }
+}

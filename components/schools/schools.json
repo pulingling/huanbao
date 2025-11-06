@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "学校",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFFFFF",
+  "component":true,
+  "usingComponents": {}
+}

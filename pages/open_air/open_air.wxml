@@ -1,0 +1,48 @@
+<view class="tab_container" bindtap="handleTab">
+    <text data-id="1" class="{{tabShow === 1?'active':''}}">开放点介绍</text>
+    <text data-id="2" class="{{tabShow === 2?'active':''}}">活动剪影</text>
+    <text data-id="3" class="{{tabShow === 3?'active':''}}">相关文件</text>
+</view>
+<view class="container">
+    <block wx:if="{{tabShow === 1}}">
+        <view class="tab1">
+            <view class="tag_box">
+                <block wx:for="{{cities}}" wx:for-index="key"  wx:for-item="value" wx:key="*this">
+                    <tag class="tag_item" active="{{actCity === key-0}}" data-city="{{key}}" bindtap="handleCity">{{value}}</tag>
+                </block>
+            </view>
+            <view class="item_box" wx:for="{{list}}" wx:key="id" bindtap="handleOpenDetail" data-id="{{item.id}}" data-type="1">
+                <image src="{{item.s_image}}" mode="aspectFill"></image>
+                <view class="title">{{item.title}}</view>
+                <view class="desc">{{item.description}}</view>
+            </view>
+        </view>
+    </block>
+    <block wx:if="{{tabShow === 2}}">
+        <view class="tab2">
+            <block wx:for="{{medias}}" wx:key="id">
+                <view class="media_box" bindtap="handleOpenDetail" data-id="{{item.id}}" data-type="2">
+                    <h2>{{item.create_time}}</h2>
+                    <view class="media_card">
+                        <h1>{{item.title}}</h1>
+                        <view>{{item.description}}</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </block>
+    <block wx:if="{{tabShow === 3}}">
+        <view class="tab3">
+            <image src="/images/bg2.png" mode="withFill" class="bg"></image>
+            <view class="docs_box {{index === 0?'top':''}}" wx:for="{{docs}}" wx:key="id" bindtap="handleOpenDetail" data-id="{{item.id}}" data-type="3">
+                <image src="/images/folder.png" mode="aspectFill"></image>
+                <view class="title">{{item.title}}</view>
+            </view>
+        </view>
+    </block>
+</view>
+
+
+<view class="cover1" wx:if="{{coverVisible}}"  catchtouchmove="move">
+	<cover bind:close="close" title="{{coverTitle}}" score="{{coverScore}}"></cover>
+</view>

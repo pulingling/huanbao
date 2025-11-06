@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "footmark-record-item":"/components/footmark/footmark_record",
+    "cover":"/components/cover/cover" 
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white"
+}

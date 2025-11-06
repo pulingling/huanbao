@@ -1,0 +1,105 @@
+<view class="container">
+  <view class="top-container">
+    <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/index/main/index_bg_bird.png" mode="aspectFit" class="birds" />
+    <view class="swiper_box">
+      <!-- <swiper indicator-dots="{{0}}" current="{{currentSwiper}}" autoplay="{{bannerPlay}}" bindanimationfinish="swiperChange" class="swiper">
+            <swiper-item class="swiper_item">
+                <image class="image" src="/images/index_swiper.png" mode="aspectFill"></image>
+            </swiper-item>
+        </swiper> -->
+      <view class="swiper">
+        <video id="indexVideo" bindplay="videoPlay" enable-play-gesture object-fit="cover" custom-cache="{{false}}" controls class="video" src="https://cdn.envedu.com.cn/media/csww.mp4">
+          <view class="warning" wx:if="{{showWarning}}">您正在使用非WIFI网络,播放将产生流量费用</view>
+          <view class="coverImg" wx:if="{{coverImgShow}}">
+            <image bindtap="showVideo" class="playimage" src="/images/play.png"></image>
+            <image bindtap="showVideo" class="image" src="https://cdn.envedu.com.cn/images/index/main/csww_cover.jpg" mode="aspectFill"></image>
+          </view>
+        </video>
+      </view>
+      <view class="indication" wx:if="{{0}}">
+        <block wx:for="{{1}}" wx:key="*this">
+          <view class="dots {{index == currentSwiper?'dots_active' : ''}}"></view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <!-- 积分功能入口 -->
+  <view class="points-entrance">
+    <view class="points-cards-row">
+      <view class="points-card" bindtap="navToPoints">
+        <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/index/main/raccoon-left.png" class="points-card-img" mode="aspectFit"/>
+        <view class="points-left">
+          <view class="points-title">积分中心</view>
+          <view class="points-btn">进入中心</view>
+        </view>
+      </view>
+      <view class="lottery-card" bindtap="navToLottery">
+        <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/index/main/raccoon-right.png" class="lottery-card-img" mode="aspectFit"/>
+        <view class="lottery-left">
+          <view class="lottery-title">积分抽奖</view>
+          <view class="lottery-btn">立即抽奖</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="course-container">
+    <view class="course-head">
+      <view class="title-set">
+        <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/index/main/courseList_sign.png" mode="aspectFit" class="title-symbol" />
+        环保课程
+      </view>
+      <view class="more course_more" bindtap="handleMoreBtn" data-jump="learn">查看更多 ＞</view>
+      <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/index/main/cartoon_symbol.png" mode="aspectFit" class="cartoon-symbol" />
+    </view>
+    <view class="course-samples">
+      <view class="sample" wx:for="{{suggestCourses}}" wx:key="index" data-id="{{item.id}}" bindtap="toLearnCourse">
+        <image src="{{item.s_image}}" mode="aspectFill" class="cover" />
+        <view class="title">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="section_course">
+    <view class="section_head">
+      <view class="section_bar"></view>
+      环保课件
+      <view class="more course_more" bindtap="jumpToEducation" data-jump="ppts">查看更多 ＞</view>
+    </view>
+    <view class="item-container">
+      <view class="item" wx:for="{{courseList}}" wx:if="{{courseList.length}}" data-id="{{item.id}}" wx:key="index" bindtap="handleOpenDetail">
+        <view class="top">
+          <image src="{{item.s_image}}" mode="aspectFit" class="cover-image" />
+        </view>
+        <view class="title">{{item.short_title}}</view>
+        <view class="description">
+          <view class="des1">{{item.des1}}</view>
+          <view class="des2">{{item.des2}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="books-container">
+    <view class="section_head">
+      <view class="section_bar"></view>
+      环保读物
+      <view class="more course_more" bindtap="jumpToEducation" data-jump="books">查看更多 ＞</view>
+    </view>
+    <view class="books">
+      <view class="book-item" wx:for="{{booksList}}" wx:key="index" bindtap="jumpToBookDetail" data-id="{{item.id}}"> 
+        <image src="{{item.cover_url}}" mode="aspectFit" />
+      </view>
+    </view>
+  </view>
+  <view class="section_knowledge">
+    <view class="section_head">
+      <view class="section_bar"></view>
+      环保知识
+      <view class="more course_more" bindtap="jumpToEducation" data-jump="knowledge">查看更多 ＞</view>
+    </view>
+    <view class="knowledge-container">
+      <view class="knowledge-item" wx:for="{{knowledgeList}}" wx:key="id" bindtap="jumpToKnowledgeDetail" data-id="{{item.id}}">
+        <text class="heavy">小知识 |</text>
+        {{item.title}}
+      </view>
+    </view>
+  </view>
+</view>

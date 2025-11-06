@@ -1,0 +1,58 @@
+/* pages/footmark/strategy.wxss */
+.container{
+  background-color: #F5F5F5FF;
+  min-height: 1334rpx;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.item{
+  display: flex;
+  flex-direction: row;
+  width: 710rpx;
+  margin-left: 16rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  height: 160rpx;
+  margin-bottom: 26rpx;
+}
+.icon{
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 30rpx;
+  margin-left: 16rpx;
+  margin-right: 20rpx;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  margin-top: 26rpx;
+  width: 370rpx;
+}
+.t1{
+  color: #333;
+  font-size: 28rpx;
+  margin-bottom: 12rpx;
+  font-weight: bold;
+}
+.t2{
+  color: #666;
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+.btn{
+  margin-top: 64rpx;
+  margin-left: 32rpx;
+  width: 152rpx;
+  height: 66rpx;
+  background-color: #76A5F1FF;
+  border-radius: 33rpx ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-t{
+ color: #fff;
+ font-size: 28rpx ;
+}

@@ -1,0 +1,39 @@
+<view class="orderCard">
+  <view class="visitTime">
+    <text>{{visitTime}}</text>
+  </view>
+  <view class="Card">
+    <image class="img" src="{{item.s_image}}" mode="aspectFill"></image>
+    <view catchtap="follow" class="heartBox">
+      <image class="heart" src="{{collect?'/images/heartActive.png':'/images/heart.png'}}" mode="aspectFill"></image>
+    </view>
+    <view class="cardInfo">
+      <view class="cardName">
+        <view class="nameBox">
+          <text class="name">{{item.title}}</text>
+          <view wx:if="{{item.s_video&&item.s_video!=='null'}}" catchtap="watchVideo" data-video="{{item.s_video}}" class="toOrder">
+            云参观
+          </view>
+          <!-- <view catchtap="toDetail" class="{{isOpen?'toOrder':'toOrder disable'}}">
+            点击预约
+          </view> -->
+          <view wx:if="{{isOpen}}" catchtap="toDetail" class="{{isOpen?'toOrder':'toOrder disable'}}">
+            点击预约
+          </view>
+        </view>
+        <text class="synopsis">{{item.description}}</text>
+      </view>
+      <view class="location">
+        <view class="locationInfo">
+          <image class="locImg" src="/images/location.png" mode="aspectFill"></image>
+          <text>{{item.location_desc?item.location_desc:'待录入'}}</text>
+        </view>
+      </view>
+       
+      <view  wx:if="{{item.act_num > 0}}" class="facility" catchtap="toFacilities">
+          开放集锦
+          <label>></label>
+      </view>
+    </view>
+  </view>
+</view>

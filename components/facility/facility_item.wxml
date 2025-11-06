@@ -1,0 +1,11 @@
+<view class="container" bindtap="navigateTo">
+  <image class="img1" src="{{imgFormat}}"></image>
+  <view class="content">
+  <view class="wrap" >
+     <text class="title">{{titleFormat}}</text>
+    <text class="desc">{{descFormat}}</text>
+  </view>
+   
+    <!-- <text class="time">{{dateTime}}</text> -->
+  </view>
+</view>

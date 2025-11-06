@@ -1,0 +1,28 @@
+<view class="page {{nowPage === 'books'?'bo-bg':''}}">
+  <view class="container">
+    <view class="head">
+      <block wx:for="{{items}}" wx:key="jump">
+        <view bindtap="handleTopNavBar" class="bar_item {{nowPage === item.jump?'active':''}}" data-jump="{{item.jump}}">
+          {{item.name}}
+          <view class="under-decorate" wx:if="{{nowPage === item.jump?'active':''}}">
+          </view>
+        </view>
+      </block>
+    </view>
+    <block wx:if="{{nowPage === 'ppts'}}">
+      <ppts></ppts>
+    </block>
+    <block wx:if="{{nowPage === 'knowledge'}}">
+      <knowledge></knowledge>
+    </block>
+    <block wx:if="{{nowPage === 'books'}}">
+      <books list="{{bookList}}"></books>
+    </block>
+    <block wx:if="{{nowPage === 'base'}}">
+      <bases></bases>
+    </block>
+    <block wx:if="{{nowPage === 'schools'}}">
+      <schools></schools>
+    </block>
+  </view>
+</view>

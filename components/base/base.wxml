@@ -1,0 +1,11 @@
+<view class="container">
+    <block wx:for="{{list}}" wx:key="id">
+        <view class="base_item" bindtap="handleTap" data-id="{{item.id}}">
+            <image class="base_img" src="{{item.s_image}}" mode="aspectFill"  data-id="{{item.id}}"  binderror="useDefault"></image>
+            <h1 class="base_h1">{{item.title}}</h1>
+            <text class="base_text">{{item.description}}</text>
+        </view>
+    </block>
+    <view wx:if="{{loading}}">加载中</view>
+    <view wx:if="{{engough}}">已无更多</view>
+</view>

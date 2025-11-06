@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="tags">
+        <block wx:for="{{tags}}" wx:key="id">
+            <tag class="tag_item" active="{{actCate === item.id}}" data-category="{{item.id}}" bindtap="handleCate">{{item.title}}</tag>
+        </block>
+    </view>
+    <view class="list">
+        <view wx:for="{{list}}" wx:key="id" class="list_item" bindtap="handleTap" data-id="{{item.id}}">
+            <image class="image" src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/%E5%9C%B0%E7%90%83%402x.png" mode="aspectFill"></image>
+            <h1 class="title">{{item.title}}</h1>
+        </view>
+        <view class="footer">
+            {{enough?"已无更多":"加载中..."}}
+        </view>
+    </view>
+</view>

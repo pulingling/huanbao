@@ -1,0 +1,91 @@
+<view class="openDetail">
+  <view class="banner">
+    <image class="img" src="{{detail.s_image}}" mode="scaleToFill" lazy-load></image>
+  </view>
+  <view class="container">
+    <view class="title">
+      <text class="name">{{detail.title}}</text>
+    </view>
+    <view class="info">
+      <view class="desc">
+        <import src='../../wxParse/wxParse.wxml' />
+        <template is='wxParse' data="{{wxParseData:content.nodes}}" />
+      </view>
+    </view>
+    <view wx:if="{{detail.route.length>0}}" class="viewSteps">
+      <view class="stepTitle">
+        <view class="line"></view>
+        <text>参观路线</text>
+      </view>
+      <view class="swiperBox">
+        <swiper indicator-dots="{{0}}" next-margin="150rpx" current="{{currentSwiper}}" autoplay="{{bannerPlay}}" class="swiper">
+          <swiper-item wx:for="{{detail.route}}" wx:for-index="index"  wx:for-item="item" wx:key="index" class="swiper_item">
+            <view class="imageBox">
+              <image class="image" src="{{item.s_image}}" mode="aspectFill"></image>
+              <view class="imageNameMask">
+                <text class="imageName">{{item.title}}</text>
+              </view>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+    </view>
+    <view class="address">
+      <view class="stepTitle">
+        <view class="line"></view>
+        <text>地址</text>
+      </view>
+      <view class="info">
+        <image class="locImg" src="/images/location.png" mode="aspectFill"></image>
+        <text class="location_desc">{{detail.location_desc?detail.location_desc:'待录入'}}</text>
+      </view>
+      <view wx:if="{{detail.location_desc}}" class="map">
+        <map id="map" longitude="{{detail.lon}}" latitude="{{detail.lat}}" scale="14" markers="{{markers}}" show-location style="width: 100%; height: 260rpx"></map>
+      </view>
+    </view>
+    <view class="rules">
+      <view class="stepTitle">
+        <view class="line"></view>
+        <text>参观细则</text>
+      </view>
+      <view class="rulesMain">
+        <view wx:if="{{detail.visit_zone.length>0}}">
+          <text>参观时间: </text>
+          <text class="visitTime" wx:for="{{detail.visit_zone}}" wx:for-index="ids" wx:for-item="item">{{item.zone?item.zone:item}}{{ids >= detail.visit_zone.length -1 ? '' : ','}}</text> 
+        </view>
+        <view wx:else>
+          <text>参观时间: </text>
+          <text class="visitTime">待录入</text> 
+        </view>
+        <view>
+          <text>注意事项: </text>
+          <view class="visitTime">{{detail.notice?detail.notice:'待录入'}}</view> 
+        </view>
+      </view>
+    </view>
+    <view class="rules">
+      <view class="title">
+        <text>联系方式</text>
+      </view>
+      <view class="rulesMain">
+        <view>
+          <view class="phone">
+            <image class="phoneImg" src="/images/phone.png" mode="aspectFill"></image>
+            <text>电话: </text>
+            <text wx:if="{{detail.mobile}}" class="phonecall" data-phone="{{detail.mobile}}" bindtap="call">{{detail.mobile}}</text> 
+            <text wx:else class="phonecall">待录入</text> 
+          </view>
+        </view>
+        <view wx:if="{{detail.email}}">
+          <image class="locImg" src="/images/mail.png" mode="aspectFill"></image>
+          <text>邮箱: </text>
+          <text>{{detail.email ? detail.email : ''}}</text> 
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bottomline"></view>
+  <view class="orderNow">
+    <view class="{{isOpen?'toOrder':'toOrder disabled'}}" bindtap="toOrder">预约参观</view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="tab1">
+        <view class="tag_box">
+            <block wx:for="{{tags}}" wx:key="key" wx:for-index="key"  wx:for-item="value">
+                <tag class="tag_item" active="{{actCate === key-0}}" data-cate="{{key}}" bindtap="handleTag">{{value}}</tag>
+            </block>
+        </view>
+        <view class="books-container">
+          <view class="book-item" wx:for="{{!actCate?list:showList}}" wx:key="index" bindtap="toBookDetail" data-id="{{item.id}}">
+            <image src="{{item.cover_url}}" mode="widthFix" class="cover"/>
+            <view class="title">
+              {{item.title}}
+            </view>
+          </view>
+        </view>
+        <view class="footer">
+            {{true?"已无更多":"加载中..."}}
+        </view>
+    </view>
+</view>

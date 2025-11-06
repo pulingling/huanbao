@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "环境知识",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#F6F6F6",
+  "usingComponents": {
+    "tag": "/components/tag/tag"
+  }
+}

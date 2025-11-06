@@ -1,0 +1,25 @@
+<view class="container">
+	<view class="title-row">
+		<view class="titleIcon"></view>
+		<text class="title">环保公益活动</text>
+	</view>
+
+	<view class="recordsbg">
+		<view class="records">
+			<activity-item wx:for="{{activities}}" wx:key="unique" link="{{item.link}}"title="{{item.title}}" img="{{item.img}}" time="{{item.create_time}}" company="{{item.company}}"></activity-item>
+		</view>
+
+
+		<view class="title-row">
+			<view class="titleIcon"></view>
+			<text class="title">环保设施公众开放</text>
+		</view>
+	</view>
+
+	<view class="recordsbg">
+		<view class="records">
+			<facility-item wx:for="{{facilities}}" wx:key="unique" item_id="{{item.id}}" title="{{item.title}}" img="{{item.s_image}}" time="{{item.create_time}}" address="{{item.location_desc}}"></facility-item>
+		</view>
+	</view>
+
+</view>

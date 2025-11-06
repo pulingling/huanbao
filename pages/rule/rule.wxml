@@ -1,0 +1,4 @@
+<!--pages/rule/rule.wxml-->
+<view class="container">
+  <text>规则页面</text>
+</view>

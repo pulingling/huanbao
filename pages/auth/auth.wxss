@@ -1,0 +1,30 @@
+/* pages/auth/auth.wxss */
+.container{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 80vh;
+ flex-direction: column;
+}
+button{
+  height: 120rpx;
+  background-color: rgb(65, 168, 65);
+  width: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btntext{
+color: #fff;
+font-size: 60rpx;
+}
+.title{
+  font-size: 50rpx;
+  color:rgb(65, 168, 65) ;
+  margin-bottom: 30rpx;
+}
+.logo{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 30rpx;
+}

@@ -1,0 +1,4 @@
+<!--pages/passport/pdfPreview.wxml-->
+<view class="content">
+     <parser html="{{src}}" />   
+</view>

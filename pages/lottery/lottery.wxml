@@ -1,0 +1,103 @@
+<!--pages/lottery/lottery.wxml-->
+<view class="lottery-container">
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 积分信息卡片 -->
+  <view class="points-card">
+    <view class="points-info">
+      <text class="points-label">当前积分</text>
+      <text class="points-value">{{userPoints}}</text>
+    </view>
+    <view class="lottery-info">
+      <text class="lottery-label">今日剩余次数</text>
+      <text class="lottery-count">{{todayLotteryCount}}</text>
+    </view>
+  </view>
+
+  <!-- 转盘区域 -->
+  <view class="lottery-wheel-container">
+    
+    <view class="wheel-wrapper">
+      
+      <!-- Canvas转盘 -->
+      <view class="canvas-wheel-container" style="transform: rotate({{wheelRotation}}deg); transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);">
+        <block wx:if="{{lotteryImg}}">
+          <image src="{{lotteryImg}}" mode="aspectFill" style="width:600rpx;height:600rpx"></image>
+         </block>
+         
+  
+         
+      </view>
+      
+      <!-- 指针 -->
+      <view class="lottery-pointer">
+        <view class="pointer-triangle"></view>
+      </view>
+      
+      <!-- 中心按钮 -->
+      <view class="lottery-button" bindtap="startLottery">
+        <text class="button-text">GO</text>
+      </view>
+    </view>
+  </view>
+
+  <canvas 
+          canvas-id="lotteryWheel" 
+          class="lottery-wheel-canvas"
+          width="660"
+          height="660"
+          style="width: 600rpx; height: 600rpx;"
+        ></canvas>
+
+  
+
+  <!-- 开始抽奖按钮 -->
+  <view class="start-lottery-btn" bindtap="startLottery">
+    <text class="btn-text">{{isSpinning ? '抽奖中...' : '开始抽奖'}}</text>
+  </view>
+
+  <!-- 底部功能模块 -->
+  <view class="bottom-modules">
+    <!-- 抽奖规则说明 -->
+    <view class="module-card rules-module" bindtap="openRulesPage">
+      <view class="module-icon">📋</view>
+      <view class="module-content">
+        <view class="module-title">活动规则</view>
+      </view>
+      <view class="module-arrow">›</view>
+    </view>
+
+    <!-- 我的奖品 -->
+    <view class="module-card prizes-module" bindtap="openMyPrizes">
+      <view class="module-icon">🏆</view>
+      <view class="module-content">
+        <view class="module-title">我的奖品</view>
+      </view>
+      <view class="module-arrow">›</view>
+    </view>
+  </view>
+
+  <!-- 中奖结果弹窗 -->
+  <view class="prize-modal" wx:if="{{showResult}}" bindtap="closeResult">
+    <view class="modal-content" catchtap="">
+      <view class="modal-header">
+        <text class="modal-title">抽奖结果</text>
+        <view class="close-btn" bindtap="closeResult">×</view>
+      </view>
+      <view class="modal-body">
+        <view class="prize-result">
+          <text class="result-text">{{currentPrize.name}}</text>
+          <text class="result-points" wx:if="{{currentPrize.actualPoints > 0}}">
+            +{{currentPrize.actualPoints}}积分
+          </text>
+        </view>
+      </view>
+      <view class="modal-footer">
+        <button class="confirm-btn" bindtap="closeResult">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

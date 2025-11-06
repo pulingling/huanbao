@@ -1,0 +1,102 @@
+<view class="container">
+    <image mode="aspectFill" class="top_bg" src="{{detail.s_image || '/images/bg2.png'}}"></image>
+    <view class="main">
+        <h1 class="main_title">{{detail.title}}</h1>
+        <block wx:if="{{detail.desc && detail.desc.length}}">
+            <view class="detail {{spreadMain?'main_spread':''}}">
+                <import src='../../wxParse/wxParse.wxml' />
+                <template is='wxParse' data="{{wxParseData:desc.nodes}}" />
+            </view>
+        </block>
+        <view class="main_btn" bindtap="toggleMainSpread">
+            <text class="iconfont {{spreadMain?'iconxiajiantou':'iconshangjiantou'}}"></text>
+        </view>
+    </view>
+    <view class="manager"  wx:if="{{detail.person.length}}">
+        <h2>环境教育项目负责人</h2>
+        <block wx:for="{{detail.person}}">
+            <view class="manager_box">
+                <image mode="aspectFill" src="{{item.photo}}"></image>
+                <text class="text1">姓名：{{item.name}}</text>
+                <text class="text2">{{item.desc}}</text>
+            </view>
+        </block>
+    </view>
+    <view class="teachers" wx:if="{{detail.person.length}}">
+        <h2>环境教育师资</h2>
+        <view class="teachers_box">
+            <view class="scroll_box">
+                <view class="teacher" wx:for="{{detail.teachers}}">
+                    <view class="teacher_content">
+                        <text>姓名：{{item.name}}</text>
+                        <text>{{item.desc}}</text>
+                    </view>
+                    <image mode="aspectFill" src="{{item.photo}}" style="overflow: hidden"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="activity" wx:if="{{detail.activity && detail.activity.length}}">
+        <h2>环境教育体验及实践活动</h2>
+        <block wx:for="{{detail.activity}}">
+        <view class="act_card">
+                <image mode="aspectFill" src="{{detail.activity[index].photo[0]}}" wx:if="{{detail.activity[index].photo}}"></image>
+                <view class="act_content">
+                        <h1>{{item.name}}</h1>
+                        <block wx:if="{{item.desc && item.desc.length}}">
+                            <view class="detail {{spreadAct?'act_spread':''}}">
+                                <import src='../../wxParse/wxParse.wxml' />
+                                <template is='wxParse' wx:if="{{index === 0}}" data="{{wxParseData:school_info0.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 1}}" data="{{wxParseData:school_info1.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 2}}" data="{{wxParseData:school_info2.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 3}}" data="{{wxParseData:school_info3.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 4}}" data="{{wxParseData:school_info4.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 5}}" data="{{wxParseData:school_info5.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 6}}" data="{{wxParseData:school_info6.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 7}}" data="{{wxParseData:school_info7.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 8}}" data="{{wxParseData:school_info8.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 9}}" data="{{wxParseData:school_info9.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 10}}" data="{{wxParseData:school_info10.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 11}}" data="{{wxParseData:school_info11.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 12}}" data="{{wxParseData:school_info12.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 13}}" data="{{wxParseData:school_info13.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 14}}" data="{{wxParseData:school_info14.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 15}}" data="{{wxParseData:school_info15.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 16}}" data="{{wxParseData:school_info16.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 17}}" data="{{wxParseData:school_info17.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 18}}" data="{{wxParseData:school_info18.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 19}}" data="{{wxParseData:school_info19.nodes}}" />
+                                <template is='wxParse' wx:if="{{index === 20}}" data="{{wxParseData:school_info20.nodes}}" />
+                            </view>
+                        </block>
+
+                </view>
+        </view>
+        </block>
+        <view class="act_btn" bindtap="toggleActSpread">
+            <text class="iconfont {{spreadAct?'iconxiajiantou':'iconshangjiantou'}}"></text>
+        </view>
+    </view>
+    <view class="base_info" wx:if="{{detail.school_address || detail.school_tel || detail.school_site}}">
+        <h2>基地信息</h2>
+        <view wx:if="{{detail.school_address}}">
+            <view class="info_icon">
+                <text class="iconfont icongonggong"></text>
+            </view>
+            <text selectable class="info_text">基地地址: {{detail.school_address}}</text>
+        </view>
+        <view wx:if="{{detail.school_tel}}">
+            <view class="info_icon">
+                <text class="iconfont icondianhua"></text>
+            </view>
+            <text class="info_text" selectable >基地电话: {{detail.school_tel}}</text>
+        </view>
+
+        <view  wx:if="{{detail.school_site}}">
+            <view class="info_icon">
+                <text class="iconfont iconwangluo"></text>
+            </view>
+            <text class="info_text" selectable>基地网址: {{detail.school_site}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="index-container">
+  <main bind:handleMoreBtn="handleMoreBtn"></main>
+  <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/index/main/float_btn.png" mode="aspectFit" class="float-btn" bindtap="showPopup"/>
+  <view class="popup-knowledge {{popupTheme}}" wx:if="{{showPopup}}">
+    <view class="date">{{dailyKnowledge.date}}</view>
+    <view class="title">{{dailyKnowledge.title}}</view>
+    <view class="content">
+      <text>
+      {{dailyKnowledge.content}}
+      </text>
+    </view>
+    <view class="more" bindtap="jumpMoreKnowledge">
+      点击学习更多环保知识
+    </view>
+    <view class="bottom">
+      <view class="close" bindtap="closePopup">X</view>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{showPopup}}"></view>
+</view>
+
+
+
