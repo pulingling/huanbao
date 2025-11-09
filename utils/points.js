@@ -208,9 +208,21 @@ class PointsTracker {
   /**
    * 记录活动参与积分
    */
-  async recordActivityParticipation(activityId, activityTitle) {
+  async recordEvent(event, title = '浏览内容') {
     // 这里可以根据具体的活动类型调用相应的积分接口
-    console.log(`记录活动参与: ${activityTitle}`);
+    // console.log(`记录活动参与: ${activityTitle}`);
+    try {
+      const result = await this.makeRequest('/event/save', 'POST', {
+         event,
+       });
+      
+      if (result && result.success) {
+        console.log('浏览时长积分记录成功:', result);
+        this.showPointsEarned(result.points, title);
+      }
+    } catch (error) {
+      console.error('记录浏览时长积分失败:', error);
+    }
   }
 
   /**

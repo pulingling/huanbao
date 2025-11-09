@@ -9,44 +9,44 @@
   <!-- 主要内容 -->
   <view wx:else class="content">
     <!-- 积分概览卡片 -->
-    <view class="points-overview">
-      <view class="user-card">
-        <view class="user-left">
-          <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" mode="aspectFill"></image>
-          <view class="user-details">
-            <text class="user-type">微信用户</text>
-            <view class="level-info">
-              <text class="level-badge">{{userLevel}}</text>
-            </view>
-          </view>
-        </view>
+    <view class="brief">
+      <view class="img">
+        <image src="https://cdn.envedu.com.cn/wx-app/credit-center/bear-2.png" mode="widthFix"></image>
       </view>
-      
-      <view class="points-display">
-        <text class="points-label">我的积分</text>
-        <text class="points-value">{{totalPoints}}</text>
+      <view class="info">
+        <view class="p">欢宝：<text>微信昵称</text></view>
+        <view class="p">勋章：<text>{{userLevel}}</text></view>
+        <view class="p">财富：<text class="orange">{{totalPoints}}</text></view>
       </view>
-      
-      <image class="mascot-direct" src="/assets/imgs/mascot.png" mode="aspectFit"></image>
     </view>
+    
 
     <!-- 每日任务状态 -->
     <view class="daily-tasks">
+      <image src="https://cdn.envedu.com.cn/wx-app/credit-center/bear-1.png" class="bear" mode="widthFix"/>
       <view class="section-header">
-        <text class="section-title">今日还可获得分数</text>
-        <text class="task-progress">{{todayPoints}}分</text>
+       嘶～今日还有宝藏没挖完
+       <image src="/images/icons/coin.png" class="icon-coin" mode="widthFix"></image>
+       <text class="orange"> {{todayPoints}}</text>
+      
       </view>
       
       <view class="task-list">
         <view class="task-item" wx:for="{{tasks}}" wx:item="{{item}}">
           <view class="task-icon">
-            <view class="task-icon-text">{{icons[item.type]}}</view>
+            <image src="https://cdn.envedu.com.cn/wx-app/credit-center/{{icons[item.type]}}.png" mode="aspectFill"></image>
           </view>
           <view class="task-info">
-            <view class="task-title">{{item.title}}</view>
-            <view class="task-reward">还可获得{{item.credit_left}}积分</view>
+            <view class="task-title">{{item.title}} <text class="orange2">({{item.left_count}}/{{item.total_count}})</text></view>
+            <view class="task-reward">
+              <text class="grey">{{desc[item.type] || ''}}：</text>
+              <image src="/images/icons/coin.png" class="icon-coin" mode="widthFix"></image>
+              <text class="orange">{{item.amount}}</text>
+            </view>
           </view>
-          <button class="task-btn" bindtap="doTask" data-task="{{item.type}}">去完成</button>
+          <view class="btn {{item.left_count <= 0 ? 'off' : ''}}" bindtap="doTask" data-task="{{item.type}}">
+            <image src="https://cdn.envedu.com.cn/wx-app/credit-center/dig.png" mode="aspectFill"></image>
+          </view>
         </view>
         
         <!-- <view class="task-item">
@@ -98,24 +98,24 @@
     <!-- 底部功能模块 -->
     <view class="bottom-modules">
       <!-- 积分规则入口模块 -->
-      <view class="module-card" bindtap="openPointsRules">
+      <!-- <view class="module-card" bindtap="openPointsRules">
         <view class="module-icon">📋</view>
         <view class="module-content">
           <view class="module-title">积分规则</view>
           <view class="module-subtitle">查看详细规则</view>
         </view>
         <view class="module-arrow">›</view>
-      </view>
+      </view> -->
 
       <!-- 积分抽奖入口模块 -->
-      <view class="module-card lottery-module" bindtap="openLottery">
+      <!-- <view class="module-card lottery-module" bindtap="openLottery">
         <view class="module-icon">🎁</view>
         <view class="module-content">
           <view class="module-title">积分抽奖</view>
           <view class="module-subtitle">赢取丰厚奖品</view>
         </view>
         <view class="module-arrow">›</view>
-      </view>
+      </view> -->
     </view>
 
   </view>

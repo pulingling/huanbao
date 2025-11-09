@@ -3,7 +3,7 @@
  * 用于统计用户在各个页面的浏览时长，并上报积分
  */
 
-const api = require('./request.js');
+const pointsTracker = require("./points.js");
 const app = getApp();
 
 class BrowseTracker {
@@ -17,6 +17,20 @@ class BrowseTracker {
       'courseware': 90,   // 环保课件：90秒
       'action': 60        // 美境行动：1分钟
     };
+
+    this.timeRecord = {
+      'knowledge': 0,
+      'reading': 0,
+      'courseware': 0,
+      'action': 0
+    };
+
+    this.eventType = {
+      'knowledge': 'view_hbzs',    // 环保知识：1分钟
+      'reading': 'view_hbdw',      // 环保读物：90秒
+      'courseware': 'view_hbkj',   // 环保课件：90秒
+      'action': 'view_mjxd'        // 美境行动：1分钟
+    }
   }
 
   /**
@@ -25,6 +39,11 @@ class BrowseTracker {
    * @param {string} contentId - 内容ID（可选）
    */
   startTracking(contentType, contentId = null) {
+    if(this.contentType == contentType) {
+      console.log(`继续统计浏览时长: ${contentType}, ID: ${contentId}`);
+      return;
+    }
+
     this.startTime = Date.now();
     this.contentType = contentType;
     this.contentId = contentId;
@@ -41,18 +60,24 @@ class BrowseTracker {
     }
 
     const endTime = Date.now();
-    const durationSeconds = Math.floor((endTime - this.startTime) / 1000);
+    const exsitingTime = this.timeRecord[this.contentType] || 0;
+    const durationSeconds = Math.floor((endTime - this.startTime) / 1000) + exsitingTime;
     const minRequired = this.minDuration[this.contentType] || 60;
 
     console.log(`浏览时长: ${durationSeconds}秒, 最小要求: ${minRequired}秒`);
 
     // 如果浏览时长达到要求，上报积分
     if (durationSeconds >= minRequired) {
-      this.reportBrowsePoints(durationSeconds);
+      //this.reportBrowsePoints(durationSeconds);
+      pointsTracker.recordEvent(this.eventType[this.contentType]);
+      console.log('已上报浏览积分');
+      // 重置状态
+      this.reset();
+    } else {
+      //timeRecord
     }
 
-    // 重置状态
-    this.reset();
+    
   }
 
   /**
@@ -60,32 +85,16 @@ class BrowseTracker {
    * @param {number} durationSeconds - 浏览时长（秒）
    */
   reportBrowsePoints(durationSeconds) {
-    const data = {
-      content_type: this.contentType,
-      content_id: this.contentId,
-      duration_seconds: durationSeconds
-    };
 
-    api.browseDurationPoints(data, app).then(res => {
-      if (res.success) {
-        wx.showToast({
-          title: `获得${res.points}积分！`,
-          icon: 'success',
-          duration: 2000
-        });
-        console.log(`浏览积分获得成功: ${res.points}分`);
-      } else {
-        console.log(`浏览积分获得失败: ${res.message}`);
-      }
-    }).catch(err => {
-      console.error('上报浏览积分失败:', err);
-    });
   }
 
   /**
    * 重置统计状态
    */
   reset() {
+    if(this.contentType) {
+      this.timeRecord[this.contentType] = 0;
+    }
     this.startTime = null;
     this.contentType = null;
     this.contentId = null;

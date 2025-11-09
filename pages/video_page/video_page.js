@@ -1,7 +1,10 @@
 const app = getApp();
+const pointsTracker = require("../../utils/points.js");
 const api = require("../../utils/request.js");
 const utils = require("../../utils/util");
 var title = ''
+var timeout = null;
+var watchSec = 0;
 Page({
 	data: {
 		detail: true, // 控制tab
@@ -48,11 +51,15 @@ Page({
 					});
 				}
 			}
-		});
+    });
+    watchSec = 0;
 	},
 	onReady() {
     this.videoContext = wx.createVideoContext("video");
-	},
+  },
+  onUnload() {
+    this.stopTicktack();
+  },
 	getData() {
 		api.course(this.id, app).then(res => {
       // 
@@ -104,17 +111,45 @@ Page({
 	videoPlay() {
 		this.setData({
 			showWarning: false
-		});
-	},
+    });
+    this.ticktack();
+  },
+  videoPause() {
+    this.stopTicktack();
+  },
+  ticktack() {
+    timeout = setTimeout(() => {
+      watchSec++;
+      console.log(watchSec);
+      this.ticktack();
+    }, 1000)
+  },
+  stopTicktack() {
+    if(timeout)
+      clearTimeout(timeout);
+  },
 	close(e) {
 		this.setData({
 			coverVisible: false
 		})
 	},
 	getProgress(e) {
+    // console.log(e.detail.currentTime);
+    // console.log(e.detail.duration);
 		if (this.data.isMulti == true) {
 			return true
     }
+    const completeTime = parseInt(e.detail.duration * 0.1);
+    if(watchSec >= completeTime) {
+      this.setData({
+				isMulti: true
+      })
+      this.stopTicktack();
+      console.log('complete');
+      pointsTracker.recordEvent('view_video', '观看视频');
+      return;
+    }
+    
 		if (parseInt(e.detail.currentTime) === parseInt(e.detail.duration)) {
 
 			this.setData({

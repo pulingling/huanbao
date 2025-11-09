@@ -1,5 +1,6 @@
 const app = getApp();
 const api = require("../../utils/request.js");
+const browseTracker = require("../../utils/browseTracker.js");
 Page({
   data: {
     // banner 轮播图 
@@ -47,6 +48,20 @@ Page({
         sign_on_off: res.body.status
       });
     });
+  },
+  onShow() {
+    browseTracker.startTracking('action');
+  },
+  onHide() {
+    // 页面隐藏时停止统计
+    console.log('onHide');
+    browseTracker.onPageHide();
+  },
+  
+  onUnload() {
+    // 页面卸载时停止统计
+    console.log('onUnload');
+    browseTracker.onPageUnload();
   },
   init() {
     this.getMeijingBanners()

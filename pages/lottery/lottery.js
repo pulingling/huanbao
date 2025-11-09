@@ -25,7 +25,7 @@ Page({
   generateCanvasWheelData() {
     const prizes = [
       { id: 1, name: '京东专享图书品类卡50面值电子卡', image: '/assets/imgs/JD_Book.png', probability: 0.01, points: 0, color: '#ffffff' },
-      { id: -1, name: '50积分', image: '/assets/imgs/Points.png', probability: 0.18, points: 0, color: '#8BC34A' },
+      { id: 5, name: '50积分', image: '/assets/imgs/Points.png', probability: 0.18, points: 0, color: '#8BC34A' },
       { id: 2, name: '桌面绿植', image: '/assets/imgs/Green_plant.png', probability: 0.02, points: 0, color: '#ffffff' },
       { id: -1, name: '谢谢参与', image: '/assets/imgs/Thanks.png', probability: 0.27, points: 0, color: '#8BC34A' },
       { id: 4, name: '软木麦秸中性笔2支装', image: '/assets/imgs/Pen.png', probability: 0.02, points: 0, color: '#ffffff' },

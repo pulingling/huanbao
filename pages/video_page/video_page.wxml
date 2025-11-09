@@ -1,5 +1,5 @@
 <view class="container">
-  <video id="video" src="{{video}}" controls enable-play-gesture class="video" object-fit="cover" bindplay="videoPlay" custom-cache="{{false}}" binderror="videoError" bindtimeupdate="getProgress">
+  <video id="video" src="{{video}}" controls enable-play-gesture class="video" object-fit="cover" bindplay="videoPlay" bindpause="videoPause"custom-cache="{{false}}" binderror="videoError" bindtimeupdate="getProgress">
     <cover-view class="warning" wx:if="{{showWarning}}" bindtap="confirmBits">您正在使用非WIFI网络,播放将产生流量费用</cover-view>
   </video>
   <view class="nav">

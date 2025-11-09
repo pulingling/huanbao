@@ -87,11 +87,13 @@ Page({
   
   onHide() {
     // 页面隐藏时停止统计
+    console.log('onHide');
     browseTracker.onPageHide();
   },
   
   onUnload() {
     // 页面卸载时停止统计
+    console.log('onUnload');
     browseTracker.onPageUnload();
   },
   getMoreBook(e) {
