@@ -58,14 +58,16 @@
   color: #ffffff;
 }
 .rules {
-    padding: 100rpx 50rpx;
+    padding: 100rpx 50rpx 30rpx;
     color: #582d27;
     font-size: 40rpx;
     text-indent: 2rem;
     line-height: 2rem;
 }
 .rules strong {font-weight: bold;}
-.rules .ico {width: 40%; float: right;}
+.rules view {margin-bottom: 5px;}
+.rules .link {color: #ff912f; text-decoration: underline;}
+.rules .ico {width: 40%; float: right; margin-right: -20px;}
 .rules .h1 {
     font-size: 50rpx;
     text-align: center;
