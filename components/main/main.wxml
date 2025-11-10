@@ -24,24 +24,15 @@
     </view>
   </view>
   <!-- 积分功能入口 -->
-  <view class="points-entrance">
-    <view class="points-cards-row">
-      <view class="points-card" bindtap="navToPoints">
-        <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/index/main/raccoon-left.png" class="points-card-img" mode="aspectFit"/>
-        <view class="points-left">
-          <view class="points-title">积分中心</view>
-          <view class="points-btn">进入中心</view>
-        </view>
-      </view>
-      <view class="lottery-card" bindtap="navToLottery">
-        <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/index/main/raccoon-right.png" class="lottery-card-img" mode="aspectFit"/>
-        <view class="lottery-left">
-          <view class="lottery-title">积分抽奖</view>
-          <view class="lottery-btn">立即抽奖</view>
-        </view>
-      </view>
-    </view>
+  <view class="overview">
+     <view class="btn-pts" bindtap="navToPoints">
+       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/btn-pts.png" mode="widthFix"></image>
+     </view>
+     <view class="btn-pts" bindtap="navToLottery">
+       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/btn-ltry.png" mode="widthFix"></image>
+     </view>
   </view>
+  
   <view class="course-container">
     <view class="course-head">
       <view class="title-set">

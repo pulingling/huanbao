@@ -554,14 +554,32 @@
 }
 
 /* 抽奖卡片图片样式 - 增大20%并放到右侧 */
+.pts-ltry {
+
+}
 .lottery-card-img {
   width: 108rpx;
   height: 108rpx;
   order: 2; /* 将图片放到右侧 */
   margin-left: 0rpx;
 }
-
 /* 积分中心卡片图片样式 - 放在文字左侧 */
+.btn-pts {
+    width: 50%; display: inline-block;
+}
+.overview {
+    background: #FFFEEC;
+    width: 100%;
+    display: table;
+}
+.btn-pts {
+    display: table-cell;
+}
+.btn-pts image {width:100%;}
+.overview image:active {
+    opacity: 0.7;
+}
+
 .points-card-img {
   width: 108rpx;
   height: 108rpx;

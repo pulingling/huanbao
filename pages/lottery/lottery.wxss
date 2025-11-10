@@ -1,11 +1,12 @@
 /* pages/lottery/lottery.wxss */
 .lottery-container {
   min-height: 100vh;
-  background: #E3FFCC;
-  padding: 20rpx;
+  background: #fce982 url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/bg-ltry.png) no-repeat 0 10rpx;
+  background-size: 100% auto;
+  padding: 20% 0 20px;
   box-sizing: border-box;
+  font-family:'yuanti','圆体','fangsong', Courier, monospace;
 }
-
 /* 加载状态 */
 .loading {
   display: flex;
@@ -56,7 +57,21 @@
 .lottery-count {
   color: #ffffff;
 }
-
+.rules {
+    padding: 100rpx 50rpx;
+    color: #582d27;
+    font-size: 40rpx;
+    text-indent: 2rem;
+    line-height: 2rem;
+}
+.rules strong {font-weight: bold;}
+.rules .ico {width: 40%; float: right;}
+.rules .h1 {
+    font-size: 50rpx;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
 /* 转盘容器样式 */
 .lottery-wheel-container {
   display: flex;
@@ -65,7 +80,7 @@
   width: 100%;
   height: 600rpx;
   margin: 40rpx 0;
-  position: relative;
+  top: 11%;
 }
 
 .wheel-wrapper {
@@ -80,6 +95,8 @@
 /* Canvas转盘容器 */
 .canvas-wheel-container {
   position: absolute;
+  background-image: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/circle.png);
+  background-size: 100% 100%;
   left: 0;
   top: 0;
   width: 600rpx;
@@ -143,12 +160,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 180rpx;
-  height: 180rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
-  border: 6rpx solid #ffffff;
-  box-shadow: 0 6rpx 20rpx rgba(255, 193, 7, 0.4), 0 0 0 3rpx #FFD54F;
+  background:#db7d29;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,24 +178,22 @@
 
 .button-text {
   color: #ffffff;
-  font-size: 84rpx;
+  font-size: 60rpx;
   font-weight: bold;
-  text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
-  letter-spacing: 2rpx;
+  text-shadow: 0 0 2rpx rgba(0, 0, 0, 0.3);
+  font-family: Times, serif;
 }
 
 /* 开始抽奖按钮 */
 .start-lottery-btn {
-  background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
   color: #fff;
-  padding: 28rpx 60rpx;
   border-radius: 60rpx;
   text-align: center;
   margin: 50rpx auto;
-  width: 320rpx;
-  box-shadow: 0 12rpx 32rpx rgba(255, 193, 7, 0.35);
-  transition: all 0.3s ease;
-  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  width: 46%;  transition: all 0.3s ease;
+}
+.start-lottery-btn image {
+    width: 100%;
 }
 
 .start-lottery-btn:active {
@@ -191,6 +204,7 @@
 .btn-text {
   font-size: 36rpx;
   font-weight: bold;
+  background-image: url(https://cdn.envedu.com.cn/images/btn-try.png);
   text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
 }
 
