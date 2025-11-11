@@ -1,9 +1,19 @@
 <!--pages/prize_delivery/prize_delivery.wxml-->
-<view class="delivery-container">
-  <!-- 表单区域 --><view class="section-title history">
+<view class="delivery-container" wx:if="{{loading}}">
+
+</view>
+
+<view class="delivery-container" wx:else>
+
+  <view wx:if="{{prizeInfo == null}}">
+    <view class="no-prize">很遗憾你还没有中奖信息~</view>
+  </view>
+  <view wx:else>
+  <!-- 表单区域 -->
+  <view class="section-title history">
     <text>嘎嘎~，你的运气真好！</text>
-    <text>这份「奖品名称」请收下吧！</text>
-    <text>2025-11-11, 你成功解锁了「奖品名称」</text>
+    <text>这份「{{prizeInfo.prize_name}}」请收下吧！</text>
+    <text>{{prizeInfo.day}}, 你成功解锁了「{{prizeInfo.prize_name}}」</text>
   </view>
   <view class="form-container">
     <!-- 收货人信息 --><image class="ico-bear" src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-br.png" mode="widthFix"></image>
@@ -21,17 +31,6 @@
         />
       </view>
 
-      <view class="form-item">
-        <text class="item-label">邮箱地址</text>
-        <input 
-          class="item-input" 
-          type="text" 
-          placeholder="邮箱地址"
-          placeholder-class="placeholder"
-          value="{{name}}"
-          bindinput="onNameInput"
-        />
-      </view>
 
       <view class="form-item">
         <text class="item-label">电话号码</text>
@@ -45,10 +44,23 @@
           maxlength="11"
         />
       </view>
+
+      
+      <view class="form-item" wx:if="{{prizeInfo.prize_type == 2}}">
+        <text class="item-label">邮箱地址</text>
+        <input 
+          class="item-input" 
+          type="text" 
+          placeholder="邮箱地址"
+          placeholder-class="placeholder"
+          value="{{email}}"
+          bindinput="onEmailInput"
+        />
+      </view>
     </view>
 
     <!-- 收货地址 -->
-    <view class="form-section">
+    <view class="form-section" wx:if="{{prizeInfo.prize_type == 0}}">
       <text class="section-title">收货地址</text>
       
       <view class="form-item">
@@ -88,7 +100,6 @@
     <button 
       class="submit-btn" 
       bindtap="onSubmit"
-      disabled="{{!isFormValid}}"
     >
       提交信息
     </button>
@@ -103,4 +114,5 @@
       <button class="modal-btn" bindtap="closeSuccess">确定</button>
     </view>
   </view>
+</view>
 </view>

@@ -1,6 +1,6 @@
 // pages/prize_delivery/prize_delivery.js
 const app = getApp()
-
+const pointsTracker = require("../../utils/points.js");
 Page({
   /**
    * 页面的初始数据
@@ -8,12 +8,14 @@ Page({
   data: {
     name: '', // 收货人姓名
     phone: '', // 手机号码
+    email: '', // 手机号码
     region: [], // 省市区
     detailAddress: '', // 详细地址
     remark: '', // 备注信息
     isFormValid: false, // 表单是否有效
     showSuccess: false, // 是否显示成功弹窗
-    prizeInfo: null // 奖品信息（可从上一页传递）
+    prizeInfo: null, // 奖品信息（可从上一页传递）
+    loading: true,
   },
 
   /**
@@ -21,20 +23,43 @@ Page({
    */
   onLoad(options) {
     // 如果有奖品信息传递过来，可以在这里接收
-    if (options.prizeInfo) {
-      try {
-        this.setData({
-          prizeInfo: JSON.parse(options.prizeInfo)
-        })
-      } catch (e) {
-        console.error('解析奖品信息失败:', e)
-      }
-    }
+    this.loadPrize()
     
     // 设置页面标题
     wx.setNavigationBarTitle({
       title: '我的福袋'
     })
+  },
+
+  async loadPrize() {
+    wx.request({
+        url: `${pointsTracker.pointsApiBase}/prize/mine`,
+        method: 'GET',
+        data: { access_token: wx.getStorageSync('pointsToken') },
+        timeout: 10000,
+        success: (response) => {
+          if(response.statusCode !== 200 || !response.data) {
+            wx.showToast({
+              title: '获取中奖信息失败',
+              icon: 'none'
+            });
+            return;
+          }
+          console.log(response.data.data[0]);
+          this.setData({ 
+            loading: false,
+            prizeInfo: response.data.data.length > 0 ? response.data.data[0] : null,
+          });
+          
+        },
+        fail: (error) => {
+          console.error('获取中奖信息失败:', error);
+          wx.showToast({
+            title: '获取中奖信息失败',
+            icon: 'none'
+          });
+        }
+    });
   },
 
   /**
@@ -45,6 +70,13 @@ Page({
     this.setData({ name })
     this.checkFormValidity()
   },
+
+  onEmailInput(e) {
+    const email = e.detail.value.trim()
+    this.setData({ email })
+    this.checkFormValidity()
+  },
+
 
   /**
    * 手机号码输入处理
@@ -85,14 +117,25 @@ Page({
    * 检查表单是否有效
    */
   checkFormValidity() {
-    const { name, phone, region, detailAddress } = this.data
-    const isFormValid = 
-      name.length > 0 && 
-      phone.length === 11 && 
-      region.length === 3 && 
-      detailAddress.length > 0
+    const { name, phone, region, detailAddress, email, prizeInfo } = this.data
+    if(prizeInfo.prize_type == 2) {
+
+      const isFormValid = 
+        name.length > 0 && 
+        phone.length === 11 && 
+        email.length > 0
+      
+      this.setData({ isFormValid })
+    } else {
+      const isFormValid = 
+        name.length > 0 && 
+        phone.length === 11 && 
+        region.length === 3 && 
+        detailAddress.length > 0
+      
+      this.setData({ isFormValid })
+    }
     
-    this.setData({ isFormValid })
   },
 
   /**
@@ -107,7 +150,8 @@ Page({
    * 提交表单
    */
   onSubmit() {
-    const { name, phone, region, detailAddress, remark, isFormValid } = this.data
+    this.checkFormValidity();
+    const { name, phone, region, detailAddress, remark, isFormValid, email, prizeInfo } = this.data
     
     if (!isFormValid) {
       wx.showToast({
@@ -132,75 +176,60 @@ Page({
       mask: true
     })
 
-    // 构建提交数据
-    const deliveryData = {
-      name,
-      phone,
-      province: region[0],
-      city: region[1],
-      district: region[2],
-      detailAddress,
-      remark,
-      prizeInfo: this.data.prizeInfo,
-      submitTime: new Date().toISOString(),
-      userId: app.globalData.userInfo ? app.globalData.userInfo.id : null
+    // const deliveryData = {
+    //   name,
+    //   phone,
+    // }
+    let address = "";
+    if(prizeInfo.prize_type == 2) {
+      address = `${name} ${phone} ${email}`
+    } else {
+      address = `${name} ${phone} ${region[0]}${region[1]}${region[2]}${detailAddress}`
     }
 
+
     // 调用后端API提交数据
-    this.submitDeliveryInfo(deliveryData)
+    this.submitDeliveryInfo(address, prizeInfo.id)
   },
 
   /**
    * 提交收货信息到后端
    */
-  async submitDeliveryInfo(deliveryData) {
-    try {
-      // 这里调用实际的后端API
-      const result = await wx.request({
-        url: 'https://your-backend-api.com/api/delivery/submit',
-        method: 'POST',
-        data: deliveryData,
-        header: {
-          'content-type': 'application/json',
-          'Authorization': `Bearer ${app.globalData.token}`
-        },
-        timeout: 10000
-      })
+  async submitDeliveryInfo(address, prizeId) {
 
-      wx.hideLoading()
-
-      if (result.statusCode === 200 && result.data.success) {
+    wx.request({
+      url: `${pointsTracker.pointsApiBase}/prize/address`,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: { id: prizeId, address, access_token: wx.getStorageSync('pointsToken') },
+      timeout: 10000,
+      success: (response) => {
+        wx.hideLoading()
+        if(response.statusCode !== 200 || !response.data || response.data.error_code != 0) {
+          wx.showToast({
+            title: '提交信息失败',
+            icon: 'none'
+          });
+          return;
+        }
+        
         // 提交成功
         this.setData({ showSuccess: true })
         
         // 清空表单数据（可选）
         this.clearFormData()
-        
-      } else {
-        // 提交失败
+      },
+      fail: (error) => {
+        wx.hideLoading()
+        console.error('提交信息失败:', error);
         wx.showToast({
-          title: result.data.message || '提交失败，请重试',
+          title: '提交信息失败',
           icon: 'none'
-        })
+        });
       }
-
-    } catch (error) {
-      wx.hideLoading()
-      
-      // 网络错误或超时
-      console.error('提交收货信息失败:', error)
-      
-      // 模拟成功提交（开发测试用）
-      this.setData({ showSuccess: true })
-      this.clearFormData()
-      
-      /*
-      wx.showToast({
-        title: '网络错误，请检查网络连接',
-        icon: 'none'
-      })
-      */
-    }
+  });
   },
 
   /**
@@ -210,6 +239,7 @@ Page({
     this.setData({
       name: '',
       phone: '',
+      email: '',
       region: [],
       detailAddress: '',
       remark: '',
