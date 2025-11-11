@@ -1,12 +1,12 @@
 <!--pages/prize_delivery/prize_delivery.wxml-->
 <view class="delivery-container">
-  <!-- 表单区域 -->
-  <view class="section-title history">
+  <!-- 表单区域 --><view class="section-title history">
     <text>嘎嘎~，你的运气真好！</text>
     <text>这份「奖品名称」请收下吧！</text>
+    <text>2025-11-11, 你成功解锁了「奖品名称」</text>
   </view>
   <view class="form-container">
-    <!-- 收货人信息 -->
+    <!-- 收货人信息 --><image class="ico-bear" src="../../images/ico-br.png" mode="widthFix"></image>
     <view class="form-section"> 
         <text class="section-title">请填写收货人信息</text>     
       <view class="form-item">
@@ -15,6 +15,18 @@
           class="item-input" 
           type="text" 
           placeholder="请输入收货人姓名"
+          placeholder-class="placeholder"
+          value="{{name}}"
+          bindinput="onNameInput"
+        />
+      </view>
+
+      <view class="form-item">
+        <text class="item-label">邮箱地址</text>
+        <input 
+          class="item-input" 
+          type="text" 
+          placeholder="邮箱地址"
           placeholder-class="placeholder"
           value="{{name}}"
           bindinput="onNameInput"
@@ -68,21 +80,7 @@
       </view>
     </view>
 
-    <!-- 备注信息 -->
-    <view class="form-section">
-      <text class="section-title">备注信息（选填）</text>
-      
-      <view class="form-item">
-        <textarea 
-          class="remark-textarea" 
-          placeholder="如有特殊要求请在此备注"
-          placeholder-class="placeholder"
-          value="{{remark}}"
-          bindinput="onRemarkInput"
-          maxlength="500"
-        />
-      </view>
-    </view>
+   
   </view>
 
   <!-- 提交按钮 -->

@@ -60,16 +60,16 @@
 .rules {
     padding: 100rpx 50rpx 30rpx;
     color: #582d27;
-    font-size: 40rpx;
+    font-size: 36rpx;
     text-indent: 2rem;
-    line-height: 2rem;
+    line-height: 1.8rem;
 }
-.rules strong {font-weight: bold;}
+.rules strong {font-weight: bold; }
 .rules view {margin-bottom: 5px;}
 .rules .link {color: #ff912f; text-decoration: underline;}
 .rules .ico {width: 40%; float: right; margin-right: -20px;}
 .rules .h1 {
-    font-size: 50rpx;
+    font-size: 48rpx;
     text-align: center;
     font-weight: bold;
     margin-bottom: 0.5rem;
