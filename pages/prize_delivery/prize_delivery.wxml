@@ -6,7 +6,7 @@
     <text>2025-11-11, 你成功解锁了「奖品名称」</text>
   </view>
   <view class="form-container">
-    <!-- 收货人信息 --><image class="ico-bear" src="../../images/ico-br.png" mode="widthFix"></image>
+    <!-- 收货人信息 --><image class="ico-bear" src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-br.png" mode="widthFix"></image>
     <view class="form-section"> 
         <text class="section-title">请填写收货人信息</text>     
       <view class="form-item">
