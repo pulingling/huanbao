@@ -33,7 +33,7 @@ Page({
     
     // 设置页面标题
     wx.setNavigationBarTitle({
-      title: '填写收货信息'
+      title: '我的福袋'
     })
   },
 

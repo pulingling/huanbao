@@ -1,7 +1,7 @@
 {
-  "navigationBarTitleText": "填写收货信息",
-  "navigationBarBackgroundColor": "#E3FFCC",
+  "navigationBarTitleText": "我的福袋",
+  "navigationBarBackgroundColor": "#fce982",
   "navigationBarTextStyle": "black",
-  "backgroundColor": "#E3FFCC",
+  "backgroundColor": "#fce982",
   "usingComponents": {}
 }

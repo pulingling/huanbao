@@ -2,7 +2,7 @@
 
 .delivery-container {
   min-height: 100vh;
-  background: #f5f5f5;
+  background: #fce982;
   padding: 20rpx 30rpx 120rpx;
   box-sizing: border-box;
 }
@@ -10,14 +10,10 @@
 /* 页面头部 */
 .page-header {
   display: flex;
-  align-items: center;
-  padding: 30rpx 0;
-  background: #fff;
-  border-radius: 16rpx;
-  margin-bottom: 20rpx;
-  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
 }
-
+.item-label {
+    font-weight: bold;
+}
 .back-btn {
   width: 80rpx;
   height: 80rpx;
@@ -46,7 +42,7 @@
   background: #fff;
   border-radius: 16rpx;
   padding: 0 30rpx;
-  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2rpx 0 2rpx rgba(0, 0, 0, 0.1);
 }
 
 /* 表单区块 */
@@ -78,8 +74,8 @@
 }
 
 .item-label {
-  font-size: 28rpx;
-  color: #666;
+  font-size: 36rpx;
+  color: #000;
   margin-bottom: 16rpx;
   display: block;
 }
@@ -87,7 +83,7 @@
 .item-input, .item-textarea {
   width: 100%;
   height: 80rpx;
-  border: 2rpx solid #e0e0e0;
+  border: 2rpx solid #888;
   border-radius: 12rpx;
   padding: 0 24rpx;
   box-sizing: border-box;
@@ -100,9 +96,17 @@
   padding: 20rpx 24rpx;
   line-height: 1.6;
 }
-
+.submit-btn-container button.submit-btn {
+    background-color:#ff912f!important;
+    font-size: 36rpx;
+    color: #fff;
+}
 .remark-textarea {
-  height: 200rpx;
+  height: 100rpx;
+  border: solid 1px #888;
+    border-radius: 5px;
+    padding: 12px;
+    color: #222;
 }
 
 .placeholder {
@@ -144,6 +148,7 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 32rpx;
+  margin-top: 32rpx;
   color: #999;
   font-weight: bold;
 }
