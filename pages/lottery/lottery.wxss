@@ -140,20 +140,20 @@
   height: 0;
   border-left: 30rpx solid transparent;
   border-right: 30rpx solid transparent;
-  border-top: 60rpx solid #FFC107;
+  border-top: 60rpx solid transparent;
   position: relative;
 }
 
 .pointer-triangle::after {
   content: '';
   position: absolute;
-  top: -58rpx;
+  top: -62rpx;
   left: -28rpx;
   width: 0;
   height: 0;
   border-left: 28rpx solid transparent;
   border-right: 28rpx solid transparent;
-  border-top: 56rpx solid #FFC107;
+  border-top: 56rpx solid #fff9d7;
 }
 
 /* 中心按钮样式 */

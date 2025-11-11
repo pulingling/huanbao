@@ -1,11 +1,14 @@
 <!--pages/prize_delivery/prize_delivery.wxml-->
 <view class="delivery-container">
   <!-- 表单区域 -->
+  <view class="section-title history">
+    <text>嘎嘎~，你的运气真好！</text>
+    <text>这份「奖品名称」请收下吧！</text>
+  </view>
   <view class="form-container">
     <!-- 收货人信息 -->
     <view class="form-section"> 
-        <text class="section-title">请填写收货人信息</text>
-     
+        <text class="section-title">请填写收货人信息</text>     
       <view class="form-item">
         <text class="item-label">收货人姓名</text>
         <input 

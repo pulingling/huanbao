@@ -92,7 +92,7 @@
 }
 
 .item-textarea {
-  height: 160rpx;
+  height: 80rpx;
   padding: 20rpx 24rpx;
   line-height: 1.6;
 }
@@ -151,6 +151,10 @@
   margin-top: 32rpx;
   color: #999;
   font-weight: bold;
+}
+.history text {
+    display: block;
+    text-indent: 1rem;
 }
 
 /* 提交按钮 */
