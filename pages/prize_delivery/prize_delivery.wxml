@@ -5,15 +5,15 @@
 
 <view class="delivery-container" wx:else>
 
-  <view wx:if="{{prizeInfo == null}}">
-    <view class="no-prize">很遗憾你还没有中奖信息~</view>
+  <view wx:if="{{prizeInfo == null}}" class="section-title history">
+    <text>很遗憾你还没有中奖，不过别灰心，下次再来玩~</text>
   </view>
   <view wx:else>
   <!-- 表单区域 -->
   <view class="section-title history">
     <text>嘎嘎~，你的运气真好！</text>
-    <text>这份「{{prizeInfo.prize_name}}」请收下吧！</text>
     <text>{{prizeInfo.day}}, 你成功解锁了「{{prizeInfo.prize_name}}」</text>
+    <text>这份「{{prizeInfo.prize_name}}」请收下吧！</text>
   </view>
   <view class="form-container">
     <!-- 收货人信息 --><image class="ico-bear" src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-br.png" mode="widthFix"></image>

@@ -51,13 +51,13 @@
     <view class="h1">福利大放送规则</view>
     <view>为保障活动公平公正，提升参与体验，特制定以下规则：</view>
     <view><strong>1.参与方式</strong></view>
-    <view>· 每次抽奖消耗500积分，每人每日限参与1次。</view>
+    <view>每次抽奖消耗500积分，每人每日限参与1次。</view>
     <view><strong>2.奖品设置</strong></view>
-    <view>· 奖品分为实物奖品（数量有限，每月更新）与虚拟奖品（含卡券、积分，不限量）。</view>
-    <view>·具体奖品以抽奖页面实时展示为准。</view>
+    <view>奖品分为实物奖品（数量有限，每月更新）与虚拟奖品（含卡券、积分，不限量）。</view>
+    <view>具体奖品以抽奖页面实时展示为准。</view>
     <view><strong>3.中奖发放</strong></view>
-    <view>· 实物奖品：中奖后，请于5日内在“<text bindtap="openMyPrizes">我的福袋</text>”填写相关信息（逾期视为放弃），提交后10日内安排寄送。</view>
-    <image class="ico" src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-bear.png" mode="widthFix"></image><view>· 虚拟奖品：中奖后，积分即时到账，可在“积分中心”查看；卡券请于5日内在“<strong bindtap="openMyPrizes" class="link">我的福袋</strong>”
+    <view>实物奖品：中奖后，请于5日内在“<strong bindtap="openMyPrizes" class="link">我的福袋</strong>”填写相关信息（逾期视为放弃），提交后10日内安排寄送。</view>
+    <image class="ico" src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-bear.png" mode="widthFix"></image><view>虚拟奖品：中奖后，积分即时到账，可在“积分中心”查看；卡券请于5日内在“<strong bindtap="openMyPrizes" class="link">我的福袋</strong>”
     填写相关信息（逾期视为放弃），提交后10日内安排发放。</view>  
 </view>
   <!-- 底部功能模块 -->

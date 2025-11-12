@@ -69,6 +69,7 @@
 
 .brief .info .p text.orange {
   color: #D67F00;
+  font-weight: bold;
 }
 .task-item {
   box-sizing: content-box;
@@ -165,11 +166,16 @@
 .section-header {
   line-height: 40rpx;
 }
+.section-header .icon-coin {
+    margin-left: 10rpx;
+}
 .task-info .orange, .section-header .orange{
   color: #f3ab47;
+  font-weight: bold;
 }
 .task-info .orange2{
   color: #c07349;
+  margin-left: 4rpx;
 }
 .task-info .grey{
   color: #666666;
