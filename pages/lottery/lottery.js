@@ -292,7 +292,7 @@ Page({
       prizes: canvasPrizes
     }, () => {
       // 数据设置完成后绘制转盘
-      this.drawCanvasWheel();
+      //this.drawCanvasWheel();
     });
     
     this.loadUserData()

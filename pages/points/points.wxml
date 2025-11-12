@@ -14,7 +14,9 @@
         <image src="https://cdn.envedu.com.cn/wx-app/credit-center/bear-2.png" mode="widthFix"></image>
       </view>
       <view class="info">
-        <view class="p">欢宝：<text>微信昵称</text></view>
+        <view class="p">欢宝：<text>{{nickname}}</text>
+        <text class="change" wx:if="{{nickname_changeable}}" bindtap="changeNickname">改</text>
+        </view>
         <view class="p">勋章：<text>{{userLevel}}</text></view>
         <view class="p" style="padding-top: 14rpx;">财富：<text class="orange" style="padding-left: 8rpx;"> {{totalPoints}}</text></view>
       </view>
@@ -37,14 +39,11 @@
             <!-- <image src="https://cdn.envedu.com.cn/wx-app/credit-center/{{icons[item.type]}}.png" mode="aspectFill"></image> -->
           </view>
           <view class="task-info">
-            <view class="task-title">{{item.title}} <text class="orange2">({{item.left_count}}/{{item.total_count}})</text></view>
-            <view class="task-reward" wx:if="{{item.type != 'share'}}">
+            <view class="task-title">{{item.title}} <text class="orange2">({{item.total_count - item.left_count}}/{{item.total_count}})</text></view>
+            <view class="task-reward">
               <text class="grey">{{desc[item.type] || ''}}：</text>
               <image src="/images/icons/coin.png" class="icon-coin" mode="widthFix"></image>
               <text class="orange">{{item.amount}}</text>
-            </view>
-            <view class="task-reward" wx:else>
-              <text class="grey">点击屏幕右上角(…)分享好友</text>
             </view>
           </view>
           <view wx:if="{{item.type != 'share'}}" class="btn {{item.left_count <= 0 ? 'off' : ''}}" bindtap="doTask" data-task="{{item.type}}">

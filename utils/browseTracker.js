@@ -13,8 +13,8 @@ class BrowseTracker {
     this.contentId = null;
     this.minDuration = {
       'knowledge': 60,    // 环保知识：1分钟
-      'reading': 90,      // 环保读物：90秒
-      'courseware': 90,   // 环保课件：90秒
+      'reading': 60,      // 环保读物：90秒
+      'courseware': 60,   // 环保课件：90秒
       'action': 60        // 美境行动：1分钟
     };
 
