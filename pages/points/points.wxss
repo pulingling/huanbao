@@ -167,7 +167,7 @@
   line-height: 40rpx;
 }
 .section-header .icon-coin {
-    margin-left: 10rpx;
+    margin-left: 6rpx;
 }
 .task-info .orange, .section-header .orange{
   color: #f3ab47;
@@ -175,7 +175,7 @@
 }
 .task-info .orange2{
   color: #c07349;
-  margin-left: 4rpx;
+  margin-left: 6rpx;
 }
 .task-info .grey{
   color: #666666;
