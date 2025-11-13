@@ -25,7 +25,7 @@
 
     <!-- 每日任务状态 -->
     <view class="daily-tasks">
-      <image src="https://cdn.envedu.com.cn/wx-app/credit-center/bear-1.png" class="bear" mode="widthFix"/>
+      <image src="https://cdn.envedu.com.cn/wx-app/credit-center/ico-br.png" class="bear" mode="widthFix"/>
       <view class="section-header">
        嘶～今日还有宝藏没挖完
        <image src="/images/icons/coin.png" class="icon-coin" mode="widthFix"></image>

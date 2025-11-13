@@ -26,10 +26,10 @@
   <!-- 积分功能入口 -->
   <view class="overview">
      <view class="btn-pts" bindtap="navToPoints">
-       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/btn-pts.png" mode="widthFix"></image>
+       <image src="https://cdn.envedu.com.cn/wx-app/credit-center/btn-pts.png" mode="widthFix"></image>
      </view>
      <view class="btn-pts" bindtap="navToLottery">
-       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/btn-ltry.png" mode="widthFix"></image>
+       <image src="https://cdn.envedu.com.cn/wx-app/credit-center/btn-ltry.png" mode="widthFix"></image>
      </view>
   </view>
   

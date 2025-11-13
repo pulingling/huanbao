@@ -6,7 +6,7 @@
 <view class="delivery-container" wx:else>
 
   <view wx:if="{{prizeInfo == null}}" class="section-title history">
-    <text>很遗憾你还没有中奖，不过别灰心，下次再来玩~</text>
+    <text>很遗憾你还没有中奖，别灰心，下次再来玩~</text>
   </view>
   <view wx:else>
   <!-- 表单区域 -->

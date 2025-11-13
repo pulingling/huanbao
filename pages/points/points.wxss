@@ -196,6 +196,6 @@
 .task-reward image {
   width: 36rpx;
   height: 36rpx;
-  vertical-align: middle;
+  vertical-align: text-bottom;
   margin-right: 6rpx;
 }
