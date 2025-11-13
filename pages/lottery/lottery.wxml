@@ -13,12 +13,7 @@
       
       <!-- Canvas转盘 -->
       <view class="canvas-wheel-container" style="transform: rotate({{wheelRotation}}deg); transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);">
-        <block wx:if="{{lotteryImg}}">
-          <image src="{{lotteryImg}}" mode="aspectFill" style="width:600rpx;height:600rpx"></image>
-         </block>
-         
-  
-         
+          <image src="https://cdn.envedu.com.cn/wx-app/circle_v2.png" mode="aspectFill" style="width:600rpx;height:600rpx"></image>
       </view>
       
       <!-- 指针 -->
@@ -33,13 +28,13 @@
     </view>
   </view>
 
-  <canvas 
+  <!-- <canvas 
           canvas-id="lotteryWheel" 
           class="lottery-wheel-canvas"
           width="660"
           height="660"
           style="width: 600rpx; height: 600rpx;"
-        ></canvas>
+        ></canvas> -->
 
   
 

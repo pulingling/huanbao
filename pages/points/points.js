@@ -10,7 +10,9 @@ Page({
     loading: false,
     refreshing: false,
     userInfo: {},
-    userLevel: 1,
+    userLevel: "",
+    nickname: "",
+    nickname_changeable: false,
     totalPoints: 0,
     todayPoints: 0,
     dailyStatus: {
@@ -32,8 +34,8 @@ Page({
     },
     desc: {
       view_hbzs: '学习60秒',
-      view_hbdw: '学习90秒',
-      view_hbkj: '学习90秒',
+      view_hbdw: '学习60秒',
+      view_hbkj: '学习60秒',
       view_mjxd: '学习60秒',
       view_video: '学习80%以上',
       share: '分享1次',
@@ -98,6 +100,8 @@ Page({
             userLevel: response.data.data.level || 1,
             todayPoints: response.data.data.today_credit || 0,
             tasks: response.data.data.tasks || [],
+            nickname: response.data.data.nickname,
+            nickname_changeable: response.data.data.nickname_changeable,
           });
           
         },
@@ -155,6 +159,73 @@ Page({
     //   this.setData({ refreshing: false });
     //   wx.stopPullDownRefresh();
     // }
+  },
+
+  changeNickname() {
+    wx.showModal({
+      title: '修改昵称',
+      placeholderText: '只能修改一次，5个字以内',
+      editable: true,
+      success: (res) => {
+        console.log(res);
+        if (res.confirm) {
+          this.saveNickname(res.content);
+        }
+      }
+    })
+  },
+
+  saveNickname(nickname) {
+    if(!nickname) {
+      return;
+    }
+
+    if(nickname.length > 5) {
+      wx.showToast({
+        icon: 'none',
+        title: '昵称只能5个字以内',
+      })
+      return;
+    }
+
+    wx.showLoading();
+
+    wx.request({
+      url: `${pointsTracker.pointsApiBase}/user/update`,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      data: { nickname, access_token: wx.getStorageSync('pointsToken') },
+      timeout: 10000,
+      success: (response) => {
+        wx.hideLoading();
+        if(response.statusCode !== 200 || !response.data || response.data.error_code != 0) {
+          wx.showToast({
+            title: '修改失败',
+            icon: 'none'
+          });
+          return;
+        }
+        wx.showToast({
+          title: '修改成功',
+          icon: 'none'
+        });
+        this.setData({ 
+          nickname: nickname,
+          nickname_changeable: false,
+        });
+        
+      },
+      fail: (error) => {
+        wx.hideLoading();
+        console.error('获取用户信息失败:', error);
+        wx.showToast({
+          title: '修改失败',
+          icon: 'none'
+        });
+      }
+  });
   },
 
   /**

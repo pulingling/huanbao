@@ -97,7 +97,7 @@
 /* Canvas转盘容器 */
 .canvas-wheel-container {
   position: absolute;
-  background-image: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/circle.png);
+  /* background-image: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/circle.png); */
   background-size: 100% 100%;
   left: 0;
   top: 0;
