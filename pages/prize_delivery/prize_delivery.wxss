@@ -141,7 +141,14 @@
   font-size: 28rpx;
   color: #999;
 }
-
+.ico-null {
+    width: 100px;
+    display: inline-block;
+    margin: 20rpx 0 40rpx;
+}
+.a-center {
+    text-align: center;
+}
 .picker-arrow {
   position: absolute;
   right: 24rpx;
