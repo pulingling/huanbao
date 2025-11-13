@@ -139,10 +139,11 @@ Page({
 		if (this.data.isMulti == true) {
 			return true
     }
-    const completeTime = parseInt(e.detail.duration * 0.1);
+    // const completeTime = parseInt(e.detail.duration * 0.1);
+    const completeTime = 90;
     if(watchSec >= completeTime) {
       this.setData({
-				isMulti: true
+			isMulti: true
       })
       this.stopTicktack();
       console.log('complete');

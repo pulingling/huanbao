@@ -67,10 +67,12 @@
   font-size: 40rpx;
 }
 .brief .info .p .change {
-  font-size: 28rpx;
+  vertical-align: middle;
+  display: inline-block;
   font-weight: normal;
-  padding-left: 20rpx;
-  color: rgb(43, 141, 43);
+  margin-left: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .brief .info .p text.orange {
   color: #D67F00;

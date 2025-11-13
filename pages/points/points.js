@@ -37,7 +37,7 @@ Page({
       view_hbdw: '学习60秒',
       view_hbkj: '学习60秒',
       view_mjxd: '学习60秒',
-      view_video: '学习80%以上',
+      view_video: '学习90秒',
       share: '分享1次',
     },
     hasMore: true,

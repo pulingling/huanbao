@@ -15,7 +15,7 @@
       </view>
       <view class="info">
         <view class="p">欢宝：<text>{{nickname}}</text>
-        <text class="change" wx:if="{{nickname_changeable}}" bindtap="changeNickname">改</text>
+        <image src="/assets/icons/ico-edit.png"  class="change" wx:if="{{nickname_changeable}}" bindtap="changeNickname" mode="widthFix"></image>
         </view>
         <view class="p">勋章：<text>{{userLevel}}</text></view>
         <view class="p" style="padding-top: 14rpx;">财富：<text class="orange" style="padding-left: 8rpx;"> {{totalPoints}}</text></view>
