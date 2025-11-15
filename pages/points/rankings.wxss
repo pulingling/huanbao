@@ -1,0 +1,73 @@
+/* pages/points/rankings.wxss */
+.container {
+    min-height: 100vh;
+    background: #E3FFCC;
+    padding: 0 20rpx;
+    font-size: 30rpx;
+  }
+  .notice {
+    color: #ff5a00;
+    padding: 0 20rpx;text-shadow: 0 1px 1px white;
+}
+.rankings {
+    background-color: white; 
+    border-radius: 20rpx;
+    height: 70vh;
+    padding: 30rpx; 
+    line-height: 40rpx;
+    overflow: auto;
+    margin-top: 5rpx;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.icon {
+    float:right;
+    width: 30%;
+    position: absolute;
+    right: 40rpx;
+    z-index: 1;
+}
+.icon.bottom {
+    bottom: 10rpx;
+    width: 33%;
+    right: 0;
+}
+.rankings::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.rk {
+    position: relative;
+    z-index: 2;
+    font-size: 1.1rem;
+    color:#333;
+}
+.rk + .rk { 
+    margin-top: 18rpx;
+
+}
+.num {
+    min-width: 38rpx;
+    height: 38rpx;
+    text-align: center;
+    display: inline-block;border-radius: 38rpx;background: #552e26; color: white;margin-right: 10rpx;
+    vertical-align: text-bottom;font-size: 90%;
+}
+.name {font-weight: bold;}
+.name::before {
+    content: "欢宝：";
+    font-weight: normal;
+}
+.points {color: #ca8320; font-weight: bold; padding-left: 38rpx; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/coin.png) no-repeat left top; background-size: 36rpx 36rpx; margin:0 10rpx;}
+.link {
+    width: 50%;
+    margin: 30rpx auto; position:relative; z-index:2;
+}
+.first .num{ background-color: #cea5eb;}
+.first .num::before {
+    content: "";
+    display:inline-block;
+    background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top;
+}
+.second .num{ background-color: #ff5a00;}
+.third .num{ background-color: #00a8ff;}

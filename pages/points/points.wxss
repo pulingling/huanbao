@@ -66,13 +66,18 @@
   font-weight: bold;
   font-size: 40rpx;
 }
+.notice {
+    color: #ff5a00;
+    padding: 0 20rpx;
+}
 .brief .info .p .change {
-  vertical-align: middle;
+  vertical-align: text-top;
   display: inline-block;
   font-weight: normal;
   margin-left: 20rpx;
-  width: 40rpx;
-  height: 40rpx;
+  width: 36rpx;
+  height: 36rpx;
+  opacity: 0.9;
 }
 .brief .info .p text.orange {
   color: #D67F00;
@@ -163,7 +168,7 @@
   right: 0;
   top: -100rpx;
 }
-
+.link {font-size: 80%!important;margin-left: 8rpx; font-weight: normal; text-decoration: underline;}
 .icon-coin {
   width: 40rpx;
   height: 40rpx;
@@ -175,6 +180,7 @@
 }
 .section-header .icon-coin {
     margin-left: 6rpx;
+    margin-right: 2rpx;
 }
 .task-info .orange, .section-header .orange{
   color: #f3ab47;
@@ -183,6 +189,7 @@
 .task-info .orange2{
   color: #c07349;
   margin-left: 6rpx;
+  letter-spacing: 1rpx;
 }
 .task-info .grey{
   color: #666666;

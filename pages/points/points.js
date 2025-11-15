@@ -401,7 +401,12 @@ Page({
       url: '/pages/points_rules/points_rules'
     });
   },
-
+  openRankings() {
+    // 跳转到收货信息填写页面
+    wx.navigateTo({
+      url: '/pages/points/rankings'
+    });
+  },
   /**
    * 打开抽奖页面
    */

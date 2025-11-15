@@ -9,6 +9,7 @@
   <!-- 主要内容 -->
   <view wx:else class="content">
     <!-- 积分概览卡片 -->
+    <view class="notice">嘎噶～你的财富值UP加速包来了：11月21日-11月25日，所有挖宝行动财富翻倍</view>
     <view class="brief">
       <view class="img">
         <image src="https://cdn.envedu.com.cn/wx-app/credit-center/bear-2.png" mode="widthFix"></image>
@@ -18,7 +19,7 @@
         <image src="/assets/icons/ico-edit.png"  class="change" wx:if="{{nickname_changeable}}" bindtap="changeNickname" mode="widthFix"></image>
         </view>
         <view class="p">勋章：<text>{{userLevel}}</text></view>
-        <view class="p" style="padding-top: 14rpx;">财富：<text class="orange" style="padding-left: 8rpx;"> {{totalPoints}}</text></view>
+        <view class="p" style="padding-top: 14rpx;">财富：<text class="orange" >{{totalPoints}} <text class="link" bindtap="openRankings">财富排行榜</text></text></view>
       </view>
     </view>
     
@@ -29,8 +30,7 @@
       <view class="section-header">
        嘶～今日还有宝藏没挖完
        <image src="/images/icons/coin.png" class="icon-coin" mode="widthFix"></image>
-       <text class="orange"> {{todayPoints}}</text>
-      
+       <text class="orange">{{todayPoints}} </text>
       </view>
       
       <view class="task-list">
