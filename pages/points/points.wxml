@@ -9,14 +9,17 @@
   <!-- 主要内容 -->
   <view wx:else class="content">
     <!-- 积分概览卡片 -->
-    <view class="notice">嘎噶～你的财富值UP加速包来了：11月21日-11月25日，所有挖宝行动财富翻倍</view>
+    <!-- <view class="notice">{{notice}}</view> -->
+    <view class="marquee2" wx:if="{{notice}}" bindtransitionend="animationend" animation="{{animationData}}">
+      <text class='notice'>{{notice}}</text>
+    </view>
     <view class="brief">
       <view class="img">
         <image src="https://cdn.envedu.com.cn/wx-app/credit-center/bear-2.png" mode="widthFix"></image>
       </view>
       <view class="info">
         <view class="p">欢宝：<text>{{nickname}}</text>
-        <image src="/assets/icons/ico-edit.png"  class="change" wx:if="{{nickname_changeable}}" bindtap="changeNickname" mode="widthFix"></image>
+          <image src="/assets/icons/ico-edit.png" bindtap="changeNickname" class="change" mode="widthFix"></image>
         </view>
         <view class="p">勋章：<text>{{userLevel}}</text></view>
         <view class="p" style="padding-top: 14rpx;">财富：<text class="orange" >{{totalPoints}} <text class="link" bindtap="openRankings">财富排行榜</text></text></view>

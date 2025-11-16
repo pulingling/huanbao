@@ -42,7 +42,8 @@
     "pages/lottery/lottery",
     "pages/lottery_rules/lottery_rules",
     "pages/points_rules/points_rules",
-    "pages/prize_delivery/prize_delivery"
+    "pages/prize_delivery/prize_delivery",
+    "pages/points/userInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

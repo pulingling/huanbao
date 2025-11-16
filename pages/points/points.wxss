@@ -68,7 +68,11 @@
 }
 .notice {
     color: #ff5a00;
-    padding: 0 20rpx;
+}
+.brief .info .p .change-btn {
+  border: 0 none;
+  display: inline-block;
+  line-height: 0;
 }
 .brief .info .p .change {
   vertical-align: text-top;
@@ -207,4 +211,11 @@
   height: 36rpx;
   vertical-align: text-bottom;
   margin-right: 6rpx;
+}
+
+
+.marquee2{
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 750rpx;
 }

@@ -12,6 +12,7 @@ Page({
     userInfo: {},
     userLevel: "",
     nickname: "",
+    notice: "",
     nickname_changeable: false,
     totalPoints: 0,
     todayPoints: 0,
@@ -49,15 +50,54 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    this.initPage();
+    // this.initPage();
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    this.refreshData();
+    this.initPage();
   },
+
+  initNotice() {
+    this.animation = wx.createAnimation({
+      duration: 8000,
+      timingFunction: 'linear'
+    });
+    var query = wx.createSelectorQuery();
+    query.select('.marquee2').boundingClientRect();
+    query.exec((res) => {
+      if (res[0]) {
+        this.setData({
+          marqueeWidth: res[0].width //文字长度
+        }, () => {
+          this.doAnim()
+        })
+      }
+    })
+  },
+
+  doAnim: function () {
+      //向左滚动到超出屏幕，这里临时写死的屏幕宽度375px
+      this.animation.translate(-this.data.marqueeWidth - 375, 0).step();
+      setTimeout(() => {
+        this.setData({
+          animationData: this.animation.export(),
+        });
+      }, 10)
+  },
+  animationend() {
+      //复位
+      this.animation.translate(0, 0).step({ duration: 0 });
+      this.setData({
+        animationData: this.animation.export()
+      }, () => {
+        //重新开始动画
+        this.doAnim()
+      });
+  },
+
 
   /**
    * 初始化页面
@@ -101,9 +141,12 @@ Page({
             todayPoints: response.data.data.today_credit || 0,
             tasks: response.data.data.tasks || [],
             nickname: response.data.data.nickname,
+            notice: response.data.data.notice,
             nickname_changeable: response.data.data.nickname_changeable,
           });
-          
+
+          if(response.data.data.notice)
+            this.initNotice();
         },
         fail: (error) => {
           console.error('获取用户信息失败:', error);
@@ -161,18 +204,23 @@ Page({
     // }
   },
 
-  changeNickname() {
-    wx.showModal({
-      title: '修改昵称',
-      placeholderText: '只能修改一次，5个字以内',
-      editable: true,
-      success: (res) => {
-        console.log(res);
-        if (res.confirm) {
-          this.saveNickname(res.content);
-        }
-      }
-    })
+  changeNickname(res) {
+
+    console.log(res);
+    wx.navigateTo({
+      url: '/pages/points/userInfo',
+    });
+    // wx.showModal({
+    //   title: '修改昵称',
+    //   placeholderText: '只能修改一次，5个字以内',
+    //   editable: true,
+    //   success: (res) => {
+    //     console.log(res);
+    //     if (res.confirm) {
+    //       this.saveNickname(res.content);
+    //     }
+    //   }
+    // })
   },
 
   saveNickname(nickname) {
