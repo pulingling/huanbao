@@ -2,15 +2,15 @@
 <view class="container">
   <view class="title">快来瞅瞅，都有哪些可爱好物啦～</view>
   <view class="article">
-  <view class="name"><text>第1-3名：儿童版手持式户外简易显微镜</text></view>
+  <view class="name"><text>第1-3名：植物种子盲盒</text></view>
   <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/prize1.jpg" class="icon bottom" mode="widthFix"></image>
   <view class="name"><text>第4-10名：元素周期表LED灯科普展示摆件</text></view>
   <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/prize2.jpg" class="icon bottom" mode="widthFix"></image>
   <view class="name"><text>第11-20名：植物标本收纳册</text></view>
   <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/prize3.jpg" class="icon bottom" mode="widthFix"></image>
-  <view class="name"><text>第21-30名：植物盲盒</text></view>
+  <view class="name"><text>第21-30名：植物种子盲盒</text></view>
   <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/prize4.jpg" class="icon bottom" mode="widthFix"></image>
-  <view class="name"><text>第31-40名：印有四川生态环境logo的“美丽中国 我是行动者”笔记本</text></view>
+  <view class="name"><text>第31-40名：“美丽中国 我是行动者”笔记本×2</text></view>
   <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/prize5.jpg" class="icon bottom" mode="widthFix"></image>
   <view class="name"><text>第41-50名：800积分</text></view>
   <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/prize6.png" class="icon bottom" mode="widthFix"></image>

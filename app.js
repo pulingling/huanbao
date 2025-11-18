@@ -215,7 +215,7 @@ App({
 		// 初始化积分追踪系统
 		pointsTracker.init();
 		// 记录每日首次登录积分
-		pointsTracker.recordDailyLogin();
+		// pointsTracker.recordDailyLogin();
 	},
 	updateUser() {
 		const that = this;

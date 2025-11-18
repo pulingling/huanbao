@@ -3,6 +3,5 @@
     "navigationBarTitleText": "奖品设置",
     "navigationBarBackgroundColor": "#E3FFCC",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#E3FFCC",
-    "enablePullDownRefresh": true
+    "backgroundColor": "#E3FFCC"
   }

@@ -1,18 +1,20 @@
 // pages/points/rankings.js
+const pointsTracker = require("../../utils/points.js");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    ranks: [],
+    in_rank: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.loadData();
   },
 
   /**
@@ -62,6 +64,38 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+
+  async loadData() {
+    wx.showLoading();
+    wx.request({
+        url: `${pointsTracker.pointsApiBase}/user/rank`,
+        method: 'GET',
+        data: { access_token: wx.getStorageSync('pointsToken') },
+        timeout: 10000,
+        success: (response) => {
+          wx.hideLoading()
+          if(response.statusCode !== 200 || !response.data) {
+            wx.showToast({
+              title: '获取信息失败',
+              icon: 'none'
+            });
+            return;
+          }
+          this.setData({ 
+            ranks: response.data.data.ranks || [],
+            in_rank: response.data.data.in_rank,
+          });
+        },
+        fail: (error) => {
+          wx.hideLoading();
+          console.error('获取信息失败:', error);
+          wx.showToast({
+            title: '获取信息失败',
+            icon: 'none'
+          });
+        }
+    });
   },
 
   openMyPrizes() {

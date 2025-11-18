@@ -9,8 +9,10 @@
   <!-- 主要内容 -->
   <view wx:else class="content">
     <!-- 积分概览卡片 -->
-    <view class="marquee2" wx:if="{{notice}}" bindtransitionend="animationend" animation="{{animationData}}">
-      <text class='notice'>{{notice}}</text>
+    <view class="marquee-wraper">
+      <view class="marquee2" wx:if="{{notice}}" bindtransitionend="animationend" animation="{{animationData}}">
+        <text class='notice'>{{notice}}</text>
+      </view>
     </view>
     <view class="brief">
       <view class="img">

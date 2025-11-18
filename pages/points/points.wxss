@@ -214,7 +214,10 @@
   margin-right: 6rpx;
 }
 
-
+.marquee-wraper {
+  width: 730rpx;
+  overflow: hidden;
+}
 .marquee2{
   display: inline-block;
   white-space: nowrap;

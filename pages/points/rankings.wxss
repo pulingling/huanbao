@@ -65,12 +65,12 @@
 .link view {padding: 0 0 0 10rpx;}
 .link text {font-weight: bold; text-decoration: underline;}
 .second,.third {margin-top: 25rpx;}
-.first .num{ background-color: #cea5eb;}
-.second .num{ background-color: #ff5a00;}
-.third .num{ background-color: #00a8ff;}
-.first .num::before,
-.second .num::before,
-.third .num::before {
+.rank-list .rk:first-child .num{ background-color: #cea5eb;}
+.rank-list .rk:nth-child(2) .num{ background-color: #ff5a00;}
+.rank-list .rk:nth-child(3) .num{ background-color: #00a8ff;}
+.rank-list .rk:first-child::before,
+.rank-list .rk:nth-child(2)::before,
+.rank-list .rk:nth-child(3)::before {
     display: inline-block; content: ""; width: 40rpx; height: 25rpx;
     position: absolute; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top; background-size: 40rpx 25rpx;left: -2rpx; top: -21rpx;
 }

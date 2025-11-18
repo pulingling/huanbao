@@ -3,12 +3,14 @@
    <view class="rankings">
       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-pick.png" class="icon" mode="widthFix"></image>
       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-plant.png" class="icon bottom" mode="widthFix"></image>
-      <view class="rk first">
-        <text class="num">1</text>
-        <text class="name">蜜桃苏打</text>
-        <text class="points">62345</text>
+      <view class="rank-list">
+        <view wx:for="{{ranks}}" class="rk">
+          <text class="num">{{item.no}}</text>
+          <text class="name">{{item.nickname}}</text>
+          <text class="points">{{item.credit}}</text>
+        </view>
       </view>
-      <view class="rk second">
+      <!-- <view class="rk second">
         <text class="num">2</text>
         <text class="name">Aris</text>
         <text class="points">62345</text>
@@ -17,100 +19,11 @@
         <text class="num">3</text>
         <text class="name">昭昭</text>
         <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">4</text>
-        <text class="name">浮一大白</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">5</text>
-        <text class="name">少侠留步</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">6</text>
-        <text class="name">A蜜桃苏打asf</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">7</text>
-        <text class="name">Aris</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">8</text>
-        <text class="name">昭昭</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">9</text>
-        <text class="name">浮一大白</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">...</text>
-        <text class="name">少侠留步</text>
-        <text class="points">62345</text>
-      </view> 
-      <view class="rk">
-        <text class="num">50</text>
-        <text class="name">少侠留步</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">7</text>
-        <text class="name">Aris</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">8</text>
-        <text class="name">昭昭</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">9</text>
-        <text class="name">浮一大白</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">...</text>
-        <text class="name">少侠留步</text>
-        <text class="points">62345</text>
-      </view> 
-      <view class="rk">
-        <text class="num">50</text>
-        <text class="name">少侠留步</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">7</text>
-        <text class="name">Aris</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">8</text>
-        <text class="name">昭昭</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">9</text>
-        <text class="name">浮一大白</text>
-        <text class="points">62345</text>
-      </view>
-      <view class="rk">
-        <text class="num">...</text>
-        <text class="name">少侠留步</text>
-        <text class="points">62345</text>
-      </view> 
-      <view class="rk">
-        <text class="num">50</text>
-        <text class="name">少侠留步</text>
-        <text class="points">62345</text>
-      </view>
+      </view> -->
+      
    </view>
    <view class="link">
-       <view>嘎嘎～恭喜您上榜啦！</view>
+       <!-- <view>嘎嘎～恭喜您上榜啦！</view> -->
        <view>前往“<text bindtap='openMyPrizes'>我的福袋</text>”领奖 ｜ 看看<text bindtap='openPrizes'>奖品设置</text></view>
     </view>
 </view>

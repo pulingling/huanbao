@@ -3,6 +3,5 @@
     "navigationBarTitleText": "欢宝学霸榜",
     "navigationBarBackgroundColor": "#E3FFCC",
     "navigationBarTextStyle": "black",
-    "backgroundColor": "#E3FFCC",
-    "enablePullDownRefresh": true
+    "backgroundColor": "#E3FFCC"
   }
