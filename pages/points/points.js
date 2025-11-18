@@ -62,7 +62,7 @@ Page({
 
   initNotice() {
     this.animation = wx.createAnimation({
-      duration: 8000,
+      duration: 10000,
       timingFunction: 'linear'
     });
     var query = wx.createSelectorQuery();
