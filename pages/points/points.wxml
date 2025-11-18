@@ -9,7 +9,6 @@
   <!-- 主要内容 -->
   <view wx:else class="content">
     <!-- 积分概览卡片 -->
-    <!-- <view class="notice">{{notice}}</view> -->
     <view class="marquee2" wx:if="{{notice}}" bindtransitionend="animationend" animation="{{animationData}}">
       <text class='notice'>{{notice}}</text>
     </view>
@@ -39,7 +38,6 @@
       <view class="task-list">
         <view class="task-item" wx:for="{{tasks}}" wx:item="{{item}}">
           <view class="task-icon">
-            <!-- <image src="https://cdn.envedu.com.cn/wx-app/credit-center/{{icons[item.type]}}.png" mode="aspectFill"></image> -->
           </view>
           <view class="task-info">
             <view class="task-title">{{item.title}} <text class="orange2">({{item.total_count - item.left_count}}/{{item.total_count}})</text></view>
@@ -54,74 +52,9 @@
           </view>
         </view>
         
-        <!-- <view class="task-item">
-          <view class="task-icon">
-          <view class="task-icon-text">📋</view>
-        </view>
-          <view class="task-info">
-            <view class="task-title">浏览"环保读物"</view>
-            <view class="task-reward">还可获得10积分</view>
-          </view>
-          <button class="task-btn" bindtap="doTask" data-task="reading">去完成</button>
-        </view>
-        
-        <view class="task-item">
-          <view class="task-icon">
-          <view class="task-icon-text">🎯</view>
-        </view>
-          <view class="task-info">
-            <view class="task-title">浏览"环保课件"</view>
-            <view class="task-reward">还可获得10积分</view>
-          </view>
-          <button class="task-btn" bindtap="doTask" data-task="courseware">去完成</button>
-        </view>
-
-        <view class="task-item">
-          <view class="task-icon">
-          <view class="task-icon-text">🌿</view>
-        </view>
-          <view class="task-info">
-            <view class="task-title">浏览"美境行动"板块</view>
-            <view class="task-reward">还可获得10积分</view>
-          </view>
-          <button class="task-btn" bindtap="doTask" data-task="action">去完成</button>
-        </view>
-
-        <view class="task-item">
-          <view class="task-icon">
-          <view class="task-icon-text">▶</view>
-        </view>
-          <view class="task-info">
-            <view class="task-title">在线学习视频课程</view>
-            <view class="task-reward">还可获得25积分</view>
-          </view>
-          <button class="task-btn" bindtap="doTask" data-task="video">去完成</button>
-        </view>-->
       </view>
     </view>
 
-    <!-- 底部功能模块 -->
-    <view class="bottom-modules">
-      <!-- 积分规则入口模块 -->
-      <!-- <view class="module-card" bindtap="openPointsRules">
-        <view class="module-icon">📋</view>
-        <view class="module-content">
-          <view class="module-title">积分规则</view>
-          <view class="module-subtitle">查看详细规则</view>
-        </view>
-        <view class="module-arrow">›</view>
-      </view> -->
-
-      <!-- 积分抽奖入口模块 -->
-      <!-- <view class="module-card lottery-module" bindtap="openLottery">
-        <view class="module-icon">🎁</view>
-        <view class="module-content">
-          <view class="module-title">积分抽奖</view>
-          <view class="module-subtitle">赢取丰厚奖品</view>
-        </view>
-        <view class="module-arrow">›</view>
-      </view> -->
-    </view>
 
   </view>
 </view>

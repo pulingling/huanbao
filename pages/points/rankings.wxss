@@ -12,7 +12,7 @@
 .rankings {
     background-color: white; 
     border-radius: 20rpx;
-    height: 70vh;
+    height: 78vh;
     padding: 30rpx; 
     line-height: 40rpx;
     overflow: auto;
@@ -27,8 +27,7 @@
     z-index: 1;
 }
 .icon.bottom {
-    bottom: 10rpx;
-    width: 33%;
+    bottom: 120rpx;
     right: 0;
 }
 .rankings::after {
@@ -43,7 +42,7 @@
     color:#333;
 }
 .rk + .rk { 
-    margin-top: 18rpx;
+    margin-top: 20rpx;
 
 }
 .num {
@@ -51,7 +50,7 @@
     height: 38rpx;
     text-align: center;
     display: inline-block;border-radius: 38rpx;background: #552e26; color: white;margin-right: 10rpx;
-    vertical-align: text-bottom;font-size: 90%;
+    vertical-align: text-bottom;font-size: 90%; position: relative;
 }
 .name {font-weight: bold;}
 .name::before {
@@ -60,14 +59,18 @@
 }
 .points {color: #ca8320; font-weight: bold; padding-left: 38rpx; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/coin.png) no-repeat left top; background-size: 36rpx 36rpx; margin:0 10rpx;}
 .link {
-    width: 50%;
-    margin: 30rpx auto; position:relative; z-index:2;
+    color: #ff5a00;
+    padding: 15rpx 0 0 20rpx;
 }
+.link view {padding: 0 0 0 10rpx;}
+.link text {font-weight: bold; text-decoration: underline;}
+.second,.third {margin-top: 25rpx;}
 .first .num{ background-color: #cea5eb;}
-.first .num::before {
-    content: "";
-    display:inline-block;
-    background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top;
-}
 .second .num{ background-color: #ff5a00;}
 .third .num{ background-color: #00a8ff;}
+.first .num::before,
+.second .num::before,
+.third .num::before {
+    display: inline-block; content: ""; width: 40rpx; height: 25rpx;
+    position: absolute; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top; background-size: 40rpx 25rpx;left: -2rpx; top: -21rpx;
+}

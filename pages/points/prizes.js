@@ -1,4 +1,4 @@
-// pages/points/rankings.js
+// pages/points/prizes.js
 Page({
 
   /**
@@ -62,18 +62,5 @@ Page({
    */
   onShareAppMessage() {
 
-  },
-
-  openMyPrizes() {
-    // 打开我的福袋
-    wx.navigateTo({
-      url: '/pages/prize_delivery/prize_delivery'
-    });
-  },
-  openPrizes() {
-    // 打开奖品设置
-    wx.navigateTo({
-      url: '/pages/points/prizes'
-    });
   }
 })
