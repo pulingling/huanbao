@@ -450,7 +450,7 @@ Page({
     });
   },
   openRankings() {
-    // 跳转到收货信息填写页面
+    // 跳转积分排行榜
     wx.navigateTo({
       url: '/pages/points/rankings'
     });

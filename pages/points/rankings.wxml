@@ -109,5 +109,8 @@
         <text class="points">62345</text>
       </view>
    </view>
-   <image class="link" src="../../assets/images/btn-fetch.png" mode="widthFix"></image>
+   <view class="link">
+       <view>嘎嘎～恭喜您上榜啦！</view>
+       <view>前往“<text bindtap='openMyPrizes'>我的福袋</text>”领奖 ｜ 看看<text bindtap='openPrizes'>奖品设置</text></view>
+    </view>
 </view>

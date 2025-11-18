@@ -3,6 +3,7 @@
   min-height: 100vh;
   background: #E3FFCC;
   padding: 20rpx;
+  overflow: hidden;
 }
 
 /* 加载状态 */

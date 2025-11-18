@@ -39,6 +39,8 @@
     "pages/sign_list/sign_list",
     "pages/sign_file/sign_file",
     "pages/points/points",
+    "pages/points/rankings",
+    "pages/points/prizes",    
     "pages/lottery/lottery",
     "pages/lottery_rules/lottery_rules",
     "pages/points_rules/points_rules",
