@@ -45,6 +45,7 @@
     margin-top: 20rpx;
 
 }
+
 .num {
     min-width: 38rpx;
     height: 38rpx;
@@ -53,9 +54,6 @@
     vertical-align: text-bottom;font-size: 90%; position: relative;
 }
 .name {font-weight: bold;}
-.name::before {
-    font-weight: normal;
-}
 .points {color: #ca8320; font-weight: bold; padding-left: 38rpx; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/coin.png) no-repeat left top; background-size: 36rpx 36rpx; margin:0 10rpx;}
 .link {
     color: #ff5a00;
@@ -64,6 +62,10 @@
 .link view {padding: 0 0 0 10rpx;}
 .link text {font-weight: bold; text-decoration: underline;}
 .second,.third {margin-top: 25rpx;}
+.rk.me .num {
+    background-color: red;
+}
+.rk.me .name {color: red;}
 .rank-list .rk:first-child .num{ background-color: #cea5eb;}
 .rank-list .rk:nth-child(2) .num{ background-color: #ff5a00;}
 .rank-list .rk:nth-child(3) .num{ background-color: #00a8ff;}
