@@ -7,21 +7,33 @@
 
   <view wx:if="{{prizeInfo == null}}" class="section-title history a-center">
     <image class="ico-null" src="https://cdn.envedu.com.cn/wx-app/credit-center/noprize.png" mode="widthFix"></image>
-    <text>活动火热进行中</text>
-    <text>最终排名将于11月26日揭晓～</text>
-    <text>快去多攒积分，向TOP50冲刺吧！</text>
-<!--上面是26日之前显示字段，下面是26日之后没有中奖显示字段-->
-    <text>✨ 给你一个大大的赞！</text>
-    <text>挑战虽然结束</text>
-        <text>但你的绿色学习之旅超酷的</text>
-            <text>这次名次有限</text>
-                <text>但你的环保行动无限！</text>
-                    <text>精彩不停歇</text>
-                        <text>你积累的积分长期有效</text>
-                            <text>仍可随时参与平台抽奖！</text>
-                                <text>学习的每一步都算数</text>
-                                    <text>环保的每一程都光荣</text>
-                                        <text>我们下一站再见！</text>
+    <view wx:if="{{from == 'rank'}}">
+        <view wx:if="{{today < 1126}}">
+          <text>活动火热进行中</text>
+          <text>最终排名将于11月26日揭晓～</text>
+          <text>快去多攒积分，向TOP50冲刺吧！</text>
+        </view>
+        <view wx:else>
+          <text>✨ 给你一个大大的赞！</text>
+          <text>挑战虽然结束</text>
+          <text>但你的绿色学习之旅超酷的</text>
+          <text>这次名次有限</text>
+          <text>但你的环保行动无限！</text>
+          <text>精彩不停歇</text>
+          <text>你积累的积分长期有效</text>
+          <text>仍可随时参与平台抽奖！</text>
+          <text>学习的每一步都算数</text>
+          <text>环保的每一程都光荣</text>
+          <text>我们下一站再见！</text>
+        </view>
+
+        
+    
+    </view>
+    <view wx:else>
+        <text>你还没有中奖~</text>
+    </view>
+    
 
   </view>
   <view wx:else>

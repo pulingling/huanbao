@@ -75,3 +75,4 @@
     display: inline-block; content: ""; width: 40rpx; height: 25rpx;
     position: absolute; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top; background-size: 40rpx 25rpx;left: -1rpx; top: -13rpx;
 }
+.rk .time {color: #999; font-weight: lighter; font-size: 80%;}

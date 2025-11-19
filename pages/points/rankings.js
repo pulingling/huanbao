@@ -101,7 +101,7 @@ Page({
   openMyPrizes() {
     // 打开我的福袋
     wx.navigateTo({
-      url: '/pages/prize_delivery/prize_delivery'
+      url: '/pages/prize_delivery/prize_delivery?from=rank',
     });
   },
   openPrizes() {

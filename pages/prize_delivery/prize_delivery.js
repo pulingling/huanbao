@@ -12,6 +12,8 @@ Page({
     region: [], // 省市区
     detailAddress: '', // 详细地址
     remark: '', // 备注信息
+    from: '',
+    today: '',
     isFormValid: false, // 表单是否有效
     showSuccess: false, // 是否显示成功弹窗
     prizeInfo: null, // 奖品信息（可从上一页传递）
@@ -22,6 +24,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log(options);
+    const now = new Date();
+    const month = now.getMonth() + 1; // 月份需要加1
+    const day = now.getDate();
+    this.setData({
+      from: options.from ? options.from : '',
+      today: `${month}${day}`,
+    })
     // 如果有奖品信息传递过来，可以在这里接收
     this.loadPrize()
     

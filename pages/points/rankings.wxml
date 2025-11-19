@@ -4,10 +4,11 @@
       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-pick.png" class="icon" mode="widthFix"></image>
       <image src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-plant.png" class="icon bottom" mode="widthFix"></image>
       <view class="rank-list">
-        <view wx:for="{{ranks}}" class="rk">
+        <view wx:for="{{ranks}}" class="rk {{item.is_me ? 'me' : ''}}">
           <text class="num">{{item.no}}</text>
           <text class="name">{{item.nickname}}</text>
           <text class="points">{{item.credit}}</text>
+          <text class="time">{{item.time}}</text>
         </view>
       </view>
       
