@@ -12,7 +12,7 @@
 .rankings {
     background-color: white; 
     border-radius: 20rpx;
-    height: 78vh;
+    height: 84vh;
     padding: 30rpx; 
     line-height: 40rpx;
     overflow: auto;
@@ -54,7 +54,6 @@
 }
 .name {font-weight: bold;}
 .name::before {
-    content: "欢宝：";
     font-weight: normal;
 }
 .points {color: #ca8320; font-weight: bold; padding-left: 38rpx; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/coin.png) no-repeat left top; background-size: 36rpx 36rpx; margin:0 10rpx;}
@@ -72,5 +71,5 @@
 .rank-list .rk:nth-child(2)::before,
 .rank-list .rk:nth-child(3)::before {
     display: inline-block; content: ""; width: 40rpx; height: 25rpx;
-    position: absolute; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top; background-size: 40rpx 25rpx;left: -2rpx; top: -21rpx;
+    position: absolute; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top; background-size: 40rpx 25rpx;left: -1rpx; top: -13rpx;
 }
