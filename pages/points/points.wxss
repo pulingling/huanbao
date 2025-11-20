@@ -68,7 +68,7 @@
   font-size: 40rpx;
 }
 .notice {
-    color: #ff5a00;
+    color: #D67F00;
 }
 .brief .info .p .change-btn {
   border: 0 none;

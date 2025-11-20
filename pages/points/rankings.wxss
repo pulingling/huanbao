@@ -6,13 +6,13 @@
     font-size: 30rpx;
   }
   .notice {
-    color: #ff5a00;
+    color: #ca8320;
     padding: 0 20rpx;text-shadow: 0 1px 1px white;
 }
 .rankings {
     background-color: white; 
     border-radius: 20rpx;
-    height: 84vh;
+    height: 82vh;
     padding: 30rpx; 
     line-height: 40rpx;
     overflow: auto;
@@ -38,11 +38,10 @@
 .rk {
     position: relative;
     z-index: 2;
-    font-size: 1.1rem;
     color:#333;
 }
 .rk + .rk { 
-    margin-top: 20rpx;
+    margin-top: 15rpx;
 
 }
 
@@ -50,29 +49,70 @@
     min-width: 38rpx;
     height: 38rpx;
     text-align: center;
-    display: inline-block;border-radius: 38rpx;background: #552e26; color: white;margin-right: 10rpx;
+    display: inline-block;border-radius: 38rpx;background: #FF9272; color: white;margin-right: 10rpx;
     vertical-align: text-bottom;font-size: 90%; position: relative;
 }
 .name {font-weight: bold;}
 .points {color: #ca8320; font-weight: bold; padding-left: 38rpx; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/coin.png) no-repeat left top; background-size: 36rpx 36rpx; margin:0 10rpx;}
 .link {
-    color: #ff5a00;
-    padding: 15rpx 0 0 20rpx;
+    color: #ca8320;
+    padding: 15rpx 0 0 15rpx;
 }
 .link view {padding: 0 0 0 10rpx;}
 .link text {font-weight: bold; text-decoration: underline;}
+
 .second,.third {margin-top: 25rpx;}
-.rk.me .num {
-    background-color: red;
-}
-.rk.me .name {color: red;}
 .rank-list .rk:first-child .num{ background-color: #cea5eb;}
-.rank-list .rk:nth-child(2) .num{ background-color: #ff5a00;}
-.rank-list .rk:nth-child(3) .num{ background-color: #00a8ff;}
+.rank-list .rk:nth-child(2) .num{ background-color: #cea5eb;}
+.rank-list .rk:nth-child(3) .num{ background-color: #cea5eb;}
 .rank-list .rk:first-child::before,
 .rank-list .rk:nth-child(2)::before,
 .rank-list .rk:nth-child(3)::before {
     display: inline-block; content: ""; width: 40rpx; height: 25rpx;
     position: absolute; background: url(https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/crown.png) no-repeat left top; background-size: 40rpx 25rpx;left: -1rpx; top: -13rpx;
 }
-.rk .time {color: #999; font-weight: lighter; font-size: 80%;}
+.rk .time {color: #999; font-weight: lighter; font-size: 85%;}
+
+
+.rank-list .rk:nth-child(4) .num,
+.rank-list .rk:nth-child(5) .num,
+.rank-list .rk:nth-child(6) .num,
+.rank-list .rk:nth-child(7) .num,
+.rank-list .rk:nth-child(8) .num,
+.rank-list .rk:nth-child(9) .num,
+.rank-list .rk:nth-child(10) .num { background-color: #21EAED;}
+
+.rank-list .rk:nth-child(11) .num,
+.rank-list .rk:nth-child(12) .num,
+.rank-list .rk:nth-child(13) .num,
+.rank-list .rk:nth-child(14) .num,
+.rank-list .rk:nth-child(15) .num,
+.rank-list .rk:nth-child(16) .num,
+.rank-list .rk:nth-child(17) .num,
+.rank-list .rk:nth-child(18) .num,
+.rank-list .rk:nth-child(19) .num,
+.rank-list .rk:nth-child(20) .num { background-color: #00C53C;}
+
+.rank-list .rk:nth-child(21) .num,
+.rank-list .rk:nth-child(22) .num,
+.rank-list .rk:nth-child(23) .num,
+.rank-list .rk:nth-child(24) .num,
+.rank-list .rk:nth-child(25) .num,
+.rank-list .rk:nth-child(26) .num,
+.rank-list .rk:nth-child(27) .num,
+.rank-list .rk:nth-child(28) .num,
+.rank-list .rk:nth-child(29) .num,
+.rank-list .rk:nth-child(30) .num { background-color: #D58B91;}
+
+.rank-list .rk:nth-child(31) .num,
+.rank-list .rk:nth-child(32) .num,
+.rank-list .rk:nth-child(33) .num,
+.rank-list .rk:nth-child(34) .num,
+.rank-list .rk:nth-child(35) .num,
+.rank-list .rk:nth-child(36) .num,
+.rank-list .rk:nth-child(37) .num,
+.rank-list .rk:nth-child(38) .num,
+.rank-list .rk:nth-child(39) .num,
+.rank-list .rk:nth-child(40) .num { background-color: #f3ab47;}
+
+.rk.me::after{content: " 你在这里"; color: red;}
