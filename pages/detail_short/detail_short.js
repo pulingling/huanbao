@@ -39,12 +39,21 @@ Page({
 		api[field](this.id, app).then(res => {
 			
 			if (res) {
+        if(res.s_image) {
+          res.s_image = res.s_image.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+        }
 				this.setData({ detail: res });
 				wx.setNavigationBarTitle({
 					title: res.title || "详情"
-				});
-				res.description && WxParse.wxParse("description", "html", res.description, this, 5);
-				res.content && WxParse.wxParse("content", "html", res.content, this, 5);
+        });
+        let content = res.description || '';
+        content = content.replaceAll("http://103.203.219.137:200", "https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com");
+        content = content.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+        WxParse.wxParse("description", "html", content, this, 5);
+        content = res.content || '';
+        content = content.replaceAll("http://103.203.219.137:200", "https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com");
+        content = content.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+				WxParse.wxParse("content", "html", content, this, 5);
 			}
 		});
 	},

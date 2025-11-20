@@ -18,8 +18,11 @@ Page({
 			this.setData({ detail: res });
 			wx.setNavigationBarTitle({
 				title: res.title || "环保知识"
-			});
-			res.content && WxParse.wxParse("content", "html", res.content, this, 5);
+      });
+      let content = res.content || ''
+      content = content.replaceAll("http://103.203.219.137:200", "https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com");
+      content = content.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+			WxParse.wxParse("content", "html", content, this, 5);
 		});
 	}
 });
