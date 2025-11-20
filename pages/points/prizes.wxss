@@ -7,7 +7,7 @@
     font-size: 1.1rem;
   }
   .title {
-    color: #ff5a00;
+    color: #ca8320;
     padding: 10rpx;text-shadow: 0 1px 1px white;
     font-weight: bold;
     text-align: center;

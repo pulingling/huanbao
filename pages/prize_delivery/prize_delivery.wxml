@@ -29,8 +29,8 @@
     </view>
     <view wx:else>
         <text>哎呀，宝藏偷偷溜走啦~</text>
-        <text>但你攒的每一分都</text>
-        <text>藏着实打实的环保能量</text>
+        <text>但你攒的每一分</text>
+        <text>都藏着实打实的环保能量</text>
         <text>继续学习，攒足积分</text>
         <text>我们下次再战！</text>
     </view>

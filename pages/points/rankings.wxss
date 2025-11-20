@@ -115,4 +115,3 @@
 .rank-list .rk:nth-child(39) .num,
 .rank-list .rk:nth-child(40) .num { background-color: #f3ab47;}
 
-.rk.me::after{content: " 你在这里"; color: red;}
