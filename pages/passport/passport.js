@@ -230,7 +230,13 @@ Page({
           value.isShow = true;
         })
         this.setData({
-          banner_list: res.body,
+          banner_list: res.body.map(item => {
+            return {
+              pic: item.pic.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com'),
+              title: item.title,
+              video: item.video.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com')
+            }
+          }),
         })
       } else {
         wx.showToast({
@@ -249,7 +255,9 @@ Page({
     }).then(res => {
       if (res && res.code == 200) {
         this.setData({
-          pageList: this.data.pageList.concat(res.body.items),
+          pageList: this.data.pageList.concat(res.body.items.map(item => {
+            return {...item, pic: item.pic.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com')}
+          })),
           page: res.body.page,
           page_size: res.body.limit,
           total: res.body.total
@@ -273,7 +281,9 @@ Page({
       console.log('111', res)
       if (res && res.code == 200) {
         this.setData({
-          pageList: this.data.pageList.concat(res.body.items),
+          pageList: this.data.pageList.concat(res.body.items.map(item => {
+            return {...item, pic: item.pic.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com')}
+          })),
           page: res.body.page,
           page_size: res.body.limit,
           total: res.body.total

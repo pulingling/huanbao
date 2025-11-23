@@ -84,7 +84,7 @@ Page({
     const wxGetImageInfo = this.promisify(wx.getImageInfo)
     Promise.all([
       wxGetImageInfo({
-        src: 'https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/cert2.png'
+        src: 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/cert2.png'
       })
     ]).then(res => {
       

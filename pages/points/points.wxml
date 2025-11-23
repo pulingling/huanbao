@@ -16,7 +16,7 @@
     </view>
     <view class="brief">
       <view class="img">
-        <image src="https://cdn.envedu.com.cn/wx-app/credit-center/bear-2.png" mode="widthFix"></image>
+        <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/bear-2.png" mode="widthFix"></image>
       </view>
       <view class="info">
         <view class="p">欢宝：<text>{{nickname}}</text>
@@ -30,7 +30,7 @@
 
     <!-- 每日任务状态 -->
     <view class="daily-tasks">
-      <image src="https://cdn.envedu.com.cn/wx-app/credit-center/ico-br.png" class="bear" mode="widthFix"/>
+      <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/ico-br.png" class="bear" mode="widthFix"/>
       <view class="section-header">
        嘶～今日还有宝藏没挖完
        <image src="/images/icons/coin.png" class="icon-coin" mode="widthFix"></image>
@@ -50,7 +50,7 @@
             </view>
           </view>
           <view wx:if="{{item.type != 'share'}}" class="btn {{item.left_count <= 0 ? 'off' : ''}}" bindtap="doTask" data-task="{{item.type}}">
-            <image src="https://cdn.envedu.com.cn/wx-app/credit-center/dig.png" mode="aspectFill"></image>
+            <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/dig.png" mode="aspectFill"></image>
           </view>
         </view>
         

@@ -71,7 +71,7 @@ Page({
 				introduction: utils.fixStringEnter(res.introduction).replace(/(1\..*?)(2\..*?)(3\..*)/, '$1\n$2\n$3').trim(),
 				title: res.title,
 				outline: utils.fixStringEnter(res.outline),
-				video: res.video
+				video: res.video.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com')
 			});
 			console.log(utils.fixStringEnter(res.introduction))
     });

@@ -18,10 +18,10 @@
     </view>
   </view>
   <view wx:if="{{anchorDirection === 'left' && !stopChange}}"class="corner-up" style="{{'transform-origin: bottom right;right:'+cornerInfo.hp+'%;width:'+cornerInfo.width+'rpx;height:'+cornerInfo.height+'rpx;bottom:0;transform:scale('+cornerInfo.scale+','+cornerInfo.scale+')'}}">
-    <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/turn_page.png"></image>
+    <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/book/turn_page.png"></image>
   </view>
   <view wx:elif="{{anchorDirection === 'right' && !stopChange}}" class="corner-up" style="{{'transform-origin: bottom left;left:'+cornerInfo.hp+'%;width:'+cornerInfo.width+'rpx;height:'+cornerInfo.height+'rpx;bottom:0;transform:scale('+cornerInfo.scale+','+cornerInfo.scale+')'}}">
-    <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/turn_page2.png"></image>
+    <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/book/turn_page2.png"></image>
   </view>
 </view>
-<audio src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/turnPage.mp3" wx:show="{{false}}"></audio>
+<audio src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/book/turnPage.mp3" wx:show="{{false}}"></audio>

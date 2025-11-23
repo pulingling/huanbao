@@ -180,10 +180,10 @@ Page({
             src: file
           }),
           wxGetImageInfo({
-            src: 'https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/back.bmp'
+            src: 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/back.bmp'
           }),
           wxGetImageInfo({
-            src: 'https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/28A0A944037E222A71201D8617D2B864.png'
+            src: 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/28A0A944037E222A71201D8617D2B864.png'
           })
         ]).then(res => {
           const ctx = wx.createCanvasContext(`shareCanvas2`)
@@ -289,13 +289,13 @@ Page({
           src: this.data.shareInfo.img
         }),
         wxGetImageInfo({
-          src: 'https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/back.bmp'
+          src: 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/back.bmp'
         }),
         wxGetImageInfo({
-          src: 'https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/gh_b93249df3999_258.jpg'
+          src: 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/gh_b93249df3999_258.jpg'
         }),
         wxGetImageInfo({
-          src: 'https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/28A0A944037E222A71201D8617D2B864.png'
+          src: 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/28A0A944037E222A71201D8617D2B864.png'
         })
       ]).then(res => {
         const ctx = wx.createCanvasContext(`shareCanvas2`)

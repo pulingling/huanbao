@@ -199,7 +199,7 @@
   justify-content: center;
   width: 750rpx;
   height: 272rpx;
-  background-image: url(https://cdn.envedu.com.cn/images/index/main/index_book_bg.png);
+  background-image: url(https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/index/main/index_book_bg.png);
   background-size: 750rpx 74rpx;
   background-position: bottom;
   background-repeat: no-repeat;

@@ -145,7 +145,7 @@
 					<image src="/assets/imgs/mascot.png" class="mascot"></image>
 				</view>
 				<image wx:if="{{shareInfo.qr}}" src="{{shareInfo.qr}}" class="qr"></image>
-				<image wx:else src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/image/gh_b93249df3999_258.jpg" class="qr"></image>
+				<image wx:else src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/gh_b93249df3999_258.jpg" class="qr"></image>
 			</view>
 		</view>
 

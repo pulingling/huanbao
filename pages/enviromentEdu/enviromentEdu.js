@@ -103,7 +103,9 @@ Page({
     }, app).then(res => {
 
       this.setData({
-        bookList: res.body.data
+        bookList: res.body.data.map(item => {
+          return {...item, cover_url: item.cover_url.replace("https://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com")}
+        })
       })
 
     })

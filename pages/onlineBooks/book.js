@@ -223,7 +223,7 @@ Page({
     })
     //5. 加载audio组件
     this.audio = wx.createInnerAudioContext({useWebAudioImplement:true})
-    this.audio.src='https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/turnPage2.mp3'
+    this.audio.src='https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/book/turnPage2.mp3'
     console.log(this.audio)
   },
 

@@ -1,6 +1,6 @@
 <view class="container">
   <view class="top-container">
-    <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/index/main/index_bg_bird.png" mode="aspectFit" class="birds" />
+    <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/index/main/index_bg_bird.png" mode="aspectFit" class="birds" />
     <view class="swiper_box">
       <!-- <swiper indicator-dots="{{0}}" current="{{currentSwiper}}" autoplay="{{bannerPlay}}" bindanimationfinish="swiperChange" class="swiper">
             <swiper-item class="swiper_item">
@@ -8,11 +8,11 @@
             </swiper-item>
         </swiper> -->
       <view class="swiper">
-        <video id="indexVideo" bindplay="videoPlay" enable-play-gesture object-fit="cover" custom-cache="{{false}}" controls class="video" src="https://cdn.envedu.com.cn/media/csww.mp4">
+        <video id="indexVideo" bindplay="videoPlay" enable-play-gesture object-fit="cover" custom-cache="{{false}}" controls class="video" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/media/csww.mp4">
           <view class="warning" wx:if="{{showWarning}}">您正在使用非WIFI网络,播放将产生流量费用</view>
           <view class="coverImg" wx:if="{{coverImgShow}}">
             <image bindtap="showVideo" class="playimage" src="/images/play.png"></image>
-            <image bindtap="showVideo" class="image" src="https://cdn.envedu.com.cn/images/index/main/csww_cover.jpg" mode="aspectFill"></image>
+            <image bindtap="showVideo" class="image" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/index/main/csww_cover.jpg" mode="aspectFill"></image>
           </view>
         </video>
       </view>
@@ -26,21 +26,21 @@
   <!-- 积分功能入口 -->
   <view class="overview">
      <view class="btn-pts" bindtap="navToPoints">
-       <image src="https://cdn.envedu.com.cn/wx-app/credit-center/btn-pts.png" mode="widthFix"></image>
+       <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/btn-pts.png" mode="widthFix"></image>
      </view>
      <view class="btn-pts" bindtap="navToLottery">
-       <image src="https://cdn.envedu.com.cn/wx-app/credit-center/btn-ltry.png" mode="widthFix"></image>
+       <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/btn-ltry.png" mode="widthFix"></image>
      </view>
   </view>
   
   <view class="course-container">
     <view class="course-head">
       <view class="title-set">
-        <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/index/main/courseList_sign.png" mode="aspectFit" class="title-symbol" />
+        <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/index/main/courseList_sign.png" mode="aspectFit" class="title-symbol" />
         环保课程
       </view>
       <view class="more course_more" bindtap="handleMoreBtn" data-jump="learn">查看更多 ＞</view>
-      <image src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/index/main/cartoon_symbol.png" mode="aspectFit" class="cartoon-symbol" />
+      <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/index/main/cartoon_symbol.png" mode="aspectFit" class="cartoon-symbol" />
     </view>
     <view class="course-samples">
       <view class="sample" wx:for="{{suggestCourses}}" wx:key="index" data-id="{{item.id}}" bindtap="toLearnCourse">

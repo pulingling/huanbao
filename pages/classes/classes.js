@@ -55,6 +55,7 @@ Page({
           }else{
             item.introduction = ''
           }
+          item.s_image = item.s_image.replace("https://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com")
 					
         });
         

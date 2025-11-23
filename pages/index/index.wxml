@@ -1,6 +1,6 @@
 <view class="index-container">
   <main bind:handleMoreBtn="handleMoreBtn"></main>
-  <image src="https://cdn.envedu.com.cn/images/index/main/float_btn.png" mode="aspectFit" class="float-btn" bindtap="showPopup"/>
+  <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/index/main/float_btn.png" mode="aspectFit" class="float-btn" bindtap="showPopup"/>
   <view class="popup-knowledge {{popupTheme}}" wx:if="{{showPopup}}">
     <view class="date">{{dailyKnowledge.date}}</view>
     <view class="title">{{dailyKnowledge.title}}</view>

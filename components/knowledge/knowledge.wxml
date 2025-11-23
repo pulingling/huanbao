@@ -6,7 +6,7 @@
     </view>
     <view class="list">
         <view wx:for="{{list}}" wx:key="id" class="list_item" bindtap="handleTap" data-id="{{item.id}}">
-            <image class="image" src="https://sthjxjzx.oss-cn-chengdu.aliyuncs.com/images/book/%E5%9C%B0%E7%90%83%402x.png" mode="aspectFill"></image>
+            <image class="image" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/images/book/%E5%9C%B0%E7%90%83%402x.png" mode="aspectFill"></image>
             <h1 class="title">{{item.title}}</h1>
         </view>
         <view class="footer">

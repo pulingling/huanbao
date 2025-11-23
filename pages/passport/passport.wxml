@@ -18,7 +18,7 @@
     <!-- 轮播图 E -->
     <view wx:if="{{sign_on_off === 'on'}}" class="view-background">
       <!-- 视图内容 -->
-      <image src="https://cdn.envedu.com.cn/image/meijing_sign_bk2.png" class="background-image" />
+      <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/meijing_sign_bk2.png" class="background-image" />
       <view class="button-container">
         <button icon="el-icon-search" class="update-button1" bindtap="jumpToSignUp">报名入口</button>
         <button class="update-button2" bindtap="jumpToSignList">报名列表</button>

@@ -304,7 +304,7 @@ const util = {
 	imageUrl(url){
 		if(!url) return ''
 		
-		return url.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+		return url.replaceAll("http://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com");
 	}
 };
 

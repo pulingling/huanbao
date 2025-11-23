@@ -86,7 +86,9 @@ Component({
       api.getBooksList({page:1,pageSize:3},app).then(res=>{
         console.log(res)
           this.setData({
-            booksList:res.body.data
+            booksList:res.body.data.map(item => {
+              return {...item, cover_url: item.cover_url.replace("https://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com")}
+            })
           })
       })
       const tolearn =
@@ -110,7 +112,11 @@ Component({
       });
 
       this.setData({
-        suggestCourses:tolearn.splice(0,2),
+        suggestCourses:tolearn.splice(0,2).map(item => {
+          item.s_image = item.s_image.replace("https://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com");
+          console.log(item);
+          return item;
+        }),
         courseList: courseList,
         knowledgeList: app.globalData.usr.knowledges.data.slice(0, 2)
       });

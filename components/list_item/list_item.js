@@ -29,7 +29,7 @@ Component({
 		useDefault(e){
 			let option = this.data.option.map(item=>{
 				if(item.id == e.target.dataset.id)
-				item.s_image = "https://cdn.envedu.com.cn/image/1605608896666.png"
+				item.s_image = "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/1605608896666.png"
 				return item
 			})
 			

@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     if (options.detail) {
       this.setData({
-        detail: options.detail
+        detail: options.detail.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com')
       })
     }
   },

@@ -13,7 +13,7 @@
       
       <!-- Canvas转盘 -->
       <view class="canvas-wheel-container" style="transform: rotate({{wheelRotation}}deg); transition: transform 3s cubic-bezier(0.23, 1, 0.32, 1);">
-          <image src="https://cdn.envedu.com.cn/wx-app/circle_v3.png" mode="aspectFill" style="width:600rpx;height:600rpx"></image>
+          <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/circle_v3.png" mode="aspectFill" style="width:600rpx;height:600rpx"></image>
       </view>
       
       <!-- 指针 -->
@@ -51,7 +51,7 @@
     <view>奖品分为实物奖品（数量有限，每月更新）与虚拟奖品（含卡券、积分，不限量），具体奖品以抽奖页面实时展示为准。</view>
     <view><strong>3.中奖发放</strong></view>
     <view>实物奖品：中奖后，请于5日内在“<strong bindtap="openMyPrizes" class="link">我的福袋</strong>”填写相关信息（逾期视为放弃），提交后10日内安排寄送。</view>
-    <image class="ico" src="https://cdn.envedu.com.cn/wx-app/credit-center/ico-bear.png" mode="widthFix"></image><view>虚拟奖品：中奖后，积分即时到账，可在“积分中心”查看；卡券请于5日内在“<strong bindtap="openMyPrizes" class="link">我的福袋</strong>”
+    <image class="ico" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/ico-bear.png" mode="widthFix"></image><view>虚拟奖品：中奖后，积分即时到账，可在“积分中心”查看；卡券请于5日内在“<strong bindtap="openMyPrizes" class="link">我的福袋</strong>”
     填写相关信息（逾期视为放弃），提交后10日内安排发放。</view>  
 </view>
   <!-- 底部功能模块 -->

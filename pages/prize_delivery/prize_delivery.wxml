@@ -6,7 +6,7 @@
 <view class="delivery-container" wx:else>
 
   <view wx:if="{{prizeInfo == null}}" class="section-title history a-center">
-    <image class="ico-null" src="https://cdn.envedu.com.cn/wx-app/credit-center/noprize.png" mode="widthFix"></image>
+    <image class="ico-null" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/noprize.png" mode="widthFix"></image>
     <view wx:if="{{from == 'rank'}}">
         <view wx:if="{{today < 1126}}">
           <text>活动火热进行中</text>

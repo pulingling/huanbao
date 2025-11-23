@@ -42,9 +42,13 @@ Page({
 		JSON.parse( app.globalData.usr.user.learned.split("'").join('"').replace('None', '""')):""
 		console.log(tolearn)
 		if (this.data.showTab === 1) {
-			this.setData({ list: tolearn});
+			this.setData({ list: tolearn.map(item => {
+        return {...item, s_image: item.s_image.replace("https://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com")}
+      })});
 		} else {
-			this.setData({  list:learned  || [] });
+			this.setData({  list: learned.map(item => {
+        return {...item, s_image: item.s_image.replace("https://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com")}
+      })  || [] });
 		}
 	},
 	handleTab(e) {

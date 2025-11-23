@@ -227,7 +227,7 @@ Page({
 				for (let i = 0;i<resData.length;i++) {
 					resData[i].collect = true
 					// if(resData[i].s_image)
-					// resData[i].s_image="https://cdn.envedu.com.cn/image/"+resData[i].s_image.slice(resData[i].s_image.search(reg),)
+					// resData[i].s_image="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/"+resData[i].s_image.slice(resData[i].s_image.search(reg),)
 				}
 				this.setData({
 					list1: [...this.data.list1,...resData],
@@ -252,7 +252,7 @@ Page({
 				for (let i = 0;i<data.length;i++) {
 					data[i].collect = true
 					// if(data[i].s_image)
-					// data[i].s_image="https://cdn.envedu.com.cn/image/"+data[i].s_image.slice(data[i].s_image.search(reg),)
+					// data[i].s_image="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/"+data[i].s_image.slice(data[i].s_image.search(reg),)
 				}
 				this.setData({
 					list2: [...this.data.list2,...resData],
@@ -266,7 +266,7 @@ Page({
 				for (let i = 0;i<data.length;i++) {
 					data[i].collect = true
 					// if(data[i].s_image)
-					// data[i].s_image="https://cdn.envedu.com.cn/image/"+data[i].s_image.slice(data[i].s_image.search(reg),)
+					// data[i].s_image="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/"+data[i].s_image.slice(data[i].s_image.search(reg),)
 				}
 				this.setData({
 					list3: data,
@@ -301,7 +301,7 @@ Page({
 				for (let i = 0;i<resData.length;i++) {
 					resData[i].collect = true
 					// if(resData[i].s_image)
-					// resData[i].s_image="https://cdn.envedu.com.cn/image/"+resData[i].s_image.slice(resData[i].s_image.search(reg),)
+					// resData[i].s_image="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/image/"+resData[i].s_image.slice(resData[i].s_image.search(reg),)
 				}
 				this.setData({
 					list1: [...this.data.list1,...resData],

@@ -40,7 +40,7 @@ Page({
 			
 			if (res) {
         if(res.s_image) {
-          res.s_image = res.s_image.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+          res.s_image = res.s_image.replaceAll("http://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com");
         }
 				this.setData({ detail: res });
 				wx.setNavigationBarTitle({
@@ -48,11 +48,11 @@ Page({
         });
         let content = res.description || '';
         content = content.replaceAll("http://103.203.219.137:200", "https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com");
-        content = content.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+        content = content.replaceAll("http://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com");
         WxParse.wxParse("description", "html", content, this, 5);
         content = res.content || '';
         content = content.replaceAll("http://103.203.219.137:200", "https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com");
-        content = content.replaceAll("http://cdn.envedu.com.cn", "https://cdn.envedu.com.cn");
+        content = content.replaceAll("http://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com");
 				WxParse.wxParse("content", "html", content, this, 5);
 			}
 		});
