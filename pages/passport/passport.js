@@ -232,8 +232,8 @@ Page({
         this.setData({
           banner_list: res.body.map(item => {
             return {
+              ...item,
               pic: item.pic.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com'),
-              title: item.title,
               video: item.video.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com')
             }
           }),

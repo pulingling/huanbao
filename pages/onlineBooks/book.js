@@ -182,7 +182,7 @@ Page({
     //1. 请求图书
     api.getBookDetail({id},app).then(res=>{
       this.setData({
-        book:res.body.content_pics
+        book:res.body.content_pics.map(item=> item.replace("https://cdn.envedu.com.cn", "https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com"))
       })
     })
     //2. 查找是否该图书有本地读书记录
