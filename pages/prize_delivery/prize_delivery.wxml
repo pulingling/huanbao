@@ -34,18 +34,16 @@
         <text>继续学习，攒足积分</text>
         <text>我们下次再战！</text>
     </view>
-    
-
   </view>
   <view wx:else>
   <!-- 表单区域 -->
   <view class="section-title history">
     <text>嘎嘎~，你的运气真好！</text>
-    <text>{{prizeInfo.day}}, 你成功解锁了「{{prizeInfo.prize_name}}」</text>
+    <text>{{prizeInfo.day}}， 你成功解锁了「{{prizeInfo.prize_name}}」</text>
     <text>这份「{{prizeInfo.prize_name}}」请收下吧！</text>
   </view>
   <view class="form-container">
-    <!-- 收货人信息 --><image class="ico-bear" src="https://sthjxjzx-cjhb.oss-cn-chengdu.aliyuncs.com/images/new/ico-br.png" mode="widthFix"></image>
+    <!-- 收货人信息 --><image class="ico-bear" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/ico-br.png" mode="widthFix"></image>
     <view class="form-section"> 
         <text class="section-title">请填写收货人信息</text>     
       <view class="form-item">
@@ -126,22 +124,19 @@
 
   <!-- 提交按钮 -->
   <view class="submit-btn-container">
-    <button 
-      class="submit-btn" 
-      bindtap="onSubmit"
-    >
-      提交信息
-    </button>
+    <button  class="submit-btn"  bindtap="onSubmit">提交信息</button>
   </view>
 
-  <!-- 提交成功弹窗 -->
-  <view class="success-modal" wx:if="{{showSuccess}}">
-    <view class="modal-content">
-      <view class="modal-icon">✓</view>
-      <text class="modal-title">提交成功！</text>
-      <text class="modal-desc">您的收货信息已提交，奖品将在7个工作日内寄出</text>
-      <button class="modal-btn" bindtap="closeSuccess">确定</button>
+  <!-- 提交成功提示 -->
+  <view class="section-title history a-center">
+    <image class="ico-null" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/noprize.png" mode="widthFix"></image>
+        <view>
+          <text>提交成功～</text>
+          <text>您的奖品已开启绿色旅程</text>
+          <text>正向您奔赴</text>
+          <text>期待与您继续践行可持续生活</text>
+        </view>
     </view>
-  </view>
+  
 </view>
 </view>
