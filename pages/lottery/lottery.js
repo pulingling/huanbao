@@ -610,7 +610,7 @@ Page({
   openMyPrizes() {
     // 跳转到收货信息填写页面
     wx.navigateTo({
-      url: '/pages/prize_delivery/prize_delivery'
+      url: '/pages/prize_history/prize_history'
     });
   }
 })

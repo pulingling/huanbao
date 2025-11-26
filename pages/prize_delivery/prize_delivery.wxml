@@ -1,41 +1,10 @@
 <!--pages/prize_delivery/prize_delivery.wxml-->
-<view class="delivery-container" wx:if="{{loading}}">
 
-</view>
 
-<view class="delivery-container" wx:else>
+<view class="delivery-container" wx:if="{{!loading}}">
 
-  <view wx:if="{{prizeInfo == null}}" class="section-title history a-center">
-    <image class="ico-null" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/noprize.png" mode="widthFix"></image>
-    <view wx:if="{{from == 'rank'}}">
-        <view wx:if="{{today < 1126}}">
-          <text>活动火热进行中</text>
-          <text>最终排名将于11月26日揭晓～</text>
-          <text>快去多攒积分</text><text>向TOP50冲刺吧！</text>
-        </view>
-        <view wx:else>
-          <text>✨ 给你一个大大的赞！</text>
-          <text>挑战虽然结束</text>
-          <text>但你的绿色学习之旅超酷的</text>
-          <text>这次名次有限</text>
-          <text>但你的环保行动无限！</text>
-          <text>精彩不停歇</text>
-          <text>你积累的积分长期有效</text>
-          <text>仍可随时参与平台抽奖！</text>
-          <text>学习的每一步都算数</text>
-          <text>环保的每一程都光荣</text>
-          <text>我们下一站再见！</text>
-        </view>
-    </view>
-    <view wx:else>
-        <text>哎呀，宝藏偷偷溜走啦~</text>
-        <text>但你攒的每一分</text>
-        <text>都藏着实打实的环保能量</text>
-        <text>继续学习，攒足积分</text>
-        <text>我们下次再战！</text>
-    </view>
-  </view>
-  <view wx:else>
+
+<view  wx:if="{{!showSuccess}}" >
   <!-- 表单区域 -->
   <view class="section-title history">
     <text>嘎嘎~，你的运气真好！</text>
@@ -118,17 +87,26 @@
         />
       </view>
     </view>
+  
 
    
-  </view>
 
-  <!-- 提交按钮 -->
-  <view class="submit-btn-container">
-    <button  class="submit-btn"  bindtap="onSubmit">提交信息</button>
-  </view>
+
+</view>
+
+
+<!-- 提交按钮 -->
+<view class="submit-btn-container">
+  <button  class="submit-btn"  bindtap="onSubmit">提交信息</button>
+</view>
+
+
+  
+</view>
+
 
   <!-- 提交成功提示 -->
-  <view class="section-title history a-center">
+  <view class="section-title history a-center" wx:if="{{showSuccess}}">
     <image class="ico-null" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/noprize.png" mode="widthFix"></image>
         <view>
           <text>提交成功～</text>
@@ -137,6 +115,4 @@
           <text>期待与您继续践行可持续生活</text>
         </view>
     </view>
-  
-</view>
 </view>

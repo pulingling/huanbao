@@ -25,15 +25,8 @@ Page({
    */
   onLoad(options) {
     console.log(options);
-    const now = new Date();
-    const month = now.getMonth() + 1; // 月份需要加1
-    const day = now.getDate();
-    this.setData({
-      from: options.from ? options.from : '',
-      today: `${month}${day}`,
-    })
     // 如果有奖品信息传递过来，可以在这里接收
-    this.loadPrize()
+    this.loadPrize(options.id)
     
     // 设置页面标题
     wx.setNavigationBarTitle({
@@ -41,11 +34,11 @@ Page({
     })
   },
 
-  async loadPrize() {
+  async loadPrize(id) {
     wx.request({
-        url: `${pointsTracker.pointsApiBase}/prize/mine`,
+        url: `${pointsTracker.pointsApiBase}/prize/detail`,
         method: 'GET',
-        data: { access_token: wx.getStorageSync('pointsToken') },
+        data: { id, access_token: wx.getStorageSync('pointsToken') },
         timeout: 10000,
         success: (response) => {
           if(response.statusCode !== 200 || !response.data) {
@@ -55,10 +48,10 @@ Page({
             });
             return;
           }
-          console.log(response.data.data[0]);
+
           this.setData({ 
             loading: false,
-            prizeInfo: response.data.data.length > 0 ? response.data.data[0] : null,
+            prizeInfo: response.data.data,
           });
           
         },

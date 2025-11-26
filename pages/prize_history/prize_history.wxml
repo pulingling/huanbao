@@ -1,0 +1,56 @@
+<!--pages/prize_delivery/prize_delivery.wxml-->
+<view class="delivery-container">
+<view wx:if="{{!loading}}">
+  <view wx:if="{{data.length < 1}}">
+    <view class="section-title history a-center">
+      <image class="ico-null" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/noprize.png" mode="widthFix"></image>
+
+      <view wx:if="{{from == 'rank'}}">
+            <text>✨ 给你一个大大的赞！</text>
+            <text>挑战虽然结束</text>
+            <text>但你的绿色学习之旅超酷的</text>
+            <text>这次名次有限</text>
+            <text>但你的环保行动无限！</text>
+            <text>精彩不停歇</text>
+            <text>你积累的积分长期有效</text>
+            <text>仍可随时参与平台抽奖！</text>
+            <text>学习的每一步都算数</text>
+            <text>环保的每一程都光荣</text>
+            <text>我们下一站再见！</text>
+      </view>
+      <view wx:else>
+          <text>哎呀，宝藏偷偷溜走啦~</text>
+          <text>但你攒的每一分</text>
+          <text>都藏着实打实的环保能量</text>
+          <text>继续学习，攒足积分</text>
+          <text>我们下次再战！</text>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="section-title history">
+    <text>嘎嘎~，你的运气真好！</text>
+  </view>
+    <view class="form-container">
+    <!-- 收货人信息 --><image class="ico-bear" src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/ico-br.png" mode="widthFix"></image>
+      <view class="form-section prize-list">
+        <view class="item" wx:for="{{data}}">
+          <view class="title">
+            <text>{{item.create_time}}</text>
+            <text class="st st{{item.status}}">{{item.status_txt}}</text>
+          </view>
+          <view class="name">{{item.prize_name}}</view>
+          <view class="p" wx:if="{{item.prize_type != 1}}"><text class="label">收货地址：</text> 
+          
+          <navigator wx:if="{{!item.address && item.status == 0}}" class="link" url="/pages/prize_delivery/prize_delivery?id={{item.id}}">去填写</navigator>
+          <text wx:else>{{ item.address ? item.address : '---' }}</text>
+          </view>
+          <view class="p"><text class="label">来源：</text>{{item.from}}</view>
+        </view>
+
+      </view>
+    </view>
+  
+  </view>
+</view>
+</view>
