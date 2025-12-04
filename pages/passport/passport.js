@@ -29,7 +29,7 @@ Page({
     currentVideo: "",
     currentCertPage: 1,
     currentYear: 0,
-    yearChoices: ['2023年', '2022年', '2021年', '2020年'],
+    yearChoices: ['2025年', '2024年', '2023年', '2022年', '2021年', '2020年'],
     certTypes1: ['优秀辅导教师奖', '优秀实施方案奖', '优秀组织奖', '优秀学校奖'],
     certTypes2: ['优秀辅导教师奖', '优秀实施方案奖', '优秀组织奖', '优秀学校奖'],
     currentCertType: 0,
