@@ -480,7 +480,7 @@ Page({
     }
   },
   showPreview(e){
-    const url = e.currentTarget.dataset.url
+    const url = e.currentTarget.dataset.url.replace('https://cdn.envedu.com.cn', 'https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com')
     wx.previewImage({
       current:url,
       urls: [url]
