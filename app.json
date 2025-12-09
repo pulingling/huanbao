@@ -69,13 +69,13 @@
       },
       {
         "pagePath": "pages/enviromentEdu/enviromentEdu",
-        "text": "环保教育",
+        "text": "环境教育",
         "iconPath": "images/icon_environment.png",
         "selectedIconPath": "images/icon_environment_active.png"
       },
       {
         "pagePath": "pages/learn/learn",
-        "text": "课程学习",
+        "text": "在线学习",
         "iconPath": "images/icon_class.png",
         "selectedIconPath": "images/icon_class_active.png"
       },

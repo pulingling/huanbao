@@ -9,11 +9,7 @@
   <!-- 主要内容 -->
   <view wx:else class="content">
     <!-- 积分概览卡片 -->
-    <view class="marquee-wraper">
-      <view class="marquee2" wx:if="{{notice}}" bindtransitionend="animationend" animation="{{animationData}}">
-        <text class='notice'>{{notice}}</text>
-      </view>
-    </view>
+  
     <view class="brief">
       <view class="img">
         <image src="https://sthjxjzx-cjhb.oss-accelerate.aliyuncs.com/wx-app/credit-center/bear-2.png" mode="widthFix"></image>
@@ -23,7 +19,7 @@
           <image src="/assets/icons/ico-edit.png" bindtap="changeNickname" class="change" mode="widthFix"></image>
         </view>
         <view class="p">勋章：<text>{{userLevel}}</text></view>
-        <view class="p" style="padding-top: 14rpx;">财富：<text class="orange" >{{totalPoints}} <text class="link" bindtap="openRankings">财富排行榜</text></text></view>
+        <view class="p" style="padding-top: 14rpx;">财富：<text class="orange" >{{totalPoints}} </text></view>
       </view>
     </view>
     
